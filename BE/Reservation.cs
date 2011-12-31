@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Globalization;
 
 namespace BE
 {
     public abstract class Reservation
     {
+        //static field
+        protected static CultureInfo calendarType = new CultureInfo("en-US");
+
         //Fields
         private readonly uint reservationID;
         private readonly Tour_Agency agency;
@@ -59,8 +63,14 @@ namespace BE
         public override string ToString()
         {
             return string.Format("{0} from {1} has created the reservation no. {2} in {3}. Arrival date: {4}. {5} for {6}. Price: {7} NIS.",
-                ContactPerson, agency.Name, reservationID, reservationDate, arrivalDate, beds == 1 ? "One bed" : beds + " beds", days == 1 ? "one day" : days + " days", Price);
+                ContactPerson,
+                agency.Name, 
+                reservationID, 
+                reservationDate.ToString(calendarType), 
+                arrivalDate.ToString(calendarType), 
+                beds == 1 ? "One bed" : beds + " beds", 
+                days == 1 ? "one day" : days + " days", 
+                Price);
         }
-
     }
 }
