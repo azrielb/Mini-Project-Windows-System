@@ -3,3 +3,8 @@ C:\Users\azrielb\Dropbox\miniProject\BE\bin\Debug\BE.pdb
 C:\Users\azrielb\Dropbox\miniProject\BE\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\azrielb\Dropbox\miniProject\BE\obj\Debug\BE.dll
 C:\Users\azrielb\Dropbox\miniProject\BE\obj\Debug\BE.pdb
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\BE\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\BE\obj\Debug\BE.dll
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\BE\bin\Debug\BE.dll
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\BE\bin\Debug\BE.pdb
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\BE\obj\Debug\BE.pdb

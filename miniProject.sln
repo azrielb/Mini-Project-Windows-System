@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE", "BE\BE.csproj", "{5D8B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Owners' tests", "tests\Owners' tests.csproj", "{F7A19ED1-4AE9-4633-BCBB-6405FDC97DCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABClasses", "ABClasses\ABClasses.csproj", "{9E238CC7-D5F6-4928-839F-2CB9372F9E33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{F7A19ED1-4AE9-4633-BCBB-6405FDC97DCF}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F7A19ED1-4AE9-4633-BCBB-6405FDC97DCF}.Release|x86.ActiveCfg = Release|x86
 		{F7A19ED1-4AE9-4633-BCBB-6405FDC97DCF}.Release|x86.Build.0 = Release|x86
+		{9E238CC7-D5F6-4928-839F-2CB9372F9E33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E238CC7-D5F6-4928-839F-2CB9372F9E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E238CC7-D5F6-4928-839F-2CB9372F9E33}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9E238CC7-D5F6-4928-839F-2CB9372F9E33}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9E238CC7-D5F6-4928-839F-2CB9372F9E33}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E238CC7-D5F6-4928-839F-2CB9372F9E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E238CC7-D5F6-4928-839F-2CB9372F9E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E238CC7-D5F6-4928-839F-2CB9372F9E33}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9E238CC7-D5F6-4928-839F-2CB9372F9E33}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9E238CC7-D5F6-4928-839F-2CB9372F9E33}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

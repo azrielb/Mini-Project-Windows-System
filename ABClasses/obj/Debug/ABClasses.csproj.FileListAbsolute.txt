@@ -1,0 +1,5 @@
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\ABClasses\bin\Debug\ABClasses.dll
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\ABClasses\bin\Debug\ABClasses.pdb
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\ABClasses\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\ABClasses\obj\Debug\ABClasses.dll
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\ABClasses\obj\Debug\ABClasses.pdb
