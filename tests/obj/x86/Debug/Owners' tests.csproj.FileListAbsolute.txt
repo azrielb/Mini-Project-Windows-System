@@ -1,0 +1,9 @@
+C:\Users\azrielb\Dropbox\miniProject\tests\bin\Debug\tests.exe
+C:\Users\azrielb\Dropbox\miniProject\tests\bin\Debug\tests.pdb
+C:\Users\azrielb\Dropbox\miniProject\tests\bin\Debug\BE.dll
+C:\Users\azrielb\Dropbox\miniProject\tests\bin\Debug\BE.pdb
+C:\Users\azrielb\Dropbox\miniProject\tests\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\azrielb\Dropbox\miniProject\tests\obj\x86\Debug\tests.exe
+C:\Users\azrielb\Dropbox\miniProject\tests\obj\x86\Debug\tests.pdb
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\tests\obj\x86\Debug\tests.exe
+C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\tests\obj\x86\Debug\tests.pdb
