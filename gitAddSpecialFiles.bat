@@ -1,12 +1,12 @@
 @echo off
-git add *.bat
-git add *.cache
-git add *ssemblyInfo.cs
-git add *.csproj
-git add *.dll
-git add *.exe
-git add *.exe.*
-git add *.pdb
-git add *.sln
-git add *.suo
-git add *.txt
+call git add *.bat
+call git add *.cache
+call git add *ssemblyInfo.cs
+call git add *.csproj
+call git add *.dll
+call git add *.exe
+call git add *.exe.*
+call git add *.pdb
+call git add *.sln
+call git add *.suo
+call git add *.txt

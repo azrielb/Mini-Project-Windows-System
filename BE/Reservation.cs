@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace BE
 {
-    public abstract class Reservation
+    public abstract class Reservation:IComparable
     {
         //static field
         protected static CultureInfo calendarType = new CultureInfo("en-US");
@@ -71,6 +71,16 @@ namespace BE
                 beds == 1 ? "One bed" : beds + " beds", 
                 days == 1 ? "one day" : days + " days", 
                 Price);
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj is Reservation)
+                return reservationID.CompareTo(((Reservation)(obj)).reservationID);
+            else if (obj is int)
+                return reservationID.CompareTo(obj);
+            else
+                throw new ArgumentException("obj must be \"Reservation\"");
         }
     }
 }

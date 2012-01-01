@@ -15,15 +15,20 @@ namespace BE
         //Override Property
         public override uint Price
         {
-            get { return (room.BedPrice == 0 ? room.Price : room.BedPrice) * days; }
+            get { return room.Price * days; }
         }
 
         //Constructor
         public Single_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, Room room, uint days = 1)
-            : base(ID, agency, arrivalDate, days, 1)
+            : base(ID, agency, arrivalDate, days, room.Beds)
         {
             this.room = room;
         }
 
+        //Override function
+        public override string ToString()
+        {
+            return string.Format("{0}\n{1}", base.ToString(), room);
+        }
     }
 }
