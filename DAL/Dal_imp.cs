@@ -9,7 +9,7 @@ namespace DAL
 {
     public class Dal_imp : Idal<List<Room>, List<Tour_Agency>, List<Reservation>>
     {
-        //Fields
+        //Fields (this class does not have to have a constructor, because the all fields are initialized)
         private List<Room> rooms = new List<Room>();
         private List<Tour_Agency> agencies = new List<Tour_Agency>();
         private List<Reservation> reservations = new List<Reservation>();
@@ -27,44 +27,53 @@ namespace DAL
             get { return reservations.ToList(); }
         }
         //Constructor
-        //Override function
 
-
+        //Implement functions of Idal
         public bool AddRoom(Room room)
         {
             if (rooms.Contains(room)) return false;
             rooms.Add(room);
             return rooms.Contains(room);
         }
-
         public bool UpdateRoom(Room room)
         {
-            throw new NotImplementedException();
+            IEnumerable<Room> oldRooms = rooms.Where(item => item.RoomID == room.RoomID);
+            if (oldRooms.Count() != 1)
+                return false;
+            oldRooms.Select(item => room);
+            return true;
         }
-
         public bool RemoveRoom(uint ID)
         {
-            throw new NotImplementedException();
+            Room room = rooms.SingleOrDefault(item => item.RoomID == ID);
+            if (room == null)
+                return false;
+            rooms.Remove(room);
+            return true;
         }
 
-
-        public bool AddAgency(Tour_Agency Agency)
+        public bool AddAgency(Tour_Agency agency)
         {
-            if (agencies.Contains(Agency)) return false;
-            agencies.Add(Agency);
-            return agencies.Contains(Agency);
+            if (agencies.Contains(agency)) return false;
+            agencies.Add(agency);
+            return agencies.Contains(agency);
         }
-
-        public bool UpdateAgency(Tour_Agency Agency)
+        public bool UpdateAgency(Tour_Agency agency)
         {
-            throw new NotImplementedException();
+            IEnumerable<Tour_Agency> oldAgencies = agencies.Where(item => item.AgencyID== agency.AgencyID);
+            if (oldAgencies.Count() != 1)
+                return false;
+            oldAgencies.Select(item => agency);
+            return true;
         }
-
         public bool RemoveAgency(uint ID)
         {
-            throw new NotImplementedException();
+            Tour_Agency agency = agencies.SingleOrDefault(item => item.AgencyID == ID);
+            if (agency == null)
+                return false;
+            agencies.Remove(agency);
+            return true;
         }
-
 
         public bool AddReservation(Reservation reservation)
         {
@@ -72,16 +81,21 @@ namespace DAL
             reservations.Add(reservation);
             return reservations.Contains(reservation);
         }
-
         public bool UpdateReservation(Reservation reservation)
         {
-            throw new NotImplementedException();
+            IEnumerable<Reservation> oldReservations = reservations.Where(item => item.ReservationID == reservation.ReservationID);
+            if (oldReservations.Count() != 1)
+                return false;
+            oldReservations.Select(item => reservation);
+            return true;
         }
-
         public bool RemoveReservation(uint ID)
         {
-            throw new NotImplementedException();
+            Reservation reservation = reservations.SingleOrDefault(item => item.ReservationID == ID);
+            if (reservation == null)
+                return false;
+            reservations.Remove(reservation);
+            return true;
         }
-
     }
 }
