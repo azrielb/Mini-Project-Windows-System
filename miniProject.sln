@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABClasses", "ABClasses\ABCl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{5D25CF41-DADD-46C7-8174-F63174E111D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,16 @@ Global
 		{5D25CF41-DADD-46C7-8174-F63174E111D5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{5D25CF41-DADD-46C7-8174-F63174E111D5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{5D25CF41-DADD-46C7-8174-F63174E111D5}.Release|x86.ActiveCfg = Release|Any CPU
+		{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3BAAEF0A-DAF6-4A2F-A44F-5ECB4D1BDAB0}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
