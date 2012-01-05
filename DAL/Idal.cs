@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using BE;
 
-namespace DAL
-{
+namespace DAL {
     public interface Idal<RO, TO, RE>
         where RO : IEnumerable<Room>
         where TO : IEnumerable<Tour_Agency>
-        where RE : IEnumerable<Reservation>
-    {
+        where RE : IEnumerable<Reservation> {
         bool AddRoom(Room room);
         bool UpdateRoom(Room room);
         bool RemoveRoom(uint ID);

@@ -1,10 +1,8 @@
 ﻿using System;
 
-namespace BE
-{
+namespace BE {
     public enum AgencyType { national, international, in_hotel_chain_ownership }
-    public class Tour_Agency: IComparable
-    {
+    public class Tour_Agency : IComparable {
         //Fields
         private readonly uint agencyID;
         private readonly AgencyType type;
@@ -12,27 +10,22 @@ namespace BE
         private string name;
 
         //Properties
-        public uint AgencyID
-        {
+        public uint AgencyID {
             get { return agencyID; }
         }
-        public string Name
-        {
+        public string Name {
             get { return name; }
             internal set { name = value; }
         }
-        public AgencyType Type
-        {
+        public AgencyType Type {
             get { return type; }
         }
-        public string ContactPerson
-        {
+        public string ContactPerson {
             get { return contactPerson; }
         }
 
         //Constructor
-        public Tour_Agency(uint ID, string name, string contactPerson, AgencyType type = AgencyType.national)
-        {
+        public Tour_Agency(uint ID, string name, string contactPerson, AgencyType type = AgencyType.national) {
             this.agencyID = ID;
             this.name = name;
             this.contactPerson = contactPerson;
@@ -40,14 +33,12 @@ namespace BE
         }
 
         //Override function
-        public override string ToString()
-        {
+        public override string ToString() {
             return String.Format("{0} (tour agency no. {1}) is {2}. Contact person: {3}.",
                 name, AgencyID, type == AgencyType.in_hotel_chain_ownership ? "in hotel chain ownership" : type.ToString(), contactPerson);
         }
 
-        public int CompareTo(object obj)
-        {
+        public int CompareTo(object obj) {
             if (obj is Tour_Agency)
                 return AgencyID.CompareTo(((Tour_Agency)(obj)).AgencyID);
             else if (obj is int)
