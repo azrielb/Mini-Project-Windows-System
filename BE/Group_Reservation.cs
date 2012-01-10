@@ -9,6 +9,9 @@ namespace BE {
         protected T rooms;
 
         ///Properties
+        public T Rooms {
+            get { return rooms; }
+        }
         //Read-only indexer
         public Room this[int indexer] {
             get {

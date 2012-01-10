@@ -13,15 +13,14 @@ namespace DAL {
         private List<Reservation> reservations = new List<Reservation>();
         //Properties
         public List<Room> Rooms {
-            get { return rooms.ToList(); }
+            get { return rooms; }
         }
         public List<Tour_Agency> Agencies {
-            get { return agencies.ToList(); }
+            get { return agencies; }
         }
         public List<Reservation> Reservations {
-            get { return reservations.ToList(); }
+            get { return reservations; }
         }
-        //Constructor
 
         //Implement functions of Idal
         public bool AddRoom(Room room) {

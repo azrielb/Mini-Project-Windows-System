@@ -27,7 +27,7 @@ namespace BE {
         }
         public uint Price {
             get { return price; }
-            //set { price = value; }
+            set { price = value; }
         }
 
         //Constructor

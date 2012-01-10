@@ -2,70 +2,129 @@
 using System.Collections.Generic;
 using System.Linq;
 using BE;
+using DAL;
 
 namespace BL {
     class BL_imp1 : IBL <List<Room>, List<Tour_Agency>, List<Reservation>> {
+        //Fields
+        private Dal_imp myDal = new Dal_imp();
+        private uint nextRoomNumber = 1;
+        private uint nextAgencyNumber = 1;
+        private uint nextReservationNumber = 1;
+
+        //Implement functions and properties of IBL
         public bool AddRoom(Room room) {
-            throw new NotImplementedException();
+            if (room.RoomID < nextRoomNumber || !myDal.AddRoom(room)) return false;
+            nextRoomNumber = room.RoomID + 1;
+            return true;
         }
         public bool UpdateRoom(Room room) {
-            throw new NotImplementedException();
+            return roomIsAvailable(room.RoomID, DateTime.Now) ? myDal.UpdateRoom(room) : false;
         }
         public bool RemoveRoom(uint ID) {
-            throw new NotImplementedException();
+            return roomIsAvailable(ID, DateTime.Now) ? myDal.RemoveRoom(ID) : false;
         }
         public List<Room> Rooms {
-            get { throw new NotImplementedException(); }
+            get { return myDal.Rooms; }
         }
         public uint NextRoomNumber {
-            get { throw new NotImplementedException(); }
+            get { return nextRoomNumber; }
+            set {
+                if (nextRoomNumber < value)
+                    nextRoomNumber = value;
+            }
         }
-        public List<Room> availableRooms(DateTime start, DateTime end) {
-            throw new NotImplementedException();
+        public IEnumerable<uint> reservedRooms(DateTime? start = null, DateTime? end = null) {
+            List<uint> reservedRooms = new List<uint>();
+            var query = start == null
+                ? end == null
+                    ? from item in myDal.Reservations select item
+                    : from item in myDal.Reservations where item.ArrivalDate <= end select item
+                : end == null
+                    ? from item in myDal.Reservations where item.LeavingDate >= start select item
+                    : from item in myDal.Reservations where item.LeavingDate >= start where item.ArrivalDate <= end select item;
+            foreach (var reservation in query) {
+                if (reservation is Single_Reservation)
+                    reservedRooms.Add(((Single_Reservation)reservation).Room.RoomID);
+                else if (reservation is Group_Reservation<IEnumerable<Room>>)
+                    reservedRooms.AddRange(from item in ((Group_Reservation<IEnumerable<Room>>)reservation).Rooms select item.RoomID);
+            }
+            return reservedRooms.Distinct();
         }
-        public List<Room> availableRooms(DateTime start, DateTime end, Func<Room, bool> predicate) {
-            throw new NotImplementedException();
+        public List<Room> availableRooms(DateTime? start = null, DateTime? end = null, Predicate<Room> predicate = null) {
+            List<Room> availableRooms = predicate == null ? myDal.Rooms : myDal.Rooms.FindAll(predicate);
+            return availableRooms.FindAll(item => !(reservedRooms(start, end).Contains(item.RoomID)));
+        }
+        public bool roomIsAvailable(uint ID, DateTime? start = null, DateTime? end = null) {
+            return !(reservedRooms(start, end).Contains(ID));
         }
 
         public bool AddAgency(Tour_Agency Agency) {
-            throw new NotImplementedException();
+            if (Agency.AgencyID < nextAgencyNumber || !myDal.AddAgency(Agency)) return false;
+            nextAgencyNumber = Agency.AgencyID + 1;
+            return true;
         }
-
         public bool UpdateAgency(Tour_Agency Agency) {
-            throw new NotImplementedException();
+            if (!myDal.UpdateAgency(Agency)) return false;
+            myDal.Reservations.ForEach(delegate(Reservation item) {
+                if (item.Agency.AgencyID == Agency.AgencyID)
+                    item.Agency = Agency;
+            });
+            return true;
         }
-
         public bool RemoveAgency(uint ID) {
-            throw new NotImplementedException();
+            return !(myDal.Reservations.Exists(item => item.Agency.AgencyID == ID)) && myDal.RemoveAgency(ID);
         }
-
         public List<Tour_Agency> Agencies {
-            get { throw new NotImplementedException(); }
+            get { return myDal.Agencies; }
+        }
+        public uint NextAgencyNumber {
+            get { return nextAgencyNumber; }
+            set {
+                if (nextAgencyNumber < value)
+                    nextAgencyNumber = value;
+            }
         }
 
         public bool AddReservation(Reservation reservation) {
-            throw new NotImplementedException();
+            if (reservation.ReservationID < nextReservationNumber || !myDal.AddReservation(reservation)) return false;
+            nextReservationNumber = reservation.ReservationID + 1;
+            return true;
         }
-
         public bool UpdateReservation(Reservation reservation) {
-            throw new NotImplementedException();
+            return myDal.UpdateReservation(reservation);
         }
-
         public bool RemoveReservation(uint ID) {
-            throw new NotImplementedException();
+            return myDal.RemoveReservation(ID);
         }
-
         public List<Reservation> Reservations {
-            get { throw new NotImplementedException(); }
+            get { return myDal.Reservations; }
         }
-
-        public int ReservationsPrice {
-            get { throw new NotImplementedException(); }
+        public uint NextReservationNumber {
+            get { return nextReservationNumber; }
+            set {
+                if (nextReservationNumber < value)
+                    nextReservationNumber = value;
+            }
         }
-
-        public int cancelReservations(DateTime start, DateTime end) {
-            throw new NotImplementedException();
+        public uint ReservationsPrice {
+            get {
+                uint reservationsPrice = 0;
+                foreach (Reservation reservation in Reservations)
+                    reservationsPrice += reservation.Price;
+                return reservationsPrice;
+            }
         }
-
+        public uint cancelReservations(DateTime start, DateTime end) {
+            uint canceled = 0;
+            var query = from item in myDal.Reservations 
+                        where item.ReservationDate >= start 
+                        where item.ReservationDate <= end 
+                        select item.ReservationID;
+            foreach (uint item in query)
+                if (myDal.RemoveReservation(item))
+                    ++canceled;
+            return canceled;
+        }
     }
 }

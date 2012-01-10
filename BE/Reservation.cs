@@ -8,18 +8,15 @@ namespace BE {
 
         //Fields
         private readonly uint reservationID;
-        private readonly Tour_Agency agency;
         private readonly DateTime reservationDate;
         protected uint beds;
         protected DateTime arrivalDate;
         protected uint days;
+        private Tour_Agency agency;
 
         //Properties
         public uint ReservationID {
             get { return reservationID; }
-        }
-        public Tour_Agency Agency {
-            get { return agency; }
         }
         public uint Beds {
             get { return beds; }
@@ -30,9 +27,16 @@ namespace BE {
         public DateTime ArrivalDate {
             get { return arrivalDate; }
         }
+        public DateTime LeavingDate {
+            get { return arrivalDate.AddDays(days); }
+        }
         public uint Days {
             get { return days; }
-            //set { days = value; }
+            set { days = value; }
+        }
+        public Tour_Agency Agency {
+            get { return agency; }
+            set { agency = value; }
         }
         public string ContactPerson {
             get { return agency.ContactPerson; }
