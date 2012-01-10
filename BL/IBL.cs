@@ -11,6 +11,8 @@ namespace BL {
         bool UpdateRoom(Room room);
         bool RemoveRoom(uint ID);
         RO Rooms { get; }
+        //Return the number of the next room - for auto-increment.
+        uint NextRoomNumber { get; }
 
         //Return a collection of all rooms that are available between these dates.
         RO availableRooms(DateTime start, DateTime end);
@@ -32,7 +34,7 @@ namespace BL {
         int cancelReservations(DateTime start, DateTime end);
 
 
-        //More 3 functions...
+        //More 2 functions...
 
     }
 }
