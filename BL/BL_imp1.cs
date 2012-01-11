@@ -81,23 +81,15 @@ namespace BL {
             
             myDal.Reservations.ForEach(item => 
             {
-                if (item.Agency.AgencyID == Agency.AgencyID)
+                if (item.AgencyID == Agency.AgencyID)
                 {
-                    item.Agency = Agency;
+                    //item.Agency = Agency;
                 }
             });
-            //myDal.Reservations.ForEach(delegate(Reservation item) {
-            //    if (item.Agency.AgencyID == Agency.AgencyID)
-            //        item.Agency = Agency;
-            //});
-            var x = (from item in myDal.Reservations
-                    where item.Agency.AgencyID == Agency.AgencyID
-                    select item);
-            x.ToList().ForEach(item => item.Agency = Agency);
             return true;
         }
         public bool RemoveAgency(uint ID) {
-            return !(myDal.Reservations.Exists(item => item.Agency.AgencyID == ID)) && myDal.RemoveAgency(ID);
+            return !(myDal.Reservations.Exists(item => item.AgencyID == ID)) && myDal.RemoveAgency(ID);
         }
         public List<Tour_Agency> Agencies {
             get { return myDal.Agencies; }

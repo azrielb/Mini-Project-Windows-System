@@ -2,7 +2,11 @@
 {
     class Checkings
     {
-        //This functions takes a number, and return whether the number is a valid israeli ID num.
+        /// <summary>
+        /// This functions takes a number, and return whether the number is a valid israeli ID num.
+        /// </summary>
+        /// <param name="idnum"></param>
+        /// <returns></returns>
         public static bool CheckIdNum(ulong idnum)
         {
             if (idnum == 0) return false;

@@ -11,12 +11,12 @@ namespace BE {
         }
         //Override Property
         public override uint Price {
-            get { return room.Price * days; }
+            get { return room.Price * Days; }
         }
 
         //Constructor
-        public Single_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, Room room, uint days = 1)
-            : base(ID, agency, arrivalDate, days, room.Beds) {
+        public Single_Reservation(uint ID, uint agencyID, DateTime arrivalDate, Room room, uint days = 1)
+            : base(ID, agencyID, arrivalDate, days, room.Beds) {
             this.room = room;
         }
 

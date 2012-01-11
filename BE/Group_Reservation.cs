@@ -6,19 +6,14 @@ namespace BE {
         : Reservation
         where T : ICollection<Room> {
         //Field
-        protected T rooms;
+        private T rooms;
 
         ///Properties
         public T Rooms {
             get { return rooms; }
-        }
-        //Read-only indexer
-        public Room this[int indexer] {
-            get {
-                foreach (Room room in rooms) {
-                    if (--indexer == -1) return room;
-                }
-                return null;
+            set {
+                rooms = value;
+                Beds = Room.calculateBeds<T>(rooms);
             }
         }
         //Override property
@@ -26,15 +21,22 @@ namespace BE {
             get {
                 uint price = 0;
                 foreach (Room room in rooms)
-                    price += room.Price * days;
+                    price += room.Price * Days;
                 return price;
             }
         }
 
-        //Constructor
-        public Group_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, T rooms, uint days = 1)
-            : base(ID, agency, arrivalDate, days, Room.calculateBeds(rooms)) {
-            this.rooms = rooms;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="ID">reservation ID</param>
+        /// <param name="agencyID">agency ID</param>
+        /// <param name="arrivalDate">arrival date</param>
+        /// <param name="myRooms">collection of rooms</param>
+        /// <param name="days">the amount of days</param>
+        public Group_Reservation(uint ID, uint agencyID, DateTime arrivalDate, T myRooms, uint days = 1)
+            : base(ID, agencyID, arrivalDate, days, Room.calculateBeds(myRooms)) {
+            rooms = myRooms;
         }
 
         //Override function
