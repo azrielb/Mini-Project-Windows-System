@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 
 namespace ABClasses {
-    class Update {
+    public class Updating {
+        /*
         public static void Update<T>(this IEnumerable<T> source, params Action<T>[] updates) {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -18,5 +19,6 @@ namespace ABClasses {
                 }
             }
         }
+         */
     }
 }

@@ -26,16 +26,16 @@ namespace BE {
             get { return seaWatching; }
         }
         public uint Price {
-            get { return price; }
-            set { price = value; }
+            get;
+            private set;
         }
-
+                         
         //Constructor
         public Room(uint ID, uint beds = 1, uint price = 100, RoomType type = RoomType.Regular, bool seaWatching = false) {
             this.beds = beds;
             this.type = type;
             this.seaWatching = seaWatching;
-            this.price = price;
+            Price = price;
             this.roomID = ID;
         }
 
