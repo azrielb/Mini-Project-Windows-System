@@ -5,11 +5,8 @@ using BE;
 
 namespace DAL {
     public class FactoryDAL {
-        public static int getDALL() { 
-            return 9; 
-        }
         public static Idal<List<Room>, List<Tour_Agency>, List<Reservation>> getDAL() {
-            return new Dal_imp();
+            return Dal_imp.Singleton();
         }
     }
 }

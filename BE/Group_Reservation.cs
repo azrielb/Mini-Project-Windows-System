@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace BE {
     public class Group_Reservation<T>
         : Reservation
-        where T : IEnumerable<Room> {
+        where T : ICollection<Room> {
         //Field
         protected T rooms;
 

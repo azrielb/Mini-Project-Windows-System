@@ -7,7 +7,11 @@ using BE;
 
 namespace DAL {
     public class Dal_imp : Idal<List<Room>, List<Tour_Agency>, List<Reservation>> {
-        internal Dal_imp() {}
+        private static Dal_imp singleton = new Dal_imp();
+        internal static Dal_imp Singleton() {
+            return singleton;
+        }
+        private Dal_imp() {}
         //Fields
         private List<Room> rooms = new List<Room>();
         private List<Tour_Agency> agencies = new List<Tour_Agency>();

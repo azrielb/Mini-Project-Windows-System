@@ -18,8 +18,13 @@ namespace BL {
             nextAgencyNumber = 1;
             nextReservationNumber = 1;
         }
-
+    
         //Implement functions and properties of IBL
+        /// <summary>
+        ///  Implement functions and properties of IBL
+        /// </summary>
+        /// <param name="room"> room ze cheder</param>
+        /// <returns></returns>
         public bool AddRoom(Room room) {
             if (room.RoomID < nextRoomNumber || !myDal.AddRoom(room)) return false;
             nextRoomNumber = room.RoomID + 1;
@@ -73,10 +78,22 @@ namespace BL {
         }
         public bool UpdateAgency(Tour_Agency Agency) {
             if (!myDal.UpdateAgency(Agency)) return false;
-            myDal.Reservations.ForEach(delegate(Reservation item) {
+            
+            myDal.Reservations.ForEach(item => 
+            {
                 if (item.Agency.AgencyID == Agency.AgencyID)
+                {
                     item.Agency = Agency;
+                }
             });
+            //myDal.Reservations.ForEach(delegate(Reservation item) {
+            //    if (item.Agency.AgencyID == Agency.AgencyID)
+            //        item.Agency = Agency;
+            //});
+            var x = (from item in myDal.Reservations
+                    where item.Agency.AgencyID == Agency.AgencyID
+                    select item);
+            x.ToList().ForEach(item => item.Agency = Agency);
             return true;
         }
         public bool RemoveAgency(uint ID) {
