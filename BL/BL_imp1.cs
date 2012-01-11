@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using BE;
-using DAL;
 
 namespace BL {
     class BL_imp1 : IBL <List<Room>, List<Tour_Agency>, List<Reservation>> {
+        internal BL_imp1() {}
         //Fields
-        private Dal_imp myDal = new Dal_imp();
+        private DAL.Idal<List<Room>, List<Tour_Agency>, List<Reservation>> myDal = DAL.FactoryDAL.getDAL();
         private uint nextRoomNumber = 1;
         private uint nextAgencyNumber = 1;
         private uint nextReservationNumber = 1;

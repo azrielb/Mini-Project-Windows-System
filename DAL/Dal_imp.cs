@@ -7,7 +7,8 @@ using BE;
 
 namespace DAL {
     public class Dal_imp : Idal<List<Room>, List<Tour_Agency>, List<Reservation>> {
-        //Fields (this class does not have to have a constructor, because the all fields are initialized)
+        internal Dal_imp() {}
+        //Fields
         private List<Room> rooms = new List<Room>();
         private List<Tour_Agency> agencies = new List<Tour_Agency>();
         private List<Reservation> reservations = new List<Reservation>();

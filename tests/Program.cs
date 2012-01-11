@@ -5,7 +5,7 @@ using BE;
 namespace tests {
     class Program {
         static void Main(string[] args) {
-            DAL.Dal_imp myDal = new DAL.Dal_imp();
+            DAL.Idal<List<Room>, List<Tour_Agency>, List<Reservation>> myDal = DAL.FactoryDAL.getDAL();
             myDal.AddRoom(new Room(1, 3, 100));
             myDal.AddRoom(new Room(2, 2, 300, RoomType.Suite, true));
             myDal.AddRoom(new Room(3, 2, 200, RoomType.Suite));
