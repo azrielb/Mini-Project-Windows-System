@@ -4,13 +4,20 @@ using System.Linq;
 using BE;
 
 namespace BL {
-    class BL_imp1 : IBL <List<Room>, List<Tour_Agency>, List<Reservation>> {
-        internal BL_imp1() {}
+    class BL_imp1 : IBL<List<Room>, List<Tour_Agency>, List<Reservation>> {
         //Fields
-        private DAL.Idal<List<Room>, List<Tour_Agency>, List<Reservation>> myDal = DAL.FactoryDAL.getDAL();
-        private uint nextRoomNumber = 1;
-        private uint nextAgencyNumber = 1;
-        private uint nextReservationNumber = 1;
+        private DAL.Idal<List<Room>, List<Tour_Agency>, List<Reservation>> myDal;
+        private uint nextRoomNumber;
+        private uint nextAgencyNumber;
+        private uint nextReservationNumber;
+
+        //Counstructor
+        internal BL_imp1() {
+            myDal = DAL.FactoryDAL.getDAL();
+            nextRoomNumber = 1;
+            nextAgencyNumber = 1;
+            nextReservationNumber = 1;
+        }
 
         //Implement functions and properties of IBL
         public bool AddRoom(Room room) {
@@ -117,9 +124,9 @@ namespace BL {
         }
         public uint cancelReservations(DateTime start, DateTime end) {
             uint canceled = 0;
-            var query = from item in myDal.Reservations 
-                        where item.ReservationDate >= start 
-                        where item.ReservationDate <= end 
+            var query = from item in myDal.Reservations
+                        where item.ReservationDate >= start
+                        where item.ReservationDate <= end
                         select item.ReservationID;
             foreach (uint item in query)
                 if (myDal.RemoveReservation(item))

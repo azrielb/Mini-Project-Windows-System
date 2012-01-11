@@ -7,3 +7,12 @@ C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniPro
 C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\BL\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\BL\obj\Debug\BL.dll
 C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\BL\obj\Debug\BL.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\obj\Debug\BL.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\BL.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\BL.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\BE.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\DAL.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\BE.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\DAL.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\obj\Debug\BL.pdb
