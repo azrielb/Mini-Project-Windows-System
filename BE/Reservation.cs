@@ -13,11 +13,9 @@ namespace BE {
         public DateTime ArrivalDate { get; set; }
         public uint Days { get; set; }
         public DateTime LeavingDate { get { return ArrivalDate.AddDays(Days); } }
-        public uint Beds { get; protected set; }
         public string ContactPerson { get; set; }
         public abstract uint Price { get; }
-
-
+        public abstract uint Beds { get; }
 
         /// <summary>
         /// Constructor
@@ -26,13 +24,11 @@ namespace BE {
         /// <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
         /// <param name="arrivalDate">arrival date</param>
         /// <param name="days">the amount of days</param>
-        /// <param name="beds">the amount of beds</param>
-        public Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, uint days = 1, uint beds = 1) {
+        public Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, uint days = 1) {
             ReservationID = ID;
             AgencyID = agency.AgencyID;
             ContactPerson = agency.ContactPerson;
             ArrivalDate = arrivalDate;
-            Beds = beds;
             Days = days;
             ReservationDate = DateTime.Now;
         }
