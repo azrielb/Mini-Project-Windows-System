@@ -2,27 +2,20 @@
 
 namespace BE {
     public class Single_Reservation : Reservation {
-        //Field
-        private Room room;
         //Property
-        public Room Room {
-            get { return room; }
-            //set { room = value; }
-        }
+        public Room Room { get; set; }
         //Override Property
-        public override uint Price {
-            get { return room.Price * days; }
-        }
+        public override uint Price { get { return Room.Price * Days; } }
 
         //Constructor
         public Single_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, Room room, uint days = 1)
             : base(ID, agency, arrivalDate, days, room.Beds) {
-            this.room = room;
+            Room = room;
         }
 
         //Override function
         public override string ToString() {
-            return string.Format("{0}\n{1}", base.ToString(), room);
+            return string.Format("{0}\n{1}", base.ToString(), Room);
         }
     }
 }
