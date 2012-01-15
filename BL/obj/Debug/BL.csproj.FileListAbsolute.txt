@@ -16,3 +16,5 @@ C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\DAL.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\BE.pdb
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\DAL.pdb
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\obj\Debug\BL.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\ABClasses.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\ABClasses.pdb

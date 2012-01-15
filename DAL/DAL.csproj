@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ABClasses\ABClasses.csproj">
+      <Project>{9E238CC7-D5F6-4928-839F-2CB9372F9E33}</Project>
+      <Name>ABClasses</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{5D8B0900-A5FE-4555-BA7D-5FDB9A2C85A4}</Project>
       <Name>BE</Name>

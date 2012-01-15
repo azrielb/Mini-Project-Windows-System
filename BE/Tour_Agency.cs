@@ -2,6 +2,7 @@
 
 namespace BE {
     public enum AgencyType { national, international, in_hotel_chain_ownership }
+
     public class Tour_Agency : IComparable {
         //Properties
         public uint AgencyID { get; private set; }
@@ -9,7 +10,13 @@ namespace BE {
         public AgencyType Type { get; private set; }
         public string ContactPerson { get; set; }
 
-        //Constructor
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="ID">id</param>
+        /// <param name="name">name</param>
+        /// <param name="contactPerson">contact person</param>
+        /// <param name="type">AgencyType</param>
         public Tour_Agency(uint ID, string name, string contactPerson, AgencyType type = AgencyType.national) {
             AgencyID = ID;
             Name = name;
@@ -23,6 +30,11 @@ namespace BE {
                 Name, AgencyID, Type == AgencyType.in_hotel_chain_ownership ? "in hotel chain ownership" : Type.ToString(), ContactPerson);
         }
 
+        /// <summary>
+        /// Tour_Agency can be comapred with another Tour_Agency or with integer
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public int CompareTo(object obj) {
             if (obj is Tour_Agency)
                 return AgencyID.CompareTo(((Tour_Agency)(obj)).AgencyID);

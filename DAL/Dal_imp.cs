@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BE;
-
+using ABClasses;
 
 namespace DAL {
     public class Dal_imp : Idal<List<Room>, List<Tour_Agency>, List<Reservation>> {
@@ -33,11 +33,15 @@ namespace DAL {
             rooms.Add(room);
             return rooms.Contains(room);
         }
-        public bool UpdateRoom(Room room) {
-            IEnumerable<Room> oldRooms = rooms.Where(item => item.RoomID == room.RoomID);
-            if (oldRooms.Count() != 1)
+        public bool UpdateRoom(uint ID, uint Beds = 0, RoomType? Type = null, uint Price = 0) {
+            var Room = rooms.Where(item => item.RoomID == ID);
+            if (Room.Count() != 1)
                 return false;
-            oldRooms.Select(item => room);
+            Room.Update(item => {
+                if (Beds > 0) item.Beds = Beds;
+                if (Type.HasValue) item.Type = Type.Value;
+                if (Price > 0) item.Price = Price;
+            });
             return true;
         }
         public bool RemoveRoom(uint ID) {
@@ -53,11 +57,14 @@ namespace DAL {
             agencies.Add(agency);
             return agencies.Contains(agency);
         }
-        public bool UpdateAgency(Tour_Agency agency) {
-            IEnumerable<Tour_Agency> oldAgencies = agencies.Where(item => item.AgencyID == agency.AgencyID);
-            if (oldAgencies.Count() != 1)
+        public bool UpdateAgency(uint ID, string Name = "", string ContactPerson = "") {
+            var Agency = agencies.Where(item => item.AgencyID == ID);
+            if (Agency.Count() != 1)
                 return false;
-            oldAgencies.Select(item => agency);
+            Agency.Update(item => {
+                if (Name != "") item.Name = Name;
+                if (ContactPerson != "") item.ContactPerson = ContactPerson;
+            });
             return true;
         }
         public bool RemoveAgency(uint ID) {
@@ -73,11 +80,36 @@ namespace DAL {
             reservations.Add(reservation);
             return reservations.Contains(reservation);
         }
-        public bool UpdateReservation(Reservation reservation) {
-            IEnumerable<Reservation> oldReservations = reservations.Where(item => item.ReservationID == reservation.ReservationID);
-            if (oldReservations.Count() != 1)
+        protected bool UpdateReservation(uint ReservationID, params Action<Reservation>[] updates) {
+            var Reservation = reservations.Where(item => item.ReservationID == ReservationID);
+            if (Reservation.Count() != 1)
                 return false;
-            oldReservations.Select(item => reservation);
+            Reservation.Update(updates);
+            return true;
+        }
+        public bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 0) {
+            UpdateReservation(ReservationID, item => {
+                if (ArrivalDate.HasValue) item.ArrivalDate = ArrivalDate.Value;
+                if (Days > 0) item.Days = Days;
+            });
+            return true;
+        }
+        public bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 0) {
+            UpdateReservation(ReservationID, item => {
+                if (!(item is Single_Reservation)) throw new ArgumentException("Reservation must be a Single_Reservation");
+                (item as Single_Reservation).Room = room;
+                if (ArrivalDate.HasValue) item.ArrivalDate = ArrivalDate.Value;
+                if (Days > 0) item.Days = Days;
+            });
+            return true;
+        }
+        public bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 0) {
+            UpdateReservation(ReservationID, item => {
+                if (!(item is Group_Reservation<List<Room>>)) throw new ArgumentException("Reservation must be a Group_Reservation");
+                (item as Group_Reservation<List<Room>>).Rooms = rooms;
+                if (ArrivalDate.HasValue) item.ArrivalDate = ArrivalDate.Value;
+                if (Days > 0) item.Days = Days;
+            });
             return true;
         }
         public bool RemoveReservation(uint ID) {

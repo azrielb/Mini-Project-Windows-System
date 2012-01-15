@@ -14,10 +14,11 @@ namespace BE {
         /// <param name="ID">reservation ID</param>
         /// <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
         /// <param name="arrivalDate">arrival date</param>
+        /// <param name="room">The room</param>
         /// <param name="days">the amount of days</param>
-        public Single_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, Room myRoom, uint days = 1)
+        public Single_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, Room room, uint days = 1)
             : base(ID, agency, arrivalDate, days) {
-            Room = myRoom;
+            Room = room;
             
         }
 

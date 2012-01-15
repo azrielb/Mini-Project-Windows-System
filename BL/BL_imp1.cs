@@ -18,7 +18,7 @@ namespace BL {
             nextAgencyNumber = 1;
             nextReservationNumber = 1;
         }
-    
+
         //Implement functions and properties of IBL
         /// <summary>
         ///  Implement functions and properties of IBL
@@ -30,8 +30,8 @@ namespace BL {
             nextRoomNumber = room.RoomID + 1;
             return true;
         }
-        public bool UpdateRoom(Room room) {
-            return roomIsAvailable(room.RoomID, DateTime.Now) ? myDal.UpdateRoom(room) : false;
+        public bool UpdateRoom(uint ID, uint Beds = 0, RoomType? Type = null, uint Price = 0) {
+            return roomIsAvailable(ID, DateTime.Now) ? myDal.UpdateRoom(ID, Beds, Type, Price) : false;
         }
         public bool RemoveRoom(uint ID) {
             return roomIsAvailable(ID, DateTime.Now) ? myDal.RemoveRoom(ID) : false;
@@ -48,13 +48,20 @@ namespace BL {
         }
         public IEnumerable<uint> reservedRooms(DateTime? start = null, DateTime? end = null) {
             List<uint> reservedRooms = new List<uint>();
-            var query = start == null
-                ? end == null
-                    ? from item in myDal.Reservations select item
-                    : from item in myDal.Reservations where item.ArrivalDate <= end select item
-                : end == null
-                    ? from item in myDal.Reservations where item.LeavingDate >= start select item
-                    : from item in myDal.Reservations where item.LeavingDate >= start where item.ArrivalDate <= end select item;
+            IEnumerable<Reservation> query;
+            if (start.HasValue) {
+                if (end.HasValue) {
+                    query = from item in myDal.Reservations where item.LeavingDate >= start.Value where item.ArrivalDate <= end.Value select item;
+                } else {
+                    query = from item in myDal.Reservations where item.LeavingDate >= start.Value select item;
+                }
+            } else {
+                if (end.HasValue) {
+                    query = from item in myDal.Reservations where item.ArrivalDate <= end.Value select item;
+                } else {
+                    query = from item in myDal.Reservations select item;
+                }
+            }
             foreach (var reservation in query) {
                 if (reservation is Single_Reservation)
                     reservedRooms.Add(((Single_Reservation)reservation).Room.RoomID);
@@ -76,14 +83,11 @@ namespace BL {
             nextAgencyNumber = Agency.AgencyID + 1;
             return true;
         }
-        public bool UpdateAgency(Tour_Agency Agency) {
-            if (!myDal.UpdateAgency(Agency)) return false;
-            
-            myDal.Reservations.ForEach(item => 
-            {
-                if (item.AgencyID == Agency.AgencyID)
-                {
-                    item.ContactPerson = Agency.ContactPerson;
+        public bool UpdateAgency(uint AgencyID, string Name = "", string ContactPerson = "") {
+            if (!myDal.UpdateAgency(AgencyID, Name, ContactPerson)) return false;
+            myDal.Reservations.ForEach(item => {
+                if (item.AgencyID == AgencyID) {
+                    item.ContactPerson = ContactPerson;
                 }
             });
             return true;
@@ -107,8 +111,14 @@ namespace BL {
             nextReservationNumber = reservation.ReservationID + 1;
             return true;
         }
-        public bool UpdateReservation(Reservation reservation) {
-            return myDal.UpdateReservation(reservation);
+        public bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 0) {
+            return myDal.UpdateReservation(ReservationID, ArrivalDate, Days);
+        }
+        public bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 0) {
+            return myDal.UpdateReservation(ReservationID, room, ArrivalDate, Days);
+        }
+        public bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 0) {
+            return myDal.UpdateReservation(ReservationID, rooms, ArrivalDate, Days);
         }
         public bool RemoveReservation(uint ID) {
             return myDal.RemoveReservation(ID);
