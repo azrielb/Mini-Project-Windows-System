@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace BE {
     public enum RoomType { Regular, Suite }
-    public class Room : IComparable {
 
+    public class Room : IComparable {
         //Properties
         public uint RoomID { get; private set; }
         public uint Beds { get; set; }
@@ -40,7 +40,7 @@ namespace BE {
         /// <typeparam name="T">type of collection</typeparam>
         /// <param name="rooms">collection of rooms</param>
         /// <returns>amount of beds that exist in these rooms</returns>
-        public static uint calculateBeds<T>(T rooms) where T : IEnumerable<Room> {
+        public static uint calculateBeds<T>(T rooms) where T : ICollection<Room> {
             uint beds = 0;
             foreach (Room room in rooms) {
                 beds += room.Beds;

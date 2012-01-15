@@ -30,19 +30,18 @@ namespace BE {
         /// Constructor
         /// </summary>
         /// <param name="ID">reservation ID</param>
-        /// <param name="agencyID">agency ID</param>
+        /// <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
         /// <param name="arrivalDate">arrival date</param>
         /// <param name="myRooms">collection of rooms</param>
         /// <param name="days">the amount of days</param>
-        public Group_Reservation(uint ID, uint agencyID, DateTime arrivalDate, T myRooms, uint days = 1)
-            : base(ID, agencyID, arrivalDate, days, Room.calculateBeds(myRooms)) {
-            rooms = myRooms;
+        public Group_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, T rooms, uint days = 1)
+            : base(ID, agency, arrivalDate, days, Room.calculateBeds(rooms)) {
+            Rooms = rooms;
         }
 
         //Override function
         public override string ToString() {
-            return string.Format("{0}\nRooms:\n{1}", base.ToString(), string.Join("\n", rooms));
+            return string.Format("{0}\nRooms:\n{1}", base.ToString(), string.Join("\n", Rooms));
         }
-
     }
 }

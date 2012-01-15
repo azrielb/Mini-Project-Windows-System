@@ -17,21 +17,24 @@ namespace BE {
         public string ContactPerson { get; set; }
         public abstract uint Price { get; }
 
+
+
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="ID">reservation ID</param>
-        /// <param name="agencyID">agency ID</param>
+        /// <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
         /// <param name="arrivalDate">arrival date</param>
         /// <param name="days">the amount of days</param>
         /// <param name="beds">the amount of beds</param>
-        public Reservation(uint ID, uint agencyID, DateTime arrivalDate, uint days = 1, uint beds = 1) {
-            AgencyID = agencyID;
+        public Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, uint days = 1, uint beds = 1) {
+            ReservationID = ID;
+            AgencyID = agency.AgencyID;
+            ContactPerson = agency.ContactPerson;
             ArrivalDate = arrivalDate;
             Beds = beds;
             Days = days;
             ReservationDate = DateTime.Now;
-            ReservationID = ID;
         }
 
         //Override function

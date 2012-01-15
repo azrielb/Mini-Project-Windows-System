@@ -83,7 +83,7 @@ namespace BL {
             {
                 if (item.AgencyID == Agency.AgencyID)
                 {
-                    //item.Agency = Agency;
+                    item.ContactPerson = Agency.ContactPerson;
                 }
             });
             return true;
