@@ -34,17 +34,17 @@ namespace DAL {
         /// <summary>
         /// add an agency to the collection
         /// </summary>
-        /// <param name="Agency">Agency</param>
+        /// <param name="agency">Agency</param>
         /// <returns>true if success, false else</returns>
-        bool AddAgency(Tour_Agency Agency);
+        bool AddAgency(Tour_Agency agency);
         /// <summary>
         /// updating an agency by parameters
         /// </summary>
-        /// <param name="AgencyID">agency's ID</param>
+        /// <param name="ID">agency's ID</param>
         /// <param name="Name">agency's name - optional</param>
         /// <param name="ContactPerson">Contact person - optional</param>
         /// <returns>true if success, false else</returns>
-        bool UpdateAgency(uint AgencyID, string Name = "", string ContactPerson = "");
+        bool UpdateAgency(uint ID, string Name = "", string ContactPerson = "");
         /// <summary>
         /// remove an agency from the collection
         /// </summary>
