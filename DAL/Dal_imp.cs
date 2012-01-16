@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using BE;
 using ABClasses;
+using BE;
 
 namespace DAL {
     public class Dal_imp : Idal<List<Room>, List<Tour_Agency>, List<Reservation>> {
