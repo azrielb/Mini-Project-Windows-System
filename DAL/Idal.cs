@@ -61,7 +61,7 @@ namespace DAL {
         /// <returns>true if success, false else</returns>
         bool AddReservation(Reservation reservation);
         /// <summary>
-        /// updating an agency by parameters
+        /// updating a reservation by parameters
         /// </summary>
         /// <param name="ReservationID">ReservationID</param>
         /// <param name="ArrivalDate">Arrival Date - optional</param>
@@ -69,7 +69,7 @@ namespace DAL {
         /// <returns>true if success, false else</returns>
         bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 0);
         /// <summary>
-        /// updating an agency by parameters
+        /// updating a reservation by parameters
         /// </summary>
         /// <param name="ReservationID">ReservationID</param>
         /// <param name="room">room - optional</param>
@@ -78,7 +78,7 @@ namespace DAL {
         /// <returns>true if success, false else</returns>
         bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 0);
         /// <summary>
-        /// updating an agency by parameters
+        /// updating a reservation by parameters
         /// </summary>
         /// <param name="ReservationID">ReservationID</param>
         /// <param name="rooms">collection of rooms - optional</param>

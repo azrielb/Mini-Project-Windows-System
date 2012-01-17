@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace BE {
     public class Group_Reservation<T>
         : Reservation
-        where T : ICollection<Room> {
+        where T : IEnumerable<Room> {
         public T Rooms { get; set; }
         public override uint Beds { get { return Room.calculateBeds<T>(Rooms); } }
         //Override property

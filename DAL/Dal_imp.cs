@@ -6,10 +6,20 @@ using BE;
 
 namespace DAL {
     public class Dal_imp : Idal<List<Room>, List<Tour_Agency>, List<Reservation>> {
+        /// <summary>
+        /// singleton
+        /// </summary>
         private static Dal_imp singleton = new Dal_imp();
+        /// <summary>
+        /// singleton. this is internalm because the class have to be created by the factory,
+        /// </summary>
+        /// <returns>the singleton</returns>
         internal static Dal_imp Singleton() {
             return singleton;
         }
+        /// <summary>
+        /// private constructor - for singleton
+        /// </summary>
         private Dal_imp() {}
         //Fields
         private List<Room> rooms = new List<Room>();
@@ -119,6 +129,12 @@ namespace DAL {
             reservations.Add(reservation);
             return reservations.Contains(reservation);
         }
+        /// <summary>
+        /// updating a reservation by functions
+        /// </summary>
+        /// <param name="ReservationID">ReservationID</param>
+        /// <param name="updates">some functions (at least one, or an array of functions) that get Reservation and return void (they can be lambda expressions)</param>
+        /// <returns>true if success, false else</returns>
         protected bool UpdateReservation(uint ReservationID, params Action<Reservation>[] updates) {
             var Reservation = reservations.Where(item => item.ReservationID == ReservationID);
             if (Reservation.Count() != 1)
@@ -127,21 +143,20 @@ namespace DAL {
             return true;
         }
         /// <summary>
-        /// updating an agency by parameters
+        /// updating a reservation by parameters
         /// </summary>
         /// <param name="ReservationID">ReservationID</param>
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
         public bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 0) {
-            UpdateReservation(ReservationID, item => {
+            return UpdateReservation(ReservationID, item => {
                 if (ArrivalDate.HasValue) item.ArrivalDate = ArrivalDate.Value;
                 if (Days > 0) item.Days = Days;
             });
-            return true;
         }
         /// <summary>
-        /// updating an agency by parameters
+        /// updating a reservation by parameters
         /// </summary>
         /// <param name="ReservationID">ReservationID</param>
         /// <param name="room">room - optional</param>
@@ -149,16 +164,15 @@ namespace DAL {
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
         public bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 0) {
-            UpdateReservation(ReservationID, item => {
+            return UpdateReservation(ReservationID, item => {
                 if (!(item is Single_Reservation)) throw new ArgumentException("Reservation must be a Single_Reservation");
                 (item as Single_Reservation).Room = room;
                 if (ArrivalDate.HasValue) item.ArrivalDate = ArrivalDate.Value;
                 if (Days > 0) item.Days = Days;
             });
-            return true;
         }
         /// <summary>
-        /// updating an agency by parameters
+        /// updating a reservation by parameters
         /// </summary>
         /// <param name="ReservationID">ReservationID</param>
         /// <param name="rooms">collection of rooms - optional</param>
@@ -166,13 +180,12 @@ namespace DAL {
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
         public bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 0) {
-            UpdateReservation(ReservationID, item => {
+            return UpdateReservation(ReservationID, item => {
                 if (!(item is Group_Reservation<List<Room>>)) throw new ArgumentException("Reservation must be a Group_Reservation");
                 (item as Group_Reservation<List<Room>>).Rooms = rooms;
                 if (ArrivalDate.HasValue) item.ArrivalDate = ArrivalDate.Value;
                 if (Days > 0) item.Days = Days;
             });
-            return true;
         }
         /// <summary>
         /// remove a reservation from the collection

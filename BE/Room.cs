@@ -40,7 +40,7 @@ namespace BE {
         /// <typeparam name="T">type of collection</typeparam>
         /// <param name="rooms">collection of rooms</param>
         /// <returns>amount of beds that exist in these rooms</returns>
-        public static uint calculateBeds<T>(T rooms) where T : ICollection<Room> {
+        public static uint calculateBeds<T>(T rooms) where T : IEnumerable<Room> {
             uint beds = 0;
             foreach (Room room in rooms) {
                 beds += room.Beds;
