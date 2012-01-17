@@ -11,21 +11,22 @@ namespace DAL {
         /// </summary>
         private static Dal_imp singleton = new Dal_imp();
         /// <summary>
-        /// singleton. this is internalm because the class have to be created by the factory,
+        /// singleton. this is internal because the class have to be created by a factory.
         /// </summary>
-        /// <returns>the singleton</returns>
-        internal static Dal_imp Singleton() {
-            return singleton;
-        }
+        internal static Dal_imp Singleton { get { return singleton; } }
+        // Fields
+        private List<Room> rooms;
+        private List<Tour_Agency> agencies;
+        private List<Reservation> reservations;
         /// <summary>
         /// private constructor - for singleton
         /// </summary>
-        private Dal_imp() {}
-        //Fields
-        private List<Room> rooms = new List<Room>();
-        private List<Tour_Agency> agencies = new List<Tour_Agency>();
-        private List<Reservation> reservations = new List<Reservation>();
-        //Properties
+        private Dal_imp() {
+            rooms = new List<Room>();
+            agencies = new List<Tour_Agency>();
+            reservations = new List<Reservation>();
+        }
+        // Properties
         public List<Room> Rooms {
             get { return rooms; }
         }
@@ -36,7 +37,7 @@ namespace DAL {
             get { return reservations; }
         }
 
-        //Implement functions of Idal
+        // Implement functions of Idal
         /// <summary>
         /// add a room to the collection
         /// </summary>
@@ -82,9 +83,13 @@ namespace DAL {
         /// <summary>
         /// add an agency to the collection
         /// </summary>
-        /// <param name="Agency">Agency</param>
+        /// <param name="agency">agency</param>
         /// <returns>true if success, false else</returns>
         public bool AddAgency(Tour_Agency agency) {
+            if (agencies.Contains(agency)) return false;
+            agencies.Add(agency);
+            return agencies.Contains(agency);
+        }
         /// <summary>
         /// updating an agency by parameters
         /// </summary>
@@ -92,10 +97,6 @@ namespace DAL {
         /// <param name="Name">agency's name - optional</param>
         /// <param name="ContactPerson">Contact person - optional</param>
         /// <returns>true if success, false else</returns>
-            if (agencies.Contains(agency)) return false;
-            agencies.Add(agency);
-            return agencies.Contains(agency);
-        }
         public bool UpdateAgency(uint ID, string Name = "", string ContactPerson = "") {
             var Agency = agencies.Where(item => item.AgencyID == ID);
             if (Agency.Count() != 1)

@@ -3,10 +3,10 @@ using System.Globalization;
 
 namespace BE {
     public abstract class Reservation : IComparable {
-        //static field
+        // static field
         public static CultureInfo CalendarType = new CultureInfo("en-US");
 
-        //Properties
+        // Properties
         public uint ReservationID { get; private set; }
         public uint AgencyID { get; private set; }
         public DateTime ReservationDate { get; private set; }
@@ -33,7 +33,7 @@ namespace BE {
             ReservationDate = DateTime.Now;
         }
 
-        //Override function
+        // Override function
         public override string ToString() {
             return string.Format("{0} from agency no. {1} has created the reservation no. {2} in {3}. Arrival date: {4}. {5} for {6}. Price: {7} NIS.",
                 ContactPerson,
@@ -49,8 +49,6 @@ namespace BE {
         /// <summary>
         /// the reservation can be comapred with another reservation or with integer
         /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
         public int CompareTo(object obj) {
             if (obj is Reservation)
                 return ReservationID.CompareTo(((Reservation)(obj)).ReservationID);

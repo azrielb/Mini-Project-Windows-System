@@ -7,7 +7,7 @@ namespace BE {
         where T : IEnumerable<Room> {
         public T Rooms { get; set; }
         public override uint Beds { get { return Room.calculateBeds<T>(Rooms); } }
-        //Override property
+        // Override property
         public override uint Price {
             get {
                 uint price = 0;
@@ -30,7 +30,7 @@ namespace BE {
             Rooms = rooms;
         }
 
-        //Override function
+        // Override function
         public override string ToString() {
             return string.Format("{0}\nRooms:\n{1}", base.ToString(), string.Join("\n", Rooms));
         }

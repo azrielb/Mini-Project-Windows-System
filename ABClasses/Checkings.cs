@@ -6,7 +6,7 @@
         /// This function takes a number, and checks whether the number is a valid israeli ID num.
         /// The all valid ID's that are smaller than 100 are: 18,26,34,42,59,67,75,83,91.
         /// </summary>
-        /// <param name="idnum"></param>
+        /// <param name="idnum">ID number for checking</param>
         /// <returns>the result of checking</returns>
         public static bool CheckIdNum(ulong idnum) {
             if (idnum == 0) return false;

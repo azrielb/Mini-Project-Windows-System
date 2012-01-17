@@ -2,9 +2,9 @@
 
 namespace BE {
     public class Single_Reservation : Reservation {
-        //Property
+        // Property
         public Room Room { get; set; }
-        //Override Properties
+        // Override Properties
         public override uint Price { get { return Room.Price * Days; } }
         public override uint Beds { get { return Room.Beds; } }
 
@@ -22,7 +22,7 @@ namespace BE {
             
         }
 
-        //Override function
+        // Override function
         public override string ToString() {
             return string.Format("{0}\n{1}", base.ToString(), Room);
         }

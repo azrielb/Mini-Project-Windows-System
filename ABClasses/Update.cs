@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ABClasses {
     public static class Updates {
         /// <summary>
+        /// perform the "updates" functions on each item in the Enumerable
         /// http://stackoverflow.com/questions/361921/list-manipulation-in-c-sharp-using-linq#answer-361958
         /// </summary>
         /// <typeparam name="T">any object</typeparam>
