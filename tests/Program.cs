@@ -5,7 +5,7 @@ using BE;
 namespace PI {
     class Program {
         static int Main(string[] args) {
-            BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL = BL.FactoryBL.getBL();
+            BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL = BL.FactoryBL.getBL;
             myBL.AddRoom(new Room(myBL.NextRoomNumber, 3, 100));
             myBL.AddRoom(new Room(myBL.NextRoomNumber, 2, 300, RoomType.Suite, true));
             myBL.AddRoom(new Room(11, 2, 200, RoomType.Suite));
