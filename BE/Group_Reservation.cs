@@ -25,8 +25,9 @@ namespace BE {
         /// <param name="arrivalDate">arrival date</param>
         /// <param name="myRooms">collection of rooms</param>
         /// <param name="days">the amount of days</param>
-        public Group_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, T rooms, uint days = 1)
-            : base(ID, agency, arrivalDate, days) {
+        /// <param name="reservationDate">reservation date, null is current date</param>
+        public Group_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, T rooms, uint days = 1, DateTime? reservationDate = null)
+            : base(ID, agency, arrivalDate, days, reservationDate) {
             Rooms = rooms;
         }
 

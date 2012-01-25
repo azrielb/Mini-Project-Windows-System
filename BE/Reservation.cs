@@ -24,13 +24,14 @@ namespace BE {
         /// <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
         /// <param name="arrivalDate">arrival date</param>
         /// <param name="days">the amount of days</param>
-        public Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, uint days = 1) {
+        /// <param name="reservationDate">reservation date, null is current date</param>
+        public Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, uint days = 1, DateTime? reservationDate = null) {
             ReservationID = ID;
             AgencyID = agency.AgencyID;
             ContactPerson = agency.ContactPerson;
             ArrivalDate = arrivalDate;
             Days = days;
-            ReservationDate = DateTime.Now;
+            ReservationDate = reservationDate == null ? DateTime.Now : (DateTime)reservationDate;
         }
 
         // Override function
