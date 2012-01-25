@@ -4,15 +4,15 @@ using System.Linq;
 using BE;
 
 namespace BL {
-    public class BL_imp1 : IBL<List<Room>, List<Tour_Agency>, List<Reservation>> {
+    public class BL_imp : IBL<List<Room>, List<Tour_Agency>, List<Reservation>> {
         /// <summary>
         /// singleton
         /// </summary>
-        private static BL_imp1 singleton = new BL_imp1();
+        private static BL_imp singleton = new BL_imp();
         /// <summary>
         /// singleton. this is internal because the class have to be created by a factory.
         /// </summary>
-        internal static BL_imp1 Singleton { get { return singleton; } }
+        internal static BL_imp Singleton { get { return singleton; } }
         // Fields
         private DAL.Idal<List<Room>, List<Tour_Agency>, List<Reservation>> myDal;
         private uint nextRoomNumber;
@@ -21,7 +21,7 @@ namespace BL {
         /// <summary>
         /// private constructor - for singleton
         /// </summary>
-        private BL_imp1() {
+        private BL_imp() {
             myDal = DAL.FactoryDAL.getDAL();
             nextRoomNumber = 1;
             nextAgencyNumber = 1;
