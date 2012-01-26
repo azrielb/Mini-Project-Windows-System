@@ -15,12 +15,29 @@ namespace DAL {
                 new XElement("SeaWatching", src.SeaWatching ? "T" : "F")
             );
         }
+        public static Room ToRoom(this XElement item) {
+            return new Room(
+                uint.Parse(item.Element("id").Value),
+                uint.Parse(item.Element("Beds").Value),
+                uint.Parse(item.Element("Price").Value),
+                (RoomType)uint.Parse(item.Element("Type").Value),
+                item.Element("SeaWatching").Value == "T"
+            );
+        }
         public static XElement ToXML(this Tour_Agency src) {
             return new XElement("agency",
                 new XElement("id", src.AgencyID),
                 new XElement("Name", src.Name),
                 new XElement("ContactPerson", src.ContactPerson),
                 new XElement("Type", (uint)src.Type)
+            );
+        }
+        public static Tour_Agency ToAgency(this XElement item) {
+            return new Tour_Agency(
+                uint.Parse(item.Element("id").Value),
+                item.Element("Name").Value,
+                item.Element("ContactPerson").Value,
+                (AgencyType)uint.Parse(item.Element("Type").Value)
             );
         }
         public static XElement ToXML(this Reservation src) {
@@ -41,29 +58,6 @@ namespace DAL {
                     )
                 )
             );
-        }
-        public static Room ToRoom(this XElement item) {
-            return new Room(
-                uint.Parse(item.Element("id").Value),
-                uint.Parse(item.Element("Beds").Value),
-                uint.Parse(item.Element("Price").Value),
-                (RoomType)uint.Parse(item.Element("Type").Value),
-                item.Element("SeaWatching").Value == "T"
-            );
-        }
-        public static List<Room> ToRoomList(this XElement src) {
-            return (from item in src.Elements("room") select item.ToRoom()).ToList<Room>();
-        }
-        public static Tour_Agency ToAgency(this XElement item) {
-            return new Tour_Agency(
-                uint.Parse(item.Element("id").Value),
-                item.Element("Name").Value,
-                item.Element("ContactPerson").Value,
-                (AgencyType)uint.Parse(item.Element("Type").Value)
-            );
-        }
-        public static List<Tour_Agency> ToAgencyList(this XElement src) {
-            return (from item in src.Elements("agency") select item.ToAgency()).ToList<Tour_Agency>();
         }
         public static Reservation ToReservation(this XElement item, Func<uint, Tour_Agency> intToAgency, Func<uint, Room> intToRoom) {
             return item.Element("roomID") != null
@@ -86,9 +80,20 @@ namespace DAL {
                 )
                 : null;
         }
-        public static List<Reservation> ToReservationList(this XElement src, Func<uint, Tour_Agency> intToAgency, Func<uint, Room> intToRoom) {
-            return (from item in src.Elements("reservation")
-                    select item.ToReservation(intToAgency, intToRoom)).ToList<Reservation>();
+        public static List<T> ToList<T>(this XElement src, Func<uint, Tour_Agency> intToAgency = null, Func<uint, Room> intToRoom = null) {
+            if (typeof(T) == typeof(Room)) {
+                return (List<T>)Convert.ChangeType((from item in src.Elements("room") select item.ToRoom()).ToList<Room>(), typeof(List<T>));
+            }
+            if (typeof(T) == typeof(Tour_Agency)) {
+                return (List<T>)Convert.ChangeType((from item in src.Elements("agency") select item.ToAgency()).ToList<Tour_Agency>(), typeof(List<T>));
+            }
+            if (typeof(T) == typeof(Reservation) && intToAgency != null && intToRoom != null) {
+                return (List<T>)Convert.ChangeType(
+                    (from item in src.Elements("reservation") select item.ToReservation(intToAgency, intToRoom)).ToList<Reservation>(),
+                    typeof(List<T>)
+                );
+            }
+            throw new NotImplementedException();
         }
     }
 }

@@ -17,9 +17,6 @@ namespace DAL {
         /// </summary>
         internal static Dal_XML_imp Singleton { get { return singleton; } }
         // Fields
-        //private List<Room> rooms;
-        //private List<Tour_Agency> agencies;
-        //private List<Reservation> reservations;
         private readonly string roomsPath = @"Xrooms.xml";
         private readonly string agenciesPath = @"Xagencies.xml";
         private readonly string reservationsPath = @"Xreservations.xml";
@@ -33,9 +30,6 @@ namespace DAL {
             Xrooms = File.Exists(roomsPath) ? loadData<Room>(roomsPath) : new XElement("Rooms");
             Xagencies = File.Exists(agenciesPath) ? loadData<Tour_Agency>(agenciesPath) : new XElement("Agencies");
             Xreservations = File.Exists(reservationsPath) ? loadData<Reservation>(reservationsPath) : new XElement("Reservations");
-            //rooms = xmlTOList<Room>(Xrooms);
-            //agencies = xmlTOList<Tour_Agency>(Xagencies);
-            //reservations = xmlTOList<Reservation>(Xreservations);
         }
 
         private XElement loadData<T>(string FPath) {
@@ -44,17 +38,17 @@ namespace DAL {
 
         // Properties
         public List<Room> Rooms {
-            get { return Xrooms.ToRoomList(); }
+            get { return Xrooms.ToList<Room>(); }
         }
         public List<Tour_Agency> Agencies {
-            get { return Xagencies.ToAgencyList(); }
+            get { return Xagencies.ToList<Tour_Agency>(); }
         }
         public List<Reservation> Reservations {
             get {
-                return Xreservations.ToReservationList(
+                return Xreservations.ToList<Reservation>(
                     id => (from item in Xagencies.Elements("agency") where item.Element("id").Value == id.ToString() select item.ToAgency()).SingleOrDefault(),
                     id => (from item in Xrooms.Elements("room") where item.Element("id").Value == id.ToString() select item.ToRoom()).SingleOrDefault()
-                    );
+                );
             }
         }
 
