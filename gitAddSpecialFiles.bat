@@ -10,3 +10,4 @@ call git add *.pdb
 call git add *.sln
 call git add *.suo
 call git add *.txt
+call git add *.xml
