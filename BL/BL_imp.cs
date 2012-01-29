@@ -24,8 +24,8 @@ namespace BL {
         private BL_imp() {
             nextRoomNumber = 1;
             nextAgencyNumber = 1;
-            myDal = DAL.FactoryDAL.getDAL();
             nextReservationNumber = 1;
+            myDal = DAL.FactoryDAL.getDAL;
         }
 
         // Implement functions and properties of IBL
