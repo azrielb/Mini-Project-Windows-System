@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rooms>
+  <room>
+    <room>
+      <id>1</id>
+      <Beds>3</Beds>
+      <Price>100</Price>
+      <Type>0</Type>
+      <SeaWatching>F</SeaWatching>
+    </room>
+  </room>
+</Rooms>

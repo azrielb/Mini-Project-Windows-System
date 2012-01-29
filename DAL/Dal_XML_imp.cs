@@ -17,9 +17,9 @@ namespace DAL {
         /// </summary>
         internal static Dal_XML_imp Singleton { get { return singleton; } }
         // Fields
-        private readonly string roomsPath = @"Xrooms.xml";
-        private readonly string agenciesPath = @"Xagencies.xml";
-        private readonly string reservationsPath = @"Xreservations.xml";
+        private readonly string roomsPath = @"Xrooms.dat";
+        private readonly string agenciesPath = @"Xagencies.dat";
+        private readonly string reservationsPath = @"Xreservations.dat";
         private XElement Xrooms;
         private XElement Xagencies;
         private XElement Xreservations;
@@ -33,7 +33,11 @@ namespace DAL {
         }
 
         private XElement loadData<T>(string FPath) {
-            throw new NotImplementedException();
+            try {
+                return XElement.Load(FPath);
+            } catch {
+                throw new NotImplementedException();
+            }
         }
 
         // Properties
@@ -59,7 +63,8 @@ namespace DAL {
         /// <param name="room">room</param>
         /// <returns>true if success, false else</returns>
         public bool AddRoom(Room room) {
-            if ((from item in Xrooms.Elements("room") where (item.Element("id").Value == room.RoomID.ToString()) select item).Count() > 0)
+            string temp = Xrooms.Value;
+            if (Xrooms.Element("room").Value != "" && (from item in Xrooms.Elements("room") where (item.Element("id").Value == room.RoomID.ToString()) select item).Count() > 0)
                 return false;
             try {
                 Xrooms.Add(new XElement("room", room.ToXML()));
