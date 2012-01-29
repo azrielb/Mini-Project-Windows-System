@@ -63,11 +63,10 @@ namespace DAL {
         /// <param name="room">room</param>
         /// <returns>true if success, false else</returns>
         public bool AddRoom(Room room) {
-            string temp = Xrooms.Value;
-            if (Xrooms.Element("room").Value != "" && (from item in Xrooms.Elements("room") where (item.Element("id").Value == room.RoomID.ToString()) select item).Count() > 0)
+            if ((from item in Xrooms.Elements("room") where item.Element("id").Value == room.RoomID.ToString() select item).Count() > 0)
                 return false;
             try {
-                Xrooms.Add(new XElement("room", room.ToXML()));
+                Xrooms.Add(room.ToXML());
                 Xrooms.Save(roomsPath);
             } catch {
                 return false;
@@ -123,7 +122,7 @@ namespace DAL {
             if ((from item in Xagencies.Elements() where (item.Element("id").Value == agency.AgencyID.ToString()) select item).Count() > 0)
                 return false;
             try {
-                Xagencies.Add(new XElement("agency", agency.ToXML()));
+                Xagencies.Add(agency.ToXML());
                 Xagencies.Save(agenciesPath);
             } catch {
                 return false;
@@ -177,7 +176,7 @@ namespace DAL {
             if ((from item in Xreservations.Elements() where (item.Element("id").Value == reservation.ReservationID.ToString()) select item).Count() > 0)
                 return false;
             try {
-                Xreservations.Add(new XElement("reservaion", reservation.ToXML()));
+                Xreservations.Add(reservation.ToXML());
                 Xreservations.Save(reservationsPath);
             } catch {
                 return false;

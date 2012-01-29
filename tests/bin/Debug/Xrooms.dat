@@ -1,12 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Rooms>
   <room>
-    <room>
-      <id>1</id>
-      <Beds>3</Beds>
-      <Price>100</Price>
-      <Type>0</Type>
-      <SeaWatching>F</SeaWatching>
-    </room>
+    <id>1</id>
+    <Beds>3</Beds>
+    <Price>100</Price>
+    <Type>0</Type>
+    <SeaWatching>F</SeaWatching>
+  </room>
+  <room>
+    <id>2</id>
+    <Beds>2</Beds>
+    <Price>300</Price>
+    <Type>1</Type>
+    <SeaWatching>T</SeaWatching>
+  </room>
+  <room>
+    <id>11</id>
+    <Beds>2</Beds>
+    <Price>200</Price>
+    <Type>1</Type>
+    <SeaWatching>F</SeaWatching>
+  </room>
+  <room>
+    <id>12</id>
+    <Beds>3</Beds>
+    <Price>100</Price>
+    <Type>0</Type>
+    <SeaWatching>T</SeaWatching>
+  </room>
+  <room>
+    <id>50</id>
+    <Beds>1</Beds>
+    <Price>70</Price>
+    <Type>0</Type>
+    <SeaWatching>F</SeaWatching>
+  </room>
+  <room>
+    <id>51</id>
+    <Beds>1</Beds>
+    <Price>200</Price>
+    <Type>1</Type>
+    <SeaWatching>T</SeaWatching>
   </room>
 </Rooms>
