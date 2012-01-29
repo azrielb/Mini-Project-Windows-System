@@ -5,7 +5,7 @@ namespace BE {
     public enum RoomType { Regular, Suite }
 
     public class Room : IComparable {
-        //Properties
+        // Properties
         public uint RoomID { get; private set; }
         public uint Beds { get; set; }
         public RoomType Type { get; set; }
@@ -28,7 +28,7 @@ namespace BE {
             RoomID = ID;
         }
 
-        //Override function
+        // Override function
         public override string ToString() {
             return String.Format("Room no. {0} is a {1}. It has {2} and it {3} the sea. Price: {4} NIS.",
                 RoomID, Type, Beds == 1 ? "one bed" : Beds + " beds", SeaWatching ? "watches" : "do not watch", Price);
@@ -40,7 +40,7 @@ namespace BE {
         /// <typeparam name="T">type of collection</typeparam>
         /// <param name="rooms">collection of rooms</param>
         /// <returns>amount of beds that exist in these rooms</returns>
-        public static uint calculateBeds<T>(T rooms) where T : ICollection<Room> {
+        public static uint calculateBeds<T>(T rooms) where T : IEnumerable<Room> {
             uint beds = 0;
             foreach (Room room in rooms) {
                 beds += room.Beds;
@@ -51,8 +51,6 @@ namespace BE {
         /// <summary>
         /// room can be comapred with another room or with integer
         /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
         public int CompareTo(object obj) {
             if (obj is Room)
                 return RoomID.CompareTo(((Room)(obj)).RoomID);
