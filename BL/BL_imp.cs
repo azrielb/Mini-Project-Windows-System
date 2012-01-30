@@ -22,9 +22,9 @@ namespace BL {
         /// private constructor - for singleton
         /// </summary>
         private BL_imp() {
-            myDal = DAL.FactoryDAL.getDAL;
             nextRoomNumber = 1;
             nextAgencyNumber = 1;
+            myDal = DAL.FactoryDAL.getDAL();
             nextReservationNumber = 1;
         }
 

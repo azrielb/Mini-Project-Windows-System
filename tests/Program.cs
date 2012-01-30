@@ -4,7 +4,7 @@ using BE;
 
 namespace PI {
     class Program {
-        static void Main(string[] args) {
+        static int Main(string[] args) {
             BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL = BL.FactoryBL.getBL;
             myBL.AddRoom(new Room(myBL.NextRoomNumber, 3, 100));
             myBL.AddRoom(new Room(myBL.NextRoomNumber, 2, 300, RoomType.Suite, true));
@@ -19,6 +19,7 @@ namespace PI {
             Console.WriteLine(myBL.Agencies[0]);
             Console.WriteLine();
             myBL.Reservations.ForEach(item => Console.WriteLine("{0}\n", item));
+            return 0;
         }
     }
 }
