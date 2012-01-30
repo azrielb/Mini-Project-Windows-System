@@ -8,23 +8,16 @@ using System.Text;
 using System.Windows.Forms;
 using BE;
 
-
 namespace PLForms
 {
-    public partial class Agencies : Form
+    public partial class Agency_edit : Form
     {
+        bool add;
         BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL;
-        
-        public Agencies(BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> BLin)
+        public Agency_edit(BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> BLin)
         {
-            myBL = BLin;
             InitializeComponent();
-            agencyIDListBox.DataSource = myBL.Agencies;
-            agencyIDListBox.DisplayMember = "Name";
-        }
-
-        private void btn_Edit_Click(object sender, EventArgs e)
-        {
+            typeListBox.DataSource = Enum.GetValues(typeof());
 
         }
     }

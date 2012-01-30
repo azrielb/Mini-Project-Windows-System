@@ -19,13 +19,8 @@ namespace PLForms
             myBL = BLin;
         
             InitializeComponent();
-            roomIDListBox.DataSource = myBL.Rooms;
+            roomIDListBoxRefresh();
 
-        }
-
-        private void roomIDLabel_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
@@ -52,6 +47,7 @@ namespace PLForms
         {
             roomIDListBox.DataSource = null;
             roomIDListBox.DataSource = myBL.Rooms;
+            roomIDListBox.DisplayMember = "RoomID";
         }
 
     }

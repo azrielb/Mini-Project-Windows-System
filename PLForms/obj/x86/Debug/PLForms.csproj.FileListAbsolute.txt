@@ -17,3 +17,5 @@ C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במער�
 C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Room_edit.resources
 C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\bin\Debug\ABClasses.dll
 C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\bin\Debug\ABClasses.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Agencies.resources
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Agency_edit.resources

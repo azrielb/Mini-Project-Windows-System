@@ -119,7 +119,6 @@
             // roomIDTextBox
             // 
             this.roomIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "RoomID", true));
-            this.roomIDTextBox.Enabled = false;
             this.roomIDTextBox.Location = new System.Drawing.Point(96, 15);
             this.roomIDTextBox.Name = "roomIDTextBox";
             this.roomIDTextBox.Size = new System.Drawing.Size(104, 20);

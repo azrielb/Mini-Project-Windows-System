@@ -52,6 +52,12 @@
     <Compile Include="Agencies.Designer.cs">
       <DependentUpon>Agencies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Agency_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agency_edit.Designer.cs">
+      <DependentUpon>Agency_edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,12 @@
     <Compile Include="Room_edit.Designer.cs">
       <DependentUpon>Room_edit.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Agencies.resx">
+      <DependentUpon>Agencies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agency_edit.resx">
+      <DependentUpon>Agency_edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

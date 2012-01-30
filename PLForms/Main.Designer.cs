@@ -52,7 +52,7 @@
             this.btn_Agencies.TabIndex = 1;
             this.btn_Agencies.Text = "Travel Agencies";
             this.btn_Agencies.UseVisualStyleBackColor = true;
-            this.btn_Agencies.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Agencies.Click += new System.EventHandler(this.btn_Agencies_Click);
             // 
             // btn_Order
             // 

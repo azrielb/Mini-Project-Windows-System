@@ -34,6 +34,7 @@ namespace PLForms
             typeListBox.DataSource = Enum.GetValues(typeof(RoomType));
             typeListBox.SelectedItem = r.Type;
             seaWatchingCheckBox.Enabled = false;
+            roomIDTextBox.Enabled = false;
         }
 
         private void btn_OK_Click(object sender, EventArgs e)
