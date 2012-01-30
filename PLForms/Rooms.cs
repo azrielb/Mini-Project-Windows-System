@@ -23,11 +23,6 @@ namespace PLForms
 
         }
 
-        private void roomIDLabel_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             Form f = new Room_edit(myBL, (Room)roomIDListBox.SelectedItem);
@@ -44,6 +39,7 @@ namespace PLForms
      
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            if (roomIDListBox.SelectedItem == null) return;
             myBL.RemoveRoom(((Room)roomIDListBox.SelectedItem).RoomID);
             roomIDListBoxRefresh();
         }

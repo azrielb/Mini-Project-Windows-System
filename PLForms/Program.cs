@@ -16,8 +16,6 @@ namespace PLForms
         static void Main()
         {
             BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL = BL.FactoryBL.getBL;
-            myBL.AddRoom(new Room(myBL.NextRoomNumber, 3, 100));
-            myBL.AddRoom(new Room(myBL.NextRoomNumber, 2, 300, RoomType.Suite, true));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main(myBL));

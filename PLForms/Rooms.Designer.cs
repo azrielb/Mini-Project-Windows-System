@@ -47,7 +47,6 @@
             roomIDLabel.Size = new System.Drawing.Size(52, 13);
             roomIDLabel.TabIndex = 1;
             roomIDLabel.Text = "Room ID:";
-            roomIDLabel.Click += new System.EventHandler(this.roomIDLabel_Click);
             // 
             // btn_Edit
             // 
