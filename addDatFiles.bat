@@ -1,1 +1,1 @@
-@git add tests\bin\Debug\*.dat
+@git add *.dat
