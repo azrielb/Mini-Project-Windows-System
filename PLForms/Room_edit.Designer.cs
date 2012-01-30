@@ -53,7 +53,7 @@
             // bedsLabel
             // 
             bedsLabel.AutoSize = true;
-            bedsLabel.Location = new System.Drawing.Point(12, 44);
+            bedsLabel.Location = new System.Drawing.Point(12, 35);
             bedsLabel.Name = "bedsLabel";
             bedsLabel.Size = new System.Drawing.Size(34, 13);
             bedsLabel.TabIndex = 1;
@@ -62,7 +62,7 @@
             // priceLabel
             // 
             priceLabel.AutoSize = true;
-            priceLabel.Location = new System.Drawing.Point(12, 70);
+            priceLabel.Location = new System.Drawing.Point(12, 61);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new System.Drawing.Size(34, 13);
             priceLabel.TabIndex = 3;
@@ -71,7 +71,7 @@
             // roomIDLabel
             // 
             roomIDLabel.AutoSize = true;
-            roomIDLabel.Location = new System.Drawing.Point(12, 18);
+            roomIDLabel.Location = new System.Drawing.Point(12, 9);
             roomIDLabel.Name = "roomIDLabel";
             roomIDLabel.Size = new System.Drawing.Size(52, 13);
             roomIDLabel.TabIndex = 5;
@@ -80,7 +80,7 @@
             // seaWatchingLabel
             // 
             seaWatchingLabel.AutoSize = true;
-            seaWatchingLabel.Location = new System.Drawing.Point(12, 98);
+            seaWatchingLabel.Location = new System.Drawing.Point(12, 89);
             seaWatchingLabel.Name = "seaWatchingLabel";
             seaWatchingLabel.Size = new System.Drawing.Size(78, 13);
             seaWatchingLabel.TabIndex = 7;
@@ -89,7 +89,7 @@
             // typeLabel
             // 
             typeLabel.AutoSize = true;
-            typeLabel.Location = new System.Drawing.Point(12, 122);
+            typeLabel.Location = new System.Drawing.Point(12, 113);
             typeLabel.Name = "typeLabel";
             typeLabel.Size = new System.Drawing.Size(34, 13);
             typeLabel.TabIndex = 12;
@@ -98,7 +98,7 @@
             // bedsTextBox
             // 
             this.bedsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "Beds", true));
-            this.bedsTextBox.Location = new System.Drawing.Point(96, 41);
+            this.bedsTextBox.Location = new System.Drawing.Point(96, 32);
             this.bedsTextBox.Name = "bedsTextBox";
             this.bedsTextBox.Size = new System.Drawing.Size(104, 20);
             this.bedsTextBox.TabIndex = 2;
@@ -111,7 +111,7 @@
             // 
             this.priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "Price", true));
             this.priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.roomBindingSource, "Price", true));
-            this.priceTextBox.Location = new System.Drawing.Point(96, 67);
+            this.priceTextBox.Location = new System.Drawing.Point(96, 58);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(104, 20);
             this.priceTextBox.TabIndex = 3;
@@ -119,7 +119,7 @@
             // roomIDTextBox
             // 
             this.roomIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "RoomID", true));
-            this.roomIDTextBox.Location = new System.Drawing.Point(96, 15);
+            this.roomIDTextBox.Location = new System.Drawing.Point(96, 6);
             this.roomIDTextBox.Name = "roomIDTextBox";
             this.roomIDTextBox.Size = new System.Drawing.Size(104, 20);
             this.roomIDTextBox.TabIndex = 1;
@@ -127,7 +127,7 @@
             // seaWatchingCheckBox
             // 
             this.seaWatchingCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.roomBindingSource, "SeaWatching", true));
-            this.seaWatchingCheckBox.Location = new System.Drawing.Point(96, 93);
+            this.seaWatchingCheckBox.Location = new System.Drawing.Point(96, 84);
             this.seaWatchingCheckBox.Name = "seaWatchingCheckBox";
             this.seaWatchingCheckBox.Size = new System.Drawing.Size(104, 24);
             this.seaWatchingCheckBox.TabIndex = 4;
@@ -136,7 +136,7 @@
             // btn_OK
             // 
             this.btn_OK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_OK.Location = new System.Drawing.Point(15, 167);
+            this.btn_OK.Location = new System.Drawing.Point(15, 158);
             this.btn_OK.Name = "btn_OK";
             this.btn_OK.Size = new System.Drawing.Size(75, 23);
             this.btn_OK.TabIndex = 6;
@@ -147,7 +147,7 @@
             // btn_Cancel
             // 
             this.btn_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_Cancel.Location = new System.Drawing.Point(124, 167);
+            this.btn_Cancel.Location = new System.Drawing.Point(124, 158);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancel.TabIndex = 7;
@@ -160,7 +160,7 @@
             this.typeListBox.DataSource = this.roomBindingSource;
             this.typeListBox.DisplayMember = "Type";
             this.typeListBox.FormattingEnabled = true;
-            this.typeListBox.Location = new System.Drawing.Point(96, 122);
+            this.typeListBox.Location = new System.Drawing.Point(96, 113);
             this.typeListBox.Name = "typeListBox";
             this.typeListBox.Size = new System.Drawing.Size(104, 30);
             this.typeListBox.TabIndex = 5;
@@ -172,7 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_Cancel;
-            this.ClientSize = new System.Drawing.Size(218, 214);
+            this.ClientSize = new System.Drawing.Size(219, 214);
             this.Controls.Add(typeLabel);
             this.Controls.Add(this.typeListBox);
             this.Controls.Add(this.btn_Cancel);

@@ -25,7 +25,30 @@ namespace PLForms
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-
+            Form f = new Agency_edit(myBL, (Tour_Agency)agencyIDListBox.SelectedItem);
+            f.ShowDialog();
+            agencyIDListBoxRefresh();
         }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            Form f = new Agency_edit(myBL);
+            f.ShowDialog();
+            agencyIDListBoxRefresh();
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            myBL.RemoveAgency(((Tour_Agency)agencyIDListBox.SelectedItem).AgencyID);
+            agencyIDListBoxRefresh();
+        }
+
+        private void agencyIDListBoxRefresh()
+        {
+            agencyIDListBox.DataSource = null;
+            agencyIDListBox.DataSource = myBL.Agencies;
+//          agencyIDListBox.DisplayMember = "Name";
+        }
+
     }
 }

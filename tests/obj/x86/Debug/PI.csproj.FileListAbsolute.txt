@@ -11,3 +11,16 @@ C:\Users\azrielb\Dropbox\Public\Programing\miniProject\tests\obj\x86\Debug\tests
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\tests\obj\x86\Debug\tests.pdb
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\tests\bin\Debug\ABClasses.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\tests\bin\Debug\ABClasses.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\obj\x86\Debug\tests.exe
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\obj\x86\Debug\tests.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\bin\Debug\tests.exe
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\bin\Debug\tests.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\bin\Debug\BE.dll
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\bin\Debug\BL.dll
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\bin\Debug\DAL.dll
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\bin\Debug\ABClasses.dll
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\bin\Debug\BE.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\bin\Debug\BL.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\bin\Debug\DAL.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\bin\Debug\ABClasses.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\tests\obj\x86\Debug\ResolveAssemblyReference.cache

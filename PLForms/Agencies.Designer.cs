@@ -39,10 +39,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tour_AgencyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // tour_AgencyBindingSource
-            // 
-            this.tour_AgencyBindingSource.DataSource = typeof(BE.Tour_Agency);
-            // 
             // agencyIDLabel
             // 
             agencyIDLabel.AutoSize = true;
@@ -51,6 +47,10 @@
             agencyIDLabel.Size = new System.Drawing.Size(60, 13);
             agencyIDLabel.TabIndex = 0;
             agencyIDLabel.Text = "Agency ID:";
+            // 
+            // tour_AgencyBindingSource
+            // 
+            this.tour_AgencyBindingSource.DataSource = typeof(BE.Tour_Agency);
             // 
             // agencyIDListBox
             // 
@@ -69,6 +69,7 @@
             this.btn_Add.TabIndex = 8;
             this.btn_Add.Text = "Add New";
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // btn_Delete
             // 
@@ -78,6 +79,7 @@
             this.btn_Delete.TabIndex = 7;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Edit
             // 

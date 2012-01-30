@@ -47,10 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tour_AgencyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // tour_AgencyBindingSource
-            // 
-            this.tour_AgencyBindingSource.DataSource = typeof(BE.Tour_Agency);
-            // 
             // agencyIDLabel
             // 
             agencyIDLabel.AutoSize = true;
@@ -59,14 +55,6 @@
             agencyIDLabel.Size = new System.Drawing.Size(60, 13);
             agencyIDLabel.TabIndex = 1;
             agencyIDLabel.Text = "Agency ID:";
-            // 
-            // agencyIDTextBox
-            // 
-            this.agencyIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tour_AgencyBindingSource, "AgencyID", true));
-            this.agencyIDTextBox.Location = new System.Drawing.Point(101, 6);
-            this.agencyIDTextBox.Name = "agencyIDTextBox";
-            this.agencyIDTextBox.Size = new System.Drawing.Size(100, 20);
-            this.agencyIDTextBox.TabIndex = 2;
             // 
             // contactPersonLabel
             // 
@@ -77,14 +65,6 @@
             contactPersonLabel.TabIndex = 3;
             contactPersonLabel.Text = "Contact Person:";
             // 
-            // contactPersonTextBox
-            // 
-            this.contactPersonTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tour_AgencyBindingSource, "ContactPerson", true));
-            this.contactPersonTextBox.Location = new System.Drawing.Point(101, 107);
-            this.contactPersonTextBox.Name = "contactPersonTextBox";
-            this.contactPersonTextBox.Size = new System.Drawing.Size(100, 20);
-            this.contactPersonTextBox.TabIndex = 4;
-            // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
@@ -93,6 +73,35 @@
             nameLabel.Size = new System.Drawing.Size(38, 13);
             nameLabel.TabIndex = 5;
             nameLabel.Text = "Name:";
+            // 
+            // typeLabel
+            // 
+            typeLabel.AutoSize = true;
+            typeLabel.Location = new System.Drawing.Point(12, 58);
+            typeLabel.Name = "typeLabel";
+            typeLabel.Size = new System.Drawing.Size(34, 13);
+            typeLabel.TabIndex = 10;
+            typeLabel.Text = "Type:";
+            // 
+            // tour_AgencyBindingSource
+            // 
+            this.tour_AgencyBindingSource.DataSource = typeof(BE.Tour_Agency);
+            // 
+            // agencyIDTextBox
+            // 
+            this.agencyIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tour_AgencyBindingSource, "AgencyID", true));
+            this.agencyIDTextBox.Location = new System.Drawing.Point(101, 6);
+            this.agencyIDTextBox.Name = "agencyIDTextBox";
+            this.agencyIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.agencyIDTextBox.TabIndex = 2;
+            // 
+            // contactPersonTextBox
+            // 
+            this.contactPersonTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tour_AgencyBindingSource, "ContactPerson", true));
+            this.contactPersonTextBox.Location = new System.Drawing.Point(101, 107);
+            this.contactPersonTextBox.Name = "contactPersonTextBox";
+            this.contactPersonTextBox.Size = new System.Drawing.Size(100, 20);
+            this.contactPersonTextBox.TabIndex = 4;
             // 
             // nameTextBox
             // 
@@ -122,15 +131,6 @@
             this.btn_OK.Text = "OK";
             this.btn_OK.UseVisualStyleBackColor = true;
             // 
-            // typeLabel
-            // 
-            typeLabel.AutoSize = true;
-            typeLabel.Location = new System.Drawing.Point(12, 58);
-            typeLabel.Name = "typeLabel";
-            typeLabel.Size = new System.Drawing.Size(34, 13);
-            typeLabel.TabIndex = 10;
-            typeLabel.Text = "Type:";
-            // 
             // typeListBox
             // 
             this.typeListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.tour_AgencyBindingSource, "Type", true));
@@ -144,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(221, 181);
+            this.ClientSize = new System.Drawing.Size(219, 181);
             this.Controls.Add(typeLabel);
             this.Controls.Add(this.typeListBox);
             this.Controls.Add(this.btn_Cancel);
@@ -155,6 +155,7 @@
             this.Controls.Add(this.contactPersonTextBox);
             this.Controls.Add(nameLabel);
             this.Controls.Add(this.nameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Agency_edit";
             this.Text = "Agency Details";
             ((System.ComponentModel.ISupportInitialize)(this.tour_AgencyBindingSource)).EndInit();
