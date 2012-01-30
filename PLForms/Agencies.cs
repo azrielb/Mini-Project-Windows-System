@@ -19,8 +19,7 @@ namespace PLForms
         {
             myBL = BLin;
             InitializeComponent();
-            agencyIDListBox.DataSource = myBL.Agencies;
-            agencyIDListBox.DisplayMember = "Name";
+            agencyIDListBoxRefresh();
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
@@ -47,8 +46,7 @@ namespace PLForms
         {
             agencyIDListBox.DataSource = null;
             agencyIDListBox.DataSource = myBL.Agencies;
-//          agencyIDListBox.DisplayMember = "Name";
+            agencyIDListBox.DisplayMember = "Name";
         }
-
     }
 }

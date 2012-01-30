@@ -27,12 +27,41 @@ namespace PLForms
             myBL = BLin;
             add = false;
             InitializeComponent();
-            agencyIDTextBox.Text = myBL.NextAgencyNumber.ToString();
+            agencyIDTextBox.Text = a.AgencyID.ToString();
             agencyIDTextBox.Enabled = false;
             nameTextBox.Text = a.Name;
             typeListBox.DataSource = Enum.GetValues(typeof(AgencyType));
             typeListBox.SelectedItem = a.Type;
+            typeListBox.Enabled = false;
             contactPersonTextBox.Text = a.ContactPerson;
+        }
+
+        private void btn_OK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Tour_Agency a = new Tour_Agency
+                (
+                    uint.Parse(agencyIDTextBox.Text),
+                    nameTextBox.Text,
+                    contactPersonTextBox.Text,
+                    (AgencyType)typeListBox.SelectedItem
+                );
+                if (add)
+                {
+                    myBL.AddAgency(a);
+                }
+                else
+                {
+                    myBL.UpdateAgency(a.AgencyID,a.Name,a.ContactPerson);
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("I am Error");
+            }
+
         }
 
     }

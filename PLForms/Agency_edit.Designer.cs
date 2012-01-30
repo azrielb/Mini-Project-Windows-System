@@ -130,6 +130,7 @@
             this.btn_OK.TabIndex = 9;
             this.btn_OK.Text = "OK";
             this.btn_OK.UseVisualStyleBackColor = true;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
             // typeListBox
             // 
