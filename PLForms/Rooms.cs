@@ -48,6 +48,16 @@ namespace PLForms
             roomIDListBox.DataSource = null;
             roomIDListBox.DataSource = myBL.Rooms;
             roomIDListBox.DisplayMember = "RoomID";
+            if (myBL.Rooms.Count == 0)
+            {
+                btn_Delete.Enabled = false;
+                btn_Edit.Enabled = false;
+            }
+            else
+            {
+                btn_Delete.Enabled = true;
+                btn_Edit.Enabled = true;
+            }
         }
 
     }

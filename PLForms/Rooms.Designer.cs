@@ -44,9 +44,9 @@
             roomIDLabel.AutoSize = true;
             roomIDLabel.Location = new System.Drawing.Point(12, 9);
             roomIDLabel.Name = "roomIDLabel";
-            roomIDLabel.Size = new System.Drawing.Size(52, 13);
+            roomIDLabel.Size = new System.Drawing.Size(78, 13);
             roomIDLabel.TabIndex = 1;
-            roomIDLabel.Text = "Room ID:";
+            roomIDLabel.Text = "Room Number:";
             // 
             // btn_Edit
             // 

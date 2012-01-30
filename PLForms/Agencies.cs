@@ -47,6 +47,16 @@ namespace PLForms
             agencyIDListBox.DataSource = null;
             agencyIDListBox.DataSource = myBL.Agencies;
             agencyIDListBox.DisplayMember = "Name";
+            if (myBL.Agencies.Count == 0)
+            {
+                btn_Delete.Enabled = false;
+                btn_Edit.Enabled = false;
+            }
+            else
+            {
+                btn_Delete.Enabled = true;
+                btn_Edit.Enabled = true;
+            }
         }
     }
 }

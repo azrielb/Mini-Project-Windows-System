@@ -73,7 +73,7 @@
             this.Controls.Add(this.btn_Rooms);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Hotel Management";
             this.ResumeLayout(false);
 
         }

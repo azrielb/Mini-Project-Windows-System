@@ -44,9 +44,9 @@
             agencyIDLabel.AutoSize = true;
             agencyIDLabel.Location = new System.Drawing.Point(12, 9);
             agencyIDLabel.Name = "agencyIDLabel";
-            agencyIDLabel.Size = new System.Drawing.Size(60, 13);
+            agencyIDLabel.Size = new System.Drawing.Size(46, 13);
             agencyIDLabel.TabIndex = 0;
-            agencyIDLabel.Text = "Agency ID:";
+            agencyIDLabel.Text = "Agency:";
             // 
             // tour_AgencyBindingSource
             // 
