@@ -11,3 +11,4 @@ call git add *.sln
 call git add *.suo
 call git add *.txt
 call git add *.xml
+call git add *.force
