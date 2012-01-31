@@ -29,7 +29,7 @@ namespace BE {
         }
 
         /// <summary>
-        /// Constructor
+        /// Constructor - by days (default: one day)
         /// </summary>
         /// <param name="ID">reservation ID</param>
         /// <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
@@ -39,6 +39,19 @@ namespace BE {
         /// <param name="reservationDate">reservation date, null is current date</param>
         public Group_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, List<Room> rooms, uint days = 1, DateTime? reservationDate = null)
             : base(ID, agency, arrivalDate, days, reservationDate) {
+            Rooms = rooms;
+        }
+        /// <summary>
+        /// Constructor - by leaving date
+        /// </summary>
+        /// <param name="ID">reservation ID</param>
+        /// <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
+        /// <param name="arrivalDate">arrival date</param>
+        /// <param name="myRooms">collection of rooms</param>
+        /// <param name="leavingDate">leaving Date</param>
+        /// <param name="reservationDate">reservation date, null is current date</param>
+        public Group_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, List<Room> rooms, DateTime leavingDate, DateTime? reservationDate = null)
+            : base(ID, agency, arrivalDate, (uint)((leavingDate - arrivalDate).Days), reservationDate) {
             Rooms = rooms;
         }
 

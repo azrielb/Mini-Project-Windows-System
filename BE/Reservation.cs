@@ -42,7 +42,7 @@ namespace BE {
         public abstract uint Beds { get; protected set; }
 
         /// <summary>
-        /// Constructor
+        /// Constructor - by days (default: one day)
         /// </summary>
         /// <param name="ID">reservation ID</param>
         /// <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
@@ -57,7 +57,22 @@ namespace BE {
             Days = days;
             ReservationDate = reservationDate == null ? DateTime.Now : (DateTime)reservationDate;
         }
-
+        /// <summary>
+        /// Constructor - by leaving date
+        /// </summary>
+        /// <param name="ID">reservation ID</param>
+        /// <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
+        /// <param name="arrivalDate">arrival date</param>
+        /// <param name="leavingDate">leaving Date</param>
+        /// <param name="reservationDate">reservation date, null is current date</param>
+        public Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, DateTime leavingDate, DateTime? reservationDate = null) {
+            ReservationID = ID;
+            AgencyID = agency.AgencyID;
+            ContactPerson = agency.ContactPerson;
+            ArrivalDate = arrivalDate;
+            Days = (uint)((leavingDate - arrivalDate).Days);
+            ReservationDate = reservationDate == null ? DateTime.Now : (DateTime)reservationDate;
+        }
         // Override function
         public override string ToString() {
             return string.Format("{0} from agency no. {1} has created the reservation no. {2} in {3}. Arrival date: {4}. {5} for {6}. Price: {7} NIS.",
