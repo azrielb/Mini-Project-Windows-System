@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Runtime.Serialization;
-using System.Collections.Generic;
 
 namespace BE {
     [DataContract]

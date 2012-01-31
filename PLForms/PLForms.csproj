@@ -99,9 +99,11 @@
     </Compile>
     <EmbeddedResource Include="Agencies.resx">
       <DependentUpon>Agencies.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Agency_edit.resx">
       <DependentUpon>Agency_edit.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -118,15 +120,19 @@
     </Compile>
     <EmbeddedResource Include="Reservations.resx">
       <DependentUpon>Reservations.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reservation_edit.resx">
       <DependentUpon>Reservation_edit.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Rooms.resx">
       <DependentUpon>Rooms.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Room_edit.resx">
       <DependentUpon>Room_edit.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\DataSources\BE.Reservation.datasource" />
