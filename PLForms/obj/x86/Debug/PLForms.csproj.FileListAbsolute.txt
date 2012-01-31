@@ -32,3 +32,5 @@ C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במער�
 C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\bin\Debug\BE.pdb
 C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.exe
 C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\obj\x86\Debug\PLForms.Reservations.resources
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\obj\x86\Debug\PLForms.Reservation_edit.resources
