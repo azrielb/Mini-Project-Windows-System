@@ -12,8 +12,8 @@ namespace PLForms
 {
    public partial class Reservations : Form
     {
-        BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL;
-        public Reservations(BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> BLin)
+        BL_ServiceReference.BL_SOAPClient myBL;
+        public Reservations(BL_ServiceReference.BL_SOAPClient BLin)
         {
             myBL = BLin;
             InitializeComponent();
@@ -23,9 +23,9 @@ namespace PLForms
         private void reservationIDListBoxRefresh()
         {
             reservationIDListBox.DataSource = null;
-            reservationIDListBox.DataSource = myBL.Reservations;
+            reservationIDListBox.DataSource = myBL.Reservations();
             //      reservationIDListBox.DisplayMember = "Name";
-            if (myBL.Reservations.Count == 0)   //Disable edit & delete buttons if no items.
+            if (myBL.Reservations().Count == 0)   //Disable edit & delete buttons if no items.
             {
                 btn_Delete.Enabled = false;
                 btn_Edit.Enabled = false;

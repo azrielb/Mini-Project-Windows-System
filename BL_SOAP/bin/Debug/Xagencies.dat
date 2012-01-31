@@ -6,16 +6,4 @@
     <ContactPerson>Reuven</ContactPerson>
     <Type>2</Type>
   </agency>
-  <agency>
-    <id>1</id>
-    <Name>233</Name>
-    <ContactPerson>4</ContactPerson>
-    <Type>0</Type>
-  </agency>
-  <agency>
-    <id>2</id>
-    <Name>k</Name>
-    <ContactPerson>l</ContactPerson>
-    <Type>0</Type>
-  </agency>
 </Agencies>

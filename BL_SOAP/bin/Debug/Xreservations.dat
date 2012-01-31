@@ -5,7 +5,40 @@
     <AgencyID>0</AgencyID>
     <ArrivalDate>2012-01-31T00:00:00+02:00</ArrivalDate>
     <Days>3</Days>
-    <ReservationDate>2012-01-31T17:31:17.5291412+02:00</ReservationDate>
-    <roomID>2</roomID>
+    <ReservationDate>2012-01-31T18:51:20.0494676+02:00</ReservationDate>
+    <roomID>58</roomID>
+  </reservation>
+  <reservation>
+    <id>1</id>
+    <AgencyID>0</AgencyID>
+    <ArrivalDate>2012-01-31T00:00:00+02:00</ArrivalDate>
+    <Days>1</Days>
+    <ReservationDate>2012-01-31T18:51:20.1384727+02:00</ReservationDate>
+    <rooms>
+      <ID>2</ID>
+      <ID>58</ID>
+      <ID>62</ID>
+      <ID>69</ID>
+      <ID>71</ID>
+      <ID>72</ID>
+      <ID>73</ID>
+      <ID>74</ID>
+      <ID>75</ID>
+      <ID>76</ID>
+      <ID>77</ID>
+      <ID>78</ID>
+      <ID>79</ID>
+      <ID>80</ID>
+      <ID>81</ID>
+      <ID>82</ID>
+      <ID>83</ID>
+      <ID>84</ID>
+      <ID>85</ID>
+      <ID>87</ID>
+      <ID>88</ID>
+      <ID>89</ID>
+      <ID>90</ID>
+      <ID>91</ID>
+    </rooms>
   </reservation>
 </Reservations>

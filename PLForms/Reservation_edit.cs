@@ -13,21 +13,21 @@ namespace PLForms
     public partial class Reservation_edit : Form
     {
         bool add;
-        BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL;
-        public Reservation_edit(BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> BLin)
+        BL_ServiceReference.BL_SOAPClient myBL;
+        public Reservation_edit(BL_ServiceReference.BL_SOAPClient BLin)
         {
             myBL = BLin;
             add = true;
             InitializeComponent();
-            agencyIDComboBox.DataSource = myBL.Agencies;
+            agencyIDComboBox.DataSource = myBL.Agencies();
             agencyIDComboBox.DisplayMember = "Name";
-            reservationIDTextBox.Text = myBL.NextReservationNumber.ToString();
+            reservationIDTextBox.Text = myBL.NextReservationNumber().ToString();
             reservationDateDateTimePicker.Value = 
                 arrivalDateDateTimePicker.Value = 
                 leavingDateDateTimePicker.Value = DateTime.Today;
 
         }
-        public Reservation_edit(BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> BLin, Reservation r)
+        public Reservation_edit(BL_ServiceReference.BL_SOAPClient BLin, Reservation r)
         {
             myBL = BLin;
             add = false;
@@ -36,7 +36,7 @@ namespace PLForms
             reservationIDTextBox.Enabled = false;
             reservationDateDateTimePicker.Value = r.ReservationDate;
             reservationDateDateTimePicker.Enabled = false;
-            agencyIDComboBox.DataSource = myBL.Agencies;
+            agencyIDComboBox.DataSource = myBL.Agencies();
             agencyIDComboBox.DisplayMember = "Name";
             agencyIDComboBox.ValueMember = "AgencyID";
             agencyIDComboBox.SelectedValue = r.AgencyID;

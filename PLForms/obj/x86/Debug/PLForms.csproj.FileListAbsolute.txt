@@ -14,3 +14,21 @@ C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\bin\Debug\BE.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\bin\Debug\BE.pdb
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\obj\x86\Debug\PLForms.exe
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\obj\x86\Debug\PLForms.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Agencies.resources
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Agency_edit.resources
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Main.resources
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Properties.Resources.resources
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Reservations.resources
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Reservation_edit.resources
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Rooms.resources
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.Room_edit.resources
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\bin\Debug\PLForms.exe.config
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\bin\Debug\PLForms.exe
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\bin\Debug\PLForms.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\bin\Debug\BE.dll
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\bin\Debug\BE.pdb
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.exe
+C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\PLForms\obj\x86\Debug\PLForms.pdb
