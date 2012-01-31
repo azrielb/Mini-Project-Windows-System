@@ -45,8 +45,8 @@
   <ItemGroup>
     <Compile Include="BL_WCF_imp.cs" />
     <Compile Include="FactoryBL_WCF.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IBL_WCF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

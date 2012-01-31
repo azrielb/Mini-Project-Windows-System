@@ -6,12 +6,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABClasses", "ABClasses\ABClasses.csproj", "{9E238CC7-D5F6-4928-839F-2CB9372F9E33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLForms", "PLForms\PLForms.csproj", "{283BB815-713E-4E9E-9ACB-F64C98FAEC16}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD10A786-3A2B-4985-A826-86C51CC9668B} = {BD10A786-3A2B-4985-A826-86C51CC9668B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{5B6E1F37-87F5-4B4C-9379-88C8E68E7410}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{CF8DC7C5-E02E-451B-B5C6-1CCE2AA15E7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL_WcfService", "BL_WcfService\BL_WcfService.csproj", "{92AA0B02-8A27-4C80-87B2-FB81310179E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL_SOAP", "BL_SOAP\BL_SOAP.csproj", "{BD10A786-3A2B-4985-A826-86C51CC9668B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,16 +76,16 @@ Global
 		{CF8DC7C5-E02E-451B-B5C6-1CCE2AA15E7F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{CF8DC7C5-E02E-451B-B5C6-1CCE2AA15E7F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{CF8DC7C5-E02E-451B-B5C6-1CCE2AA15E7F}.Release|x86.ActiveCfg = Release|Any CPU
-		{92AA0B02-8A27-4C80-87B2-FB81310179E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{92AA0B02-8A27-4C80-87B2-FB81310179E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{92AA0B02-8A27-4C80-87B2-FB81310179E0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{92AA0B02-8A27-4C80-87B2-FB81310179E0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{92AA0B02-8A27-4C80-87B2-FB81310179E0}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{92AA0B02-8A27-4C80-87B2-FB81310179E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{92AA0B02-8A27-4C80-87B2-FB81310179E0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{92AA0B02-8A27-4C80-87B2-FB81310179E0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{92AA0B02-8A27-4C80-87B2-FB81310179E0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{92AA0B02-8A27-4C80-87B2-FB81310179E0}.Release|x86.ActiveCfg = Release|Any CPU
+		{BD10A786-3A2B-4985-A826-86C51CC9668B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD10A786-3A2B-4985-A826-86C51CC9668B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD10A786-3A2B-4985-A826-86C51CC9668B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BD10A786-3A2B-4985-A826-86C51CC9668B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BD10A786-3A2B-4985-A826-86C51CC9668B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BD10A786-3A2B-4985-A826-86C51CC9668B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD10A786-3A2B-4985-A826-86C51CC9668B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD10A786-3A2B-4985-A826-86C51CC9668B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BD10A786-3A2B-4985-A826-86C51CC9668B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BD10A786-3A2B-4985-A826-86C51CC9668B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
