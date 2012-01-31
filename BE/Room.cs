@@ -48,20 +48,6 @@ namespace BE {
         }
 
         /// <summary>
-        /// Calculate how much beds exist in these rooms.
-        /// </summary>
-        /// <typeparam name="T">type of collection</typeparam>
-        /// <param name="rooms">collection of rooms</param>
-        /// <returns>amount of beds that exist in these rooms</returns>
-        public static uint calculateBeds<T>(T rooms) where T : IEnumerable<Room> {
-            uint beds = 0;
-            foreach (Room room in rooms) {
-                beds += room.Beds;
-            }
-            return beds;
-        }
-
-        /// <summary>
         /// room can be comapred with another room or with integer
         /// </summary>
         public int CompareTo(object obj) {
