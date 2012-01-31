@@ -164,7 +164,6 @@
             this.typeListBox.Name = "typeListBox";
             this.typeListBox.Size = new System.Drawing.Size(104, 30);
             this.typeListBox.TabIndex = 5;
-            this.typeListBox.SelectedIndexChanged += new System.EventHandler(this.typeListBox_SelectedIndexChanged);
             // 
             // Room_edit
             // 

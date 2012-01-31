@@ -43,11 +43,11 @@ namespace PLForms
                 );
                 if (add)
                 {
-                    myBL.AddAgency(a);
+                    if (!myBL.AddAgency(a)) throw new Exception();
                 }
                 else
                 {
-                    myBL.UpdateAgency(a.AgencyID,a.Name,a.ContactPerson);
+                    if (!myBL.UpdateAgency(a.AgencyID, a.Name, a.ContactPerson)) throw new Exception();
                 }
 
             }

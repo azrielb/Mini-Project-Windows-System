@@ -40,7 +40,11 @@ namespace PLForms
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            myBL.RemoveReservation(((Reservation)reservationIDListBox.SelectedItem).ReservationID);
+            try {
+                if (!myBL.RemoveReservation(((Reservation)reservationIDListBox.SelectedItem).ReservationID)) throw new Exception();
+            } catch {
+                MessageBox.Show("I am Error");
+            }
             reservationIDListBoxRefresh();
         }
 

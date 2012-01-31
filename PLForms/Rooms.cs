@@ -26,7 +26,11 @@ namespace PLForms {
 
         private void btn_Delete_Click(object sender, EventArgs e) {
             if (roomIDListBox.SelectedItem == null) return;
-            myBL.RemoveRoom(((Room)roomIDListBox.SelectedItem).RoomID);
+            try {
+                if (!myBL.RemoveRoom(((Room)roomIDListBox.SelectedItem).RoomID)) throw new Exception();
+            } catch {
+                MessageBox.Show("I am Error");
+            }
             roomIDListBoxRefresh();
         }
 

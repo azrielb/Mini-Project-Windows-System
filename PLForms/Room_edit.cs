@@ -31,10 +31,8 @@ namespace PLForms
             roomIDTextBox.Enabled = false;
         }
 
-        private void btn_OK_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        private void btn_OK_Click(object sender, EventArgs e) {
+            try {
                 Room r = new Room
                 (
                     uint.Parse(roomIDTextBox.Text),
@@ -43,27 +41,14 @@ namespace PLForms
                     (BE.RoomType)typeListBox.SelectedItem,
                     seaWatchingCheckBox.Checked
                 );
-                if (add)
-                {
-                    myBL.AddRoom(r);
+                if (add) {
+                    if (!myBL.AddRoom(r)) throw new Exception();
+                } else {
+                    if (!myBL.UpdateRoom(r.RoomID, r.Beds, r.Type, r.Price)) throw new Exception();
                 }
-                else
-                {
-                    myBL.UpdateRoom(r.RoomID, r.Beds, r.Type, r.Price);
-                }
-                
-            }
-            catch (Exception)
-            {
-
+            } catch (Exception) {
                 MessageBox.Show("I am Error");
             }
-        
-        }
-
-        private void typeListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
