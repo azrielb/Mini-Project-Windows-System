@@ -1,19 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace BE {
-    public class Group_Reservation<T>
-        : Reservation
-        where T : IEnumerable<Room> {
-        public T Rooms { get; set; }
-        public override uint Beds { get { return Room.calculateBeds<T>(Rooms); } }
+    [DataContract]
+    public class Group_Reservation        : Reservation {
+        [DataMember]
+        public List<Room> Rooms { get; set; }
+        [DataMember]
+        public override uint Beds {
+            get { return Room.calculateBeds(Rooms); }
+            protected set { 
+                //throw new NotImplementedException(); 
+            }
+        }
         // Override property
+        [DataMember]
         public override uint Price {
             get {
                 uint price = 0;
                 foreach (Room room in Rooms)
                     price += room.Price * Days;
                 return price;
+            }
+            protected set { 
+                //throw new NotImplementedException(); 
             }
         }
 
@@ -26,7 +37,7 @@ namespace BE {
         /// <param name="myRooms">collection of rooms</param>
         /// <param name="days">the amount of days</param>
         /// <param name="reservationDate">reservation date, null is current date</param>
-        public Group_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, T rooms, uint days = 1, DateTime? reservationDate = null)
+        public Group_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, List<Room> rooms, uint days = 1, DateTime? reservationDate = null)
             : base(ID, agency, arrivalDate, days, reservationDate) {
             Rooms = rooms;
         }

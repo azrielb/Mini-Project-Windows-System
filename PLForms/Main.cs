@@ -12,9 +12,9 @@ namespace PLForms
 {
     public partial class Main : Form
     {
-        BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL;
+        BL_ServiceReference.BL_SOAPClient myBL;
 
-        public Main(BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> BLin)
+        public Main(BL_ServiceReference.BL_SOAPClient BLin)
         {
             myBL = BLin;
             InitializeComponent();

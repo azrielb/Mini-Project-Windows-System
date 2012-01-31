@@ -1,15 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace BE {
-    public enum RoomType { Regular, Suite }
+    [DataContract]
+    public enum RoomType { 
+        [EnumMember]
+        Regular, 
+        [EnumMember]
+        Suite 
+    }
 
+    [DataContract]
     public class Room : IComparable {
         // Properties
+        [DataMember]
         public uint RoomID { get; private set; }
+        [DataMember]
         public uint Beds { get; set; }
+        [DataMember]
         public RoomType Type { get; set; }
+        [DataMember]
         public bool SeaWatching { get; private set; }
+        [DataMember]
         public uint Price { get; set; }
 
         /// <summary>

@@ -1,13 +1,27 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace BE {
-    public enum AgencyType { national, international, in_hotel_chain_ownership }
+    [DataContract]
+    public enum AgencyType { 
+        [EnumMember] 
+        national,
+        [EnumMember]
+        international,
+        [EnumMember]
+        in_hotel_chain_ownership
+    }
 
+    [DataContract]
     public class Tour_Agency : IComparable {
         // Properties
+        [DataMember]
         public uint AgencyID { get; private set; }
+        [DataMember]
         public string Name { get; set; }
+        [DataMember]
         public AgencyType Type { get; private set; }
+        [DataMember]
         public string ContactPerson { get; set; }
 
         /// <summary>

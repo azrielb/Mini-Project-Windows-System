@@ -13,9 +13,9 @@ namespace PLForms
 {
     public partial class Agencies : Form
     {
-        BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL;
+        BL_ServiceReference.BL_SOAPClient myBL;
         
-        public Agencies(BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> BLin)
+        public Agencies(BL_ServiceReference.BL_SOAPClient BLin)
         {
             myBL = BLin;
             InitializeComponent();
@@ -45,10 +45,9 @@ namespace PLForms
         private void agencyIDListBoxRefresh()
         {
             agencyIDListBox.DataSource = null;
-            agencyIDListBox.DataSource = myBL.Agencies;
+            agencyIDListBox.DataSource = myBL.Agencies();
             agencyIDListBox.DisplayMember = "Name";
-            agencyIDListBox.ValueMember = "AgencyID";
-            if (myBL.Agencies.Count == 0)   //Disable edit & delete buttons if no items.
+            if (myBL.Agencies().Count == 0)
             {
                 btn_Delete.Enabled = false;
                 btn_Edit.Enabled = false;

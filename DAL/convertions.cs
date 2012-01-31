@@ -16,13 +16,14 @@ namespace DAL {
             );
         }
         public static Room ToRoom(this XElement item) {
-            return new Room(
-                uint.Parse(item.Element("id").Value),
-                uint.Parse(item.Element("Beds").Value),
-                uint.Parse(item.Element("Price").Value),
-                (RoomType)uint.Parse(item.Element("Type").Value),
-                item.Element("SeaWatching").Value == "T"
-            );
+            uint id,Beds,Price,theType;
+            uint.TryParse(item.Element("id").Value,out id);
+            uint.TryParse(item.Element("Beds").Value,out Beds);
+            uint.TryParse(item.Element("Price").Value, out Price);
+            uint.TryParse(item.Element("Type").Value,out theType);
+            RoomType Type = (RoomType)theType;
+            bool SeaWatching = item.Element("SeaWatching").Value == "T";
+            return new Room(id, Beds, Price, Type, SeaWatching);
         }
         public static XElement ToXML(this Tour_Agency src) {
             return new XElement("agency",
@@ -49,9 +50,9 @@ namespace DAL {
                 new XElement("ReservationDate", src.ReservationDate),
                 (src is Single_Reservation
                     ? new XElement("roomID", (src as Single_Reservation).Room.RoomID)
-                    : (src is Group_Reservation<IEnumerable<Room>>
+                    : (src is Group_Reservation
                         ? new XElement("rooms",
-                            from room in (src as Group_Reservation<IEnumerable<Room>>).Rooms
+                            from room in (src as Group_Reservation).Rooms
                             select new XElement("ID", room.RoomID)
                         )
                         : null
@@ -70,7 +71,7 @@ namespace DAL {
                     DateTime.Parse(item.Element("ReservationDate").Value)
                 )
                 : item.Element("rooms") != null
-                ? (Reservation)new Group_Reservation<List<Room>>(
+                ? (Reservation)new Group_Reservation(
                     uint.Parse(item.Element("id").Value),
                     intToAgency(uint.Parse(item.Element("AgencyID").Value)),
                     DateTime.Parse(item.Element("ArrivalDate").Value),

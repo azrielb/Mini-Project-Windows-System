@@ -22,10 +22,10 @@ namespace BL {
         /// private constructor - for singleton
         /// </summary>
         private BL_imp() {
-            nextRoomNumber = 1;
-            nextAgencyNumber = 1;
-            myDal = DAL.FactoryDAL.getDAL();
-            nextReservationNumber = 1;
+            myDal = DAL.FactoryDAL.getDAL;
+            nextRoomNumber = Rooms.Count > 0 ? (from item in Rooms select item.RoomID).Max() + 1 : 1;
+            nextAgencyNumber = Agencies.Count > 0 ? (from item in Agencies select item.AgencyID).Max() + 1 : 1;
+            nextReservationNumber = Reservations.Count > 0 ? (from item in Reservations select item.ReservationID).Max() + 1 : 1;
         }
 
         // Implement functions and properties of IBL
@@ -96,8 +96,8 @@ namespace BL {
             foreach (var reservation in query) {
                 if (reservation is Single_Reservation)
                     reservedRooms.Add(((Single_Reservation)reservation).Room.RoomID);
-                else if (reservation is Group_Reservation<IEnumerable<Room>>)
-                    reservedRooms.AddRange(from item in ((Group_Reservation<IEnumerable<Room>>)reservation).Rooms select item.RoomID);
+                else if (reservation is Group_Reservation)
+                    reservedRooms.AddRange(from item in ((Group_Reservation)reservation).Rooms select item.RoomID);
             }
             return reservedRooms.Distinct();
         }

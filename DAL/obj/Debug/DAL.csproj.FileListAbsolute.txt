@@ -1,25 +1,9 @@
-C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\DAL\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\DAL\bin\Debug\DAL.dll
-C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\DAL\bin\Debug\DAL.pdb
-C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\DAL\bin\Debug\BE.dll
-C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\DAL\bin\Debug\BE.pdb
-C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\DAL\obj\Debug\DAL.dll
-C:\Users\azrielb\Dropbox\Public\Pitronot_Lev\5772_SemesterA\Mini_project\miniProject\DAL\obj\Debug\DAL.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\bin\Debug\DAL.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\bin\Debug\DAL.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\bin\Debug\ABClasses.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\bin\Debug\BE.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\bin\Debug\ABClasses.pdb
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\bin\Debug\BE.pdb
-C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\obj\Debug\DAL.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\obj\Debug\DAL.pdb
-C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\bin\Debug\ABClasses.dll
-C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\bin\Debug\ABClasses.pdb
-C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\DAL\bin\Debug\DAL.dll
-C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\DAL\bin\Debug\DAL.pdb
-C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\DAL\bin\Debug\ABClasses.dll
-C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\DAL\bin\Debug\BE.dll
-C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\DAL\bin\Debug\ABClasses.pdb
-C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\DAL\bin\Debug\BE.pdb
-C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\DAL\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\DAL\obj\Debug\DAL.dll
-C:\Users\Dani\Dropbox\Machon Lev\153007.2.5772 - מיני פרויקט במערכות חלונות\Project\DAL\obj\Debug\DAL.pdb

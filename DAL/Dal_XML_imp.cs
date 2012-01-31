@@ -17,9 +17,9 @@ namespace DAL {
         /// </summary>
         internal static Dal_XML_imp Singleton { get { return singleton; } }
         // Fields
-        private readonly string roomsPath = @"Xrooms.xml";
-        private readonly string agenciesPath = @"Xagencies.xml";
-        private readonly string reservationsPath = @"Xreservations.xml";
+        private readonly string roomsFile = @"Xrooms.dat";
+        private readonly string agenciesFile = @"Xagencies.dat";
+        private readonly string reservationsFile = @"Xreservations.dat";
         private XElement Xrooms;
         private XElement Xagencies;
         private XElement Xreservations;
@@ -27,13 +27,21 @@ namespace DAL {
         /// private constructor - for singleton
         /// </summary>
         private Dal_XML_imp() {
-            Xrooms = File.Exists(roomsPath) ? loadData<Room>(roomsPath) : new XElement("Rooms");
-            Xagencies = File.Exists(agenciesPath) ? loadData<Tour_Agency>(agenciesPath) : new XElement("Agencies");
-            Xreservations = File.Exists(reservationsPath) ? loadData<Reservation>(reservationsPath) : new XElement("Reservations");
+            string localPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            roomsFile = localPath + @"/" + roomsFile;
+            agenciesFile = localPath + @"/" + agenciesFile;
+            reservationsFile = localPath + @"/" + reservationsFile;
+            Xrooms = File.Exists(roomsFile) ? loadData<Room>(roomsFile) : new XElement("Rooms");
+            Xagencies = File.Exists(agenciesFile) ? loadData<Tour_Agency>(agenciesFile) : new XElement("Agencies");
+            Xreservations = File.Exists(reservationsFile) ? loadData<Reservation>(reservationsFile) : new XElement("Reservations");
         }
 
         private XElement loadData<T>(string FPath) {
-            throw new NotImplementedException();
+            try {
+                return XElement.Load(FPath);
+            } catch {
+                throw new NotImplementedException();
+            }
         }
 
         // Properties
@@ -59,11 +67,11 @@ namespace DAL {
         /// <param name="room">room</param>
         /// <returns>true if success, false else</returns>
         public bool AddRoom(Room room) {
-            if ((from item in Xrooms.Elements("room") where (item.Element("id").Value == room.RoomID.ToString()) select item).Count() > 0)
+            if ((from item in Xrooms.Elements("room") where item.Element("id").Value == room.RoomID.ToString() select item).Count() > 0)
                 return false;
             try {
-                Xrooms.Add(new XElement("room", room.ToXML()));
-                Xrooms.Save(roomsPath);
+                Xrooms.Add(room.ToXML());
+                Xrooms.Save(roomsFile);
             } catch {
                 return false;
             }
@@ -85,7 +93,7 @@ namespace DAL {
                 if (Beds > 0) roomToUpdate.Element("Beds").Value = Beds.ToString();
                 if (Type.HasValue) roomToUpdate.Element("Type").Value = Type.ToString();
                 if (Price > 0) roomToUpdate.Element("Price").Value = Price.ToString();
-                Xrooms.Save(roomsPath);
+                Xrooms.Save(roomsFile);
                 return true;
             } catch {
                 return false;
@@ -102,7 +110,7 @@ namespace DAL {
                 return false;
             try {
                 room.Remove();
-                Xrooms.Save(roomsPath);
+                Xrooms.Save(roomsFile);
                 return true;
             } catch {
                 return false;
@@ -118,8 +126,8 @@ namespace DAL {
             if ((from item in Xagencies.Elements() where (item.Element("id").Value == agency.AgencyID.ToString()) select item).Count() > 0)
                 return false;
             try {
-                Xagencies.Add(new XElement("agency", agency.ToXML()));
-                Xagencies.Save(agenciesPath);
+                Xagencies.Add(agency.ToXML());
+                Xagencies.Save(agenciesFile);
             } catch {
                 return false;
             }
@@ -139,7 +147,7 @@ namespace DAL {
             try {
                 if (Name != "") agencyToUpdate.Element("Name").Value = Name;
                 if (ContactPerson != "") agencyToUpdate.Element("ContactPerson").Value = ContactPerson;
-                Xagencies.Save(agenciesPath);
+                Xagencies.Save(agenciesFile);
                 return true;
             } catch {
                 return false;
@@ -156,7 +164,7 @@ namespace DAL {
                 return false;
             try {
                 agency.Remove();
-                Xagencies.Save(agenciesPath);
+                Xagencies.Save(agenciesFile);
                 return true;
             } catch {
                 return false;
@@ -172,8 +180,8 @@ namespace DAL {
             if ((from item in Xreservations.Elements() where (item.Element("id").Value == reservation.ReservationID.ToString()) select item).Count() > 0)
                 return false;
             try {
-                Xreservations.Add(new XElement("reservaion", reservation.ToXML()));
-                Xreservations.Save(reservationsPath);
+                Xreservations.Add(reservation.ToXML());
+                Xreservations.Save(reservationsFile);
             } catch {
                 return false;
             }
@@ -194,7 +202,7 @@ namespace DAL {
             try {
                 foreach (Action<XElement> update in updates)
                     update(reservationToUpdate);
-                Xreservations.Save(reservationsPath);
+                Xreservations.Save(reservationsFile);
                 return true;
             } catch {
                 return false;
@@ -260,7 +268,7 @@ namespace DAL {
                 return false;
             try {
                 reservation.Remove();
-                Xreservations.Save(reservationsPath);
+                Xreservations.Save(reservationsFile);
                 return true;
             } catch {
                 return false;
