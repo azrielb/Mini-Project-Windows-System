@@ -24,8 +24,8 @@ namespace PLForms
             myBL.AddRoom(new Room(myBL.NextRoomNumber, 1, 200, RoomType.Suite, true));
             myBL.AddAgency(new Tour_Agency(myBL.NextAgencyNumber, "Reuven Tour LTD", "Reuven", AgencyType.in_hotel_chain_ownership));
             myBL.AddReservation(new Single_Reservation(myBL.NextReservationNumber, myBL.Agencies[0], DateTime.Today, myBL.Rooms[1], 3));
-            myBL.Agencies[0] = new Tour_Agency(myBL.NextAgencyNumber, "Shimon Tour LTD", "Shimon", AgencyType.in_hotel_chain_ownership);
-            myBL.AddReservation(new Group_Reservation<List<Room>>(myBL.NextReservationNumber, myBL.Agencies[0], DateTime.Today, myBL.Rooms));
+            myBL.AddAgency(new Tour_Agency(myBL.NextAgencyNumber, "Shimon Tour LTD", "Shimon", AgencyType.in_hotel_chain_ownership));
+            myBL.AddReservation(new Group_Reservation<List<Room>>(myBL.NextReservationNumber, myBL.Agencies[1], DateTime.Today, myBL.Rooms));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main(myBL));

@@ -48,6 +48,7 @@ namespace PLForms
             roomIDListBox.DataSource = null;
             roomIDListBox.DataSource = myBL.Rooms;
             roomIDListBox.DisplayMember = "RoomID";
+            roomIDListBox.ValueMember = "RoomID";
             if (myBL.Rooms.Count == 0)
             {
                 btn_Delete.Enabled = false;

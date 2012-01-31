@@ -32,5 +32,11 @@ namespace PLForms
             f.Show();
         }
 
+        private void btn_Reservations_Click(object sender, EventArgs e)
+        {
+            Form f = new Reservations(myBL);
+            f.Show();
+        }
+
     }
 }

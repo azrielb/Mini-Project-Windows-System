@@ -47,7 +47,8 @@ namespace PLForms
             agencyIDListBox.DataSource = null;
             agencyIDListBox.DataSource = myBL.Agencies;
             agencyIDListBox.DisplayMember = "Name";
-            if (myBL.Agencies.Count == 0)
+            agencyIDListBox.ValueMember = "AgencyID";
+            if (myBL.Agencies.Count == 0)   //Disable edit & delete buttons if no items.
             {
                 btn_Delete.Enabled = false;
                 btn_Edit.Enabled = false;
