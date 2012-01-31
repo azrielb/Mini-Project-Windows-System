@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace BE {
+    [DataContract]
     public class Single_Reservation : Reservation {
         // Property
+        [DataMember]
         public Room Room { get; set; }
         // Override Properties
+        [DataMember]
         public override uint Price { get { return Room.Price * Days; } }
+        [DataMember]
         public override uint Beds { get { return Room.Beds; } }
 
         /// <summary>

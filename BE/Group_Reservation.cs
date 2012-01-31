@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace BE {
+    [DataContract]
     public class Group_Reservation<T>
         : Reservation
         where T : IEnumerable<Room> {
+        [DataMember]
         public T Rooms { get; set; }
+        [DataMember]
         public override uint Beds { get { return Room.calculateBeds<T>(Rooms); } }
         // Override property
+        [DataMember]
         public override uint Price {
             get {
                 uint price = 0;

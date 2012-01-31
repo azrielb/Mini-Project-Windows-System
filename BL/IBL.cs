@@ -115,7 +115,7 @@ namespace BL {
         /// updating a reservation by parameters
         /// </summary>
         /// <param name="ReservationID">ReservationID</param>
-        /// <param name="rooms">collection of rooms - optional</param>
+        /// <param name="rooms">collection of rooms</param>
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>

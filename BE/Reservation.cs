@@ -1,20 +1,36 @@
 ﻿using System;
 using System.Globalization;
+using System.Runtime.Serialization;
 
 namespace BE {
+    [DataContract]
     public abstract class Reservation : IComparable {
-        // static field
-        public static CultureInfo CalendarType = new CultureInfo("en-US");
+        // static Property
+        [DataMember]
+        public static CultureInfo CalendarType { get; set; }
+        // static constructor
+        static Reservation() {
+            CalendarType = new CultureInfo("en-US");
+        }
 
         // Properties
+        [DataMember]
         public uint ReservationID { get; private set; }
+        [DataMember]
         public uint AgencyID { get; private set; }
+        [DataMember]
         public DateTime ReservationDate { get; private set; }
+        [DataMember]
         public DateTime ArrivalDate { get; set; }
+        [DataMember]
         public uint Days { get; set; }
+        [DataMember]
         public DateTime LeavingDate { get { return ArrivalDate.AddDays(Days); } }
+        [DataMember]
         public string ContactPerson { get; set; }
+        [DataMember]
         public abstract uint Price { get; }
+        [DataMember]
         public abstract uint Beds { get; }
 
         /// <summary>

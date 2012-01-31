@@ -1,0 +1,12 @@
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\bin\Debug\BL_WcfService.dll.config
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\bin\Debug\BL_WcfService.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\bin\Debug\BL_WcfService.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\obj\Debug\BL_WcfService.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\obj\Debug\BL_WcfService.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\bin\Debug\BE.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\bin\Debug\DAL.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\bin\Debug\ABClasses.dll
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\bin\Debug\BE.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\bin\Debug\DAL.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_WcfService\bin\Debug\ABClasses.pdb
