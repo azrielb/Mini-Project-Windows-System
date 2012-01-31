@@ -46,29 +46,35 @@ namespace PLForms
             leavingDateDateTimePicker.Value = r.LeavingDate;
             leavingDateDateTimePicker.MinDate = r.ArrivalDate;
             var v = myBL.availableRooms(arrivalDateDateTimePicker.Value, leavingDateDateTimePicker.Value, null);
-            ArrayList localRooms = new ArrayList();
+            List<Room> localRooms = new List<Room>();
             if (r is Single_Reservation)
             {
                 localRooms.Add(((Single_Reservation)r).Room);
-                v.Insert(0, ((Single_Reservation)r).Room);
             }
             else if (r is Group_Reservation)
             {
                 localRooms.AddRange(((Group_Reservation)r).Rooms);
-                v.InsertRange(0, ((Group_Reservation)r).Rooms);
             }
+            v.InsertRange(0, localRooms);
             roomsListBox.DataSource = (v);
             roomsListBox.ValueMember = "RoomID";
             for (int i = 0; i < localRooms.Count; i++)
                 roomsListBox.SetItemChecked(i, true);
-            uint totalBeds = 0;
-            foreach (Room x in roomsListBox.CheckedItems)
-                totalBeds += x.Beds;
-            priceTextBox.Text = r.Price.ToString();
+            bedsRefresh(localRooms);
+            priceRefresh(localRooms);
         }
         private void roomsListBoxRefresh()
         {
-            roomsListBox.DataSource = myBL.availableRooms(arrivalDateDateTimePicker.Value, leavingDateDateTimePicker.Value, null);
+            var v = myBL.availableRooms(arrivalDateDateTimePicker.Value, leavingDateDateTimePicker.Value, null);
+            List<Room> checkedRooms = new List<Room>();
+            checkedRooms.AddRange(from Room item in roomsListBox.CheckedItems select item);
+            v.InsertRange(0, checkedRooms);
+            roomsListBox.DataSource = (v);
+            roomsListBox.ValueMember = "RoomID";
+            for (int i = 0; i < checkedRooms.Count; i++)
+                roomsListBox.SetItemChecked(i, true);
+            bedsRefresh(checkedRooms);
+            priceRefresh(checkedRooms);
         }
         
         private void arrivalDateDateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -81,6 +87,24 @@ namespace PLForms
         {
             arrivalDateDateTimePicker.MaxDate = leavingDateDateTimePicker.Value;
             roomsListBoxRefresh();
+        }
+        private void bedsRefresh(List<Room> roomsList)
+        {
+            bedsTextBox.Text = (from room in roomsList select (room.Beds * 1.0)).Sum().ToString();
+        }
+        private void priceRefresh(List<Room> roomsList)
+        {
+            priceTextBox.Text = (from room in roomsList select (room.Price * 1.0)).Sum().ToString();
+        }
+
+        private void roomsListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            List<Room> checkedRooms = new List<Room>();
+            checkedRooms.AddRange(from Room item in roomsListBox.CheckedItems select item);
+            roomsListBox.SelectedIndex = e.Index;
+            checkedRooms.Add((Room)roomsListBox.SelectedItem);
+            bedsRefresh(checkedRooms);
+            priceRefresh(checkedRooms);
         }
     }
 }
