@@ -173,8 +173,8 @@ namespace DAL {
         /// <returns>true if success, false else</returns>
         public bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 0) {
             return UpdateReservation(ReservationID, item => {
-                if (!(item is Group_Reservation<List<Room>>)) throw new ArgumentException("Reservation must be a Group_Reservation");
-                (item as Group_Reservation<List<Room>>).Rooms = rooms;
+                if (!(item is Group_Reservation)) throw new ArgumentException("Reservation must be a Group_Reservation");
+                (item as Group_Reservation).Rooms = rooms;
                 if (ArrivalDate.HasValue) item.ArrivalDate = ArrivalDate.Value;
                 if (Days > 0) item.Days = Days;
             });

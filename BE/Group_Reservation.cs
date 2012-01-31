@@ -4,15 +4,15 @@ using System.Runtime.Serialization;
 
 namespace BE {
     [DataContract]
-    public class Group_Reservation<T>
-        : Reservation
-        where T : IEnumerable<Room> {
+    public class Group_Reservation        : Reservation {
         [DataMember]
-        public T Rooms { get; set; }
+        public List<Room> Rooms { get; set; }
         [DataMember]
         public override uint Beds {
-            get { return Room.calculateBeds<T>(Rooms); }
-            protected set { throw new NotImplementedException(); }
+            get { return Room.calculateBeds(Rooms); }
+            protected set { 
+                //throw new NotImplementedException(); 
+            }
         }
         // Override property
         [DataMember]
@@ -23,7 +23,9 @@ namespace BE {
                     price += room.Price * Days;
                 return price;
             }
-            protected set { throw new NotImplementedException(); }
+            protected set { 
+                //throw new NotImplementedException(); 
+            }
         }
 
         /// <summary>
@@ -35,7 +37,7 @@ namespace BE {
         /// <param name="myRooms">collection of rooms</param>
         /// <param name="days">the amount of days</param>
         /// <param name="reservationDate">reservation date, null is current date</param>
-        public Group_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, T rooms, uint days = 1, DateTime? reservationDate = null)
+        public Group_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, List<Room> rooms, uint days = 1, DateTime? reservationDate = null)
             : base(ID, agency, arrivalDate, days, reservationDate) {
             Rooms = rooms;
         }

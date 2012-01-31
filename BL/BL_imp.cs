@@ -96,8 +96,8 @@ namespace BL {
             foreach (var reservation in query) {
                 if (reservation is Single_Reservation)
                     reservedRooms.Add(((Single_Reservation)reservation).Room.RoomID);
-                else if (reservation is Group_Reservation<IEnumerable<Room>>)
-                    reservedRooms.AddRange(from item in ((Group_Reservation<IEnumerable<Room>>)reservation).Rooms select item.RoomID);
+                else if (reservation is Group_Reservation)
+                    reservedRooms.AddRange(from item in ((Group_Reservation)reservation).Rooms select item.RoomID);
             }
             return reservedRooms.Distinct();
         }

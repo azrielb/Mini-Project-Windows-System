@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace BE {
     [DataContract]
     [KnownType(typeof(Single_Reservation))]
-    [KnownType(typeof(Group_Reservation<IEnumerable<Room>>))]
+    [KnownType(typeof(Group_Reservation))]
     public abstract class Reservation : IComparable {
         // static Property
         [DataMember]
@@ -30,7 +30,9 @@ namespace BE {
         [DataMember]
         public DateTime LeavingDate {
             get { return ArrivalDate.AddDays(Days); }
-            private set { throw new NotImplementedException(); }
+            private set { 
+                //throw new NotImplementedException(); 
+            }
         }
         [DataMember]
         public string ContactPerson { get; set; }

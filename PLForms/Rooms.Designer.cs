@@ -44,13 +44,13 @@
             roomIDLabel.AutoSize = true;
             roomIDLabel.Location = new System.Drawing.Point(12, 9);
             roomIDLabel.Name = "roomIDLabel";
-            roomIDLabel.Size = new System.Drawing.Size(52, 13);
+            roomIDLabel.Size = new System.Drawing.Size(78, 13);
             roomIDLabel.TabIndex = 1;
-            roomIDLabel.Text = "Room ID:";
+            roomIDLabel.Text = "Room Number:";
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(15, 27);
+            this.btn_Edit.Location = new System.Drawing.Point(15, 25);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(68, 23);
             this.btn_Edit.TabIndex = 3;
@@ -60,7 +60,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(15, 56);
+            this.btn_Delete.Location = new System.Drawing.Point(15, 54);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(68, 23);
             this.btn_Delete.TabIndex = 4;
@@ -70,7 +70,7 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(15, 86);
+            this.btn_Add.Location = new System.Drawing.Point(15, 84);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(68, 23);
             this.btn_Add.TabIndex = 5;
@@ -86,6 +86,7 @@
             // 
             this.roomIDListBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roomBindingSource, "RoomID", true));
             this.roomIDListBox.DataSource = this.roomBindingSource;
+            this.roomIDListBox.FormatString = "\\# 000";
             this.roomIDListBox.FormattingEnabled = true;
             this.roomIDListBox.Location = new System.Drawing.Point(89, 9);
             this.roomIDListBox.Name = "roomIDListBox";
@@ -96,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(220, 127);
+            this.ClientSize = new System.Drawing.Size(224, 122);
             this.Controls.Add(this.roomIDListBox);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.btn_Delete);

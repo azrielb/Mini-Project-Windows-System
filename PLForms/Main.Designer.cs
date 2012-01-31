@@ -52,7 +52,7 @@
             this.btn_Agencies.TabIndex = 1;
             this.btn_Agencies.Text = "Travel Agencies";
             this.btn_Agencies.UseVisualStyleBackColor = true;
-            this.btn_Agencies.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Agencies.Click += new System.EventHandler(this.btn_Agencies_Click);
             // 
             // btn_Order
             // 
@@ -73,7 +73,7 @@
             this.Controls.Add(this.btn_Rooms);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Hotel Management";
             this.ResumeLayout(false);
 
         }

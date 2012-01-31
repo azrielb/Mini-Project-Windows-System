@@ -1,3 +1,4 @@
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\bin\Debug\BL_SOAP.dll.config
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\bin\Debug\BL_SOAP.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\bin\Debug\BL_SOAP.pdb
@@ -7,6 +8,5 @@ C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\bin\Debug\ABClass
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\bin\Debug\BE.pdb
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\bin\Debug\DAL.pdb
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\bin\Debug\ABClasses.pdb
-C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\obj\Debug\BL_SOAP.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL_SOAP\obj\Debug\BL_SOAP.pdb

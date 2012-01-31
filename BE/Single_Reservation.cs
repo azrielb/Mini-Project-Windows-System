@@ -11,12 +11,16 @@ namespace BE {
         [DataMember]
         public override uint Price {
             get { return Room.Price * Days; }
-            protected set { throw new NotImplementedException(); }
+            protected set { 
+                //throw new NotImplementedException(); 
+            }
         }
         [DataMember]
         public override uint Beds {
             get { return Room.Beds; }
-            protected set { throw new NotImplementedException(); }
+            protected set { 
+                //throw new NotImplementedException(); 
+            }
         }
 
         /// <summary>

@@ -60,14 +60,7 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Reservation" nillable="true" type="tns:Reservation" />
-  <xs:complexType name="Group_ReservationOfArrayOfRoomaguBxXxj">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="Group_ReservationOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/BE" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfRoom" Namespace="http://schemas.datacontract.org/2004/07/BE" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
+  <xs:complexType name="Group_Reservation">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Reservation">
         <xs:sequence>
@@ -76,7 +69,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Group_ReservationOfArrayOfRoomaguBxXxj" nillable="true" type="tns:Group_ReservationOfArrayOfRoomaguBxXxj" />
+  <xs:element name="Group_Reservation" nillable="true" type="tns:Group_Reservation" />
   <xs:complexType name="Single_Reservation">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Reservation">

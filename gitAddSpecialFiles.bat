@@ -14,3 +14,4 @@ call git add *.xml
 call git add *.force
 call git add *.user
 call git add *.config
+call git add *.tlog

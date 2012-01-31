@@ -55,7 +55,7 @@ namespace PLForms.BL_ServiceReference {
         uint NextAgencyNumber();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBL_SOAP/AddReservation", ReplyAction="http://tempuri.org/IBL_SOAP/AddReservationResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BE.Group_Reservation<System.Collections.Generic.List<BE.Room>>))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BE.Group_Reservation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(BE.Single_Reservation))]
         bool AddReservation(BE.Reservation reservation);
         

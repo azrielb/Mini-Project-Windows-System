@@ -23,12 +23,14 @@ namespace PLForms
         private void btn_Rooms_Click(object sender, EventArgs e)
         {
             Form f = new Rooms(myBL);
-            f.ShowDialog();
+            f.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Agencies_Click(object sender, EventArgs e)
         {
-
+            Form f = new Agencies(myBL);
+            f.Show();
         }
+
     }
 }

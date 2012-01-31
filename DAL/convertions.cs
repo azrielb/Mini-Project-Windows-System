@@ -50,9 +50,9 @@ namespace DAL {
                 new XElement("ReservationDate", src.ReservationDate),
                 (src is Single_Reservation
                     ? new XElement("roomID", (src as Single_Reservation).Room.RoomID)
-                    : (src is Group_Reservation<IEnumerable<Room>>
+                    : (src is Group_Reservation
                         ? new XElement("rooms",
-                            from room in (src as Group_Reservation<IEnumerable<Room>>).Rooms
+                            from room in (src as Group_Reservation).Rooms
                             select new XElement("ID", room.RoomID)
                         )
                         : null
@@ -71,7 +71,7 @@ namespace DAL {
                     DateTime.Parse(item.Element("ReservationDate").Value)
                 )
                 : item.Element("rooms") != null
-                ? (Reservation)new Group_Reservation<List<Room>>(
+                ? (Reservation)new Group_Reservation(
                     uint.Parse(item.Element("id").Value),
                     intToAgency(uint.Parse(item.Element("AgencyID").Value)),
                     DateTime.Parse(item.Element("ArrivalDate").Value),
