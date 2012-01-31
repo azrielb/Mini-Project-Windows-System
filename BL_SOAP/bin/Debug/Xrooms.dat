@@ -175,4 +175,32 @@
     <Type>1</Type>
     <SeaWatching>T</SeaWatching>
   </room>
+  <room>
+    <id>108</id>
+    <Beds>3</Beds>
+    <Price>100</Price>
+    <Type>0</Type>
+    <SeaWatching>F</SeaWatching>
+  </room>
+  <room>
+    <id>109</id>
+    <Beds>2</Beds>
+    <Price>300</Price>
+    <Type>1</Type>
+    <SeaWatching>T</SeaWatching>
+  </room>
+  <room>
+    <id>110</id>
+    <Beds>3</Beds>
+    <Price>100</Price>
+    <Type>0</Type>
+    <SeaWatching>T</SeaWatching>
+  </room>
+  <room>
+    <id>111</id>
+    <Beds>1</Beds>
+    <Price>200</Price>
+    <Type>1</Type>
+    <SeaWatching>T</SeaWatching>
+  </room>
 </Rooms>

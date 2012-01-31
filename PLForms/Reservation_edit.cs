@@ -40,7 +40,7 @@ namespace PLForms
             agencyIDComboBox.ValueMember = "AgencyID";
             agencyIDComboBox.SelectedValue = r.AgencyID;
             agencyIDComboBox.Enabled = false;
-            contactPersonTextBox.Text = r.ContactPerson;
+            contactPersonTextBox.Text = ((Tour_Agency)agencyIDComboBox.SelectedItem).ContactPerson;
             arrivalDateDateTimePicker.Value = r.ArrivalDate;
             arrivalDateDateTimePicker.MaxDate = r.LeavingDate;
             leavingDateDateTimePicker.Value = r.LeavingDate;
@@ -58,8 +58,12 @@ namespace PLForms
                 v.InsertRange(0, ((Group_Reservation)r).Rooms);
             }
             roomsListBox.DataSource = (v);
-            //here it should check all the rooms in localRooms
-            bedsTextBox.Text = r.Beds.ToString();
+            roomsListBox.ValueMember = "RoomID";
+            for (int i = 0; i < localRooms.Count; i++)
+                roomsListBox.SetItemChecked(i, true);
+            uint totalBeds = 0;
+            foreach (Room x in roomsListBox.CheckedItems)
+                totalBeds += x.Beds;
             priceTextBox.Text = r.Price.ToString();
         }
         private void roomsListBoxRefresh()
