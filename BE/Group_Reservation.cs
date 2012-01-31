@@ -10,7 +10,10 @@ namespace BE {
         [DataMember]
         public T Rooms { get; set; }
         [DataMember]
-        public override uint Beds { get { return Room.calculateBeds<T>(Rooms); } }
+        public override uint Beds {
+            get { return Room.calculateBeds<T>(Rooms); }
+            protected set { throw new NotImplementedException(); }
+        }
         // Override property
         [DataMember]
         public override uint Price {
@@ -20,6 +23,7 @@ namespace BE {
                     price += room.Price * Days;
                 return price;
             }
+            protected set { throw new NotImplementedException(); }
         }
 
         /// <summary>

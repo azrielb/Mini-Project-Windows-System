@@ -12,14 +12,14 @@ namespace PLForms
 {
     public partial class Rooms : Form
     {
-        BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL;
+        BL_ServiceReference.BL_SOAPClient myBL;
 
-        public Rooms(BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> BLin)
+        public Rooms(BL_ServiceReference.BL_SOAPClient BLin)
         {
             myBL = BLin;
         
             InitializeComponent();
-            roomIDListBox.DataSource = myBL.Rooms;
+            roomIDListBox.DataSource = myBL.Rooms();
 
         }
 
@@ -47,7 +47,7 @@ namespace PLForms
         private void roomIDListBoxRefresh()
         {
             roomIDListBox.DataSource = null;
-            roomIDListBox.DataSource = myBL.Rooms;
+            roomIDListBox.DataSource = myBL.Rooms();
         }
 
     }

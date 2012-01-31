@@ -17,9 +17,9 @@ namespace DAL {
         /// </summary>
         internal static Dal_XML_imp Singleton { get { return singleton; } }
         // Fields
-        private readonly string roomsPath = @"Xrooms.dat";
-        private readonly string agenciesPath = @"Xagencies.dat";
-        private readonly string reservationsPath = @"Xreservations.dat";
+        private readonly string roomsFile = @"Xrooms.dat";
+        private readonly string agenciesFile = @"Xagencies.dat";
+        private readonly string reservationsFile = @"Xreservations.dat";
         private XElement Xrooms;
         private XElement Xagencies;
         private XElement Xreservations;
@@ -27,9 +27,13 @@ namespace DAL {
         /// private constructor - for singleton
         /// </summary>
         private Dal_XML_imp() {
-            Xrooms = File.Exists(roomsPath) ? loadData<Room>(roomsPath) : new XElement("Rooms");
-            Xagencies = File.Exists(agenciesPath) ? loadData<Tour_Agency>(agenciesPath) : new XElement("Agencies");
-            Xreservations = File.Exists(reservationsPath) ? loadData<Reservation>(reservationsPath) : new XElement("Reservations");
+            string localPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            roomsFile = localPath + @"/" + roomsFile;
+            agenciesFile = localPath + @"/" + agenciesFile;
+            reservationsFile = localPath + @"/" + reservationsFile;
+            Xrooms = File.Exists(roomsFile) ? loadData<Room>(roomsFile) : new XElement("Rooms");
+            Xagencies = File.Exists(agenciesFile) ? loadData<Tour_Agency>(agenciesFile) : new XElement("Agencies");
+            Xreservations = File.Exists(reservationsFile) ? loadData<Reservation>(reservationsFile) : new XElement("Reservations");
         }
 
         private XElement loadData<T>(string FPath) {
@@ -67,7 +71,7 @@ namespace DAL {
                 return false;
             try {
                 Xrooms.Add(room.ToXML());
-                Xrooms.Save(roomsPath);
+                Xrooms.Save(roomsFile);
             } catch {
                 return false;
             }
@@ -89,7 +93,7 @@ namespace DAL {
                 if (Beds > 0) roomToUpdate.Element("Beds").Value = Beds.ToString();
                 if (Type.HasValue) roomToUpdate.Element("Type").Value = Type.ToString();
                 if (Price > 0) roomToUpdate.Element("Price").Value = Price.ToString();
-                Xrooms.Save(roomsPath);
+                Xrooms.Save(roomsFile);
                 return true;
             } catch {
                 return false;
@@ -106,7 +110,7 @@ namespace DAL {
                 return false;
             try {
                 room.Remove();
-                Xrooms.Save(roomsPath);
+                Xrooms.Save(roomsFile);
                 return true;
             } catch {
                 return false;
@@ -123,7 +127,7 @@ namespace DAL {
                 return false;
             try {
                 Xagencies.Add(agency.ToXML());
-                Xagencies.Save(agenciesPath);
+                Xagencies.Save(agenciesFile);
             } catch {
                 return false;
             }
@@ -143,7 +147,7 @@ namespace DAL {
             try {
                 if (Name != "") agencyToUpdate.Element("Name").Value = Name;
                 if (ContactPerson != "") agencyToUpdate.Element("ContactPerson").Value = ContactPerson;
-                Xagencies.Save(agenciesPath);
+                Xagencies.Save(agenciesFile);
                 return true;
             } catch {
                 return false;
@@ -160,7 +164,7 @@ namespace DAL {
                 return false;
             try {
                 agency.Remove();
-                Xagencies.Save(agenciesPath);
+                Xagencies.Save(agenciesFile);
                 return true;
             } catch {
                 return false;
@@ -177,7 +181,7 @@ namespace DAL {
                 return false;
             try {
                 Xreservations.Add(reservation.ToXML());
-                Xreservations.Save(reservationsPath);
+                Xreservations.Save(reservationsFile);
             } catch {
                 return false;
             }
@@ -198,7 +202,7 @@ namespace DAL {
             try {
                 foreach (Action<XElement> update in updates)
                     update(reservationToUpdate);
-                Xreservations.Save(reservationsPath);
+                Xreservations.Save(reservationsFile);
                 return true;
             } catch {
                 return false;
@@ -264,7 +268,7 @@ namespace DAL {
                 return false;
             try {
                 reservation.Remove();
-                Xreservations.Save(reservationsPath);
+                Xreservations.Save(reservationsFile);
                 return true;
             } catch {
                 return false;

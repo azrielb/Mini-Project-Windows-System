@@ -9,9 +9,15 @@ namespace BE {
         public Room Room { get; set; }
         // Override Properties
         [DataMember]
-        public override uint Price { get { return Room.Price * Days; } }
+        public override uint Price {
+            get { return Room.Price * Days; }
+            protected set { throw new NotImplementedException(); }
+        }
         [DataMember]
-        public override uint Beds { get { return Room.Beds; } }
+        public override uint Beds {
+            get { return Room.Beds; }
+            protected set { throw new NotImplementedException(); }
+        }
 
         /// <summary>
         /// Constructor
@@ -25,13 +31,12 @@ namespace BE {
         public Single_Reservation(uint ID, Tour_Agency agency, DateTime arrivalDate, Room room, uint days = 1, DateTime? reservationDate = null)
             : base(ID, agency, arrivalDate, days, reservationDate) {
             Room = room;
-            
+
         }
 
         // Override function
         public override string ToString() {
             return string.Format("{0}\n{1}", base.ToString(), Room);
         }
-
     }
 }

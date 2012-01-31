@@ -8,16 +8,16 @@ namespace PLForms
     public partial class Room_edit : Form
     {
         bool add;
-        BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL;
-        public Room_edit(BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> BLin)
+        BL_ServiceReference.BL_SOAPClient myBL;
+        public Room_edit(BL_ServiceReference.BL_SOAPClient BLin)
         {
             myBL = BLin;
             add = true;
             InitializeComponent();
             typeListBox.DataSource = Enum.GetValues(typeof(RoomType));
-            roomIDTextBox.Text = myBL.NextRoomNumber.ToString();
+            roomIDTextBox.Text = myBL.NextRoomNumber().ToString();
         }
-        public Room_edit(BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> BLin, Room r)
+        public Room_edit(BL_ServiceReference.BL_SOAPClient BLin, Room r)
         {
             myBL = BLin;
             add = false;

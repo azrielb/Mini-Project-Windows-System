@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Globalization;
 using System.Runtime.Serialization;
+using System.Collections.Generic;
 
 namespace BE {
     [DataContract]
+    [KnownType(typeof(Single_Reservation))]
+    [KnownType(typeof(Group_Reservation<IEnumerable<Room>>))]
     public abstract class Reservation : IComparable {
         // static Property
         [DataMember]
@@ -25,13 +28,16 @@ namespace BE {
         [DataMember]
         public uint Days { get; set; }
         [DataMember]
-        public DateTime LeavingDate { get { return ArrivalDate.AddDays(Days); } }
+        public DateTime LeavingDate {
+            get { return ArrivalDate.AddDays(Days); }
+            private set { throw new NotImplementedException(); }
+        }
         [DataMember]
         public string ContactPerson { get; set; }
         [DataMember]
-        public abstract uint Price { get; }
+        public abstract uint Price { get; protected set; }
         [DataMember]
-        public abstract uint Beds { get; }
+        public abstract uint Beds { get; protected set; }
 
         /// <summary>
         /// Constructor

@@ -15,7 +15,7 @@ namespace PLForms
         [STAThread]
         static void Main()
         {
-            BL.IBL<List<Room>, List<Tour_Agency>, List<Reservation>> myBL = BL.FactoryBL.getBL;
+            BL_ServiceReference.BL_SOAPClient myBL = new BL_ServiceReference.BL_SOAPClient();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main(myBL));

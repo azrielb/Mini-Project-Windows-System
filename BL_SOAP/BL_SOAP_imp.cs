@@ -1,31 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.Text;
 using BE;
 
-namespace BL {
-    public class BL_imp : IBL<List<Room>, List<Tour_Agency>, List<Reservation>> {
-        /// <summary>
-        /// singleton
-        /// </summary>
-        private static BL_imp singleton = new BL_imp();
-        /// <summary>
-        /// singleton. this is internal because the class have to be created by a factory.
-        /// </summary>
-        internal static BL_imp Singleton { get { return singleton; } }
-        // Fields
+namespace BL_SOAP {
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
+    public class BL_SOAP_imp : IBL_SOAP {
         private DAL.Idal<List<Room>, List<Tour_Agency>, List<Reservation>> myDal;
         private uint nextRoomNumber;
         private uint nextAgencyNumber;
         private uint nextReservationNumber;
         /// <summary>
-        /// private constructor - for singleton
+        /// constructor
         /// </summary>
-        private BL_imp() {
+        public BL_SOAP_imp() {
             myDal = DAL.FactoryDAL.getDAL;
-            nextRoomNumber = Rooms.Count > 0 ? (from item in Rooms select item.RoomID).Max() + 1 : 1;
-            nextAgencyNumber = Agencies.Count > 0 ? (from item in Agencies select item.AgencyID).Max() + 1 : 1;
-            nextReservationNumber = Reservations.Count > 0 ? (from item in Reservations select item.ReservationID).Max() + 1 : 1;
+            nextRoomNumber = Rooms().Count > 0 ? (from item in Rooms() select item.RoomID).Max() + 1 : 1;
+            //nextAgencyNumber = Agencies.Count > 0 ? (from item in Agencies select item.AgencyID).Max() + 1 : 1;
+            //nextReservationNumber = Reservations.Count > 0 ? (from item in Reservations select item.ReservationID).Max() + 1 : 1;
         }
 
         // Implement functions and properties of IBL
@@ -59,17 +54,14 @@ namespace BL {
             return roomIsAvailable(ID, DateTime.Now) ? myDal.RemoveRoom(ID) : false;
         }
         // properties of rooms
-        public List<Room> Rooms { get { return myDal.Rooms; } }
+        public List<Room> Rooms() { return myDal.Rooms; }
         /// <summary>
         /// Return the number of the next room - for auto-increment.
         /// </summary>
-        public uint NextRoomNumber {
-            get { return nextRoomNumber; }
-            set {
-                if (nextRoomNumber < value)
-                    nextRoomNumber = value;
-            }
+        public uint NextRoomNumber() {
+            return nextRoomNumber;
         }
+
         /// <summary>
         /// Find the all rooms that are reserved between these dates.
         /// All parameters are optional. The empty calling finds the all rooms that reserved anytime.
@@ -160,16 +152,12 @@ namespace BL {
             return !(myDal.Reservations.Exists(item => item.AgencyID == ID)) && myDal.RemoveAgency(ID);
         }
         // properties of agencies
-        public List<Tour_Agency> Agencies { get { return myDal.Agencies; } }
+        public List<Tour_Agency> Agencies() { return myDal.Agencies; }
         /// <summary>
         /// Return the number of the next agency - for auto-increment.
         /// </summary>
-        public uint NextAgencyNumber {
-            get { return nextAgencyNumber; }
-            set {
-                if (nextAgencyNumber < value)
-                    nextAgencyNumber = value;
-            }
+        public uint NextAgencyNumber() {
+            return nextAgencyNumber;
         }
 
         /// <summary>
@@ -223,27 +211,20 @@ namespace BL {
             return myDal.RemoveReservation(ID);
         }
         // properties of reservations
-        public List<Reservation> Reservations { get { return myDal.Reservations; } }
+        public List<Reservation> Reservations() { return myDal.Reservations; }
         /// <summary>
         /// Return the number of the next reservation - for auto-increment.
         /// </summary>
-        public uint NextReservationNumber {
-            get { return nextReservationNumber; }
-            set {
-                if (nextReservationNumber < value)
-                    nextReservationNumber = value;
-            }
-        }
+        public uint NextReservationNumber() { return nextReservationNumber; }
         /// <summary>
         /// Calculate the price of the all erservations.
         /// </summary>
-        public uint ReservationsPrice {
-            get {
-                uint reservationsPrice = 0;
-                foreach (Reservation reservation in Reservations)
-                    reservationsPrice += reservation.Price;
-                return reservationsPrice;
-            }
+        public uint ReservationsPrice() {
+
+            uint reservationsPrice = 0;
+            foreach (Reservation reservation in Reservations())
+                reservationsPrice += reservation.Price;
+            return reservationsPrice;
         }
         /// <summary>
         /// Cancel the all rservations between these dates

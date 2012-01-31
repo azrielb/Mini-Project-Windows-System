@@ -16,13 +16,14 @@ namespace DAL {
             );
         }
         public static Room ToRoom(this XElement item) {
-            return new Room(
-                uint.Parse(item.Element("id").Value),
-                uint.Parse(item.Element("Beds").Value),
-                uint.Parse(item.Element("Price").Value),
-                (RoomType)uint.Parse(item.Element("Type").Value),
-                item.Element("SeaWatching").Value == "T"
-            );
+            uint id,Beds,Price,theType;
+            uint.TryParse(item.Element("id").Value,out id);
+            uint.TryParse(item.Element("Beds").Value,out Beds);
+            uint.TryParse(item.Element("Price").Value, out Price);
+            uint.TryParse(item.Element("Type").Value,out theType);
+            RoomType Type = (RoomType)theType;
+            bool SeaWatching = item.Element("SeaWatching").Value == "T";
+            return new Room(id, Beds, Price, Type, SeaWatching);
         }
         public static XElement ToXML(this Tour_Agency src) {
             return new XElement("agency",
