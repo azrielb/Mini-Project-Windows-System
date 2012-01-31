@@ -68,6 +68,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations.Designer.cs">
+      <DependentUpon>Reservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservation_edit.Designer.cs">
+      <DependentUpon>Reservation_edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rooms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +116,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reservations.resx">
+      <DependentUpon>Reservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservation_edit.resx">
+      <DependentUpon>Reservation_edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rooms.resx">
       <DependentUpon>Rooms.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,7 +129,6 @@
       <DependentUpon>Room_edit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\DataSources\BE.Reservation.datasource" />
     <None Include="Properties\DataSources\BE.Room.datasource" />
     <None Include="Properties\DataSources\BE.Single_Reservation.datasource" />
