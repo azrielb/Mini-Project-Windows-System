@@ -4,13 +4,13 @@ using System.Runtime.Serialization;
 
 namespace BE {
     [DataContract]
-    public class Group_Reservation        : Reservation {
+    public class Group_Reservation : Reservation {
         [DataMember]
         public List<Room> Rooms { get; set; }
         [DataMember]
         public override uint Beds {
             get { return Room.calculateBeds(Rooms); }
-            protected set { 
+            protected set {
                 //throw new NotImplementedException(); 
             }
         }
@@ -23,7 +23,7 @@ namespace BE {
                     price += room.Price * Days;
                 return price;
             }
-            protected set { 
+            protected set {
                 //throw new NotImplementedException(); 
             }
         }

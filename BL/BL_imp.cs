@@ -35,7 +35,8 @@ namespace BL {
         /// <param name="room">room</param>
         /// <returns>true if success, false else</returns>
         public bool AddRoom(Room room) {
-            if (room.RoomID < nextRoomNumber || !myDal.AddRoom(room)) return false;
+            if (room.RoomID < nextRoomNumber) return false;
+            if (!myDal.AddRoom(room)) return false;
             nextRoomNumber = room.RoomID + 1;
             return true;
         }
@@ -131,7 +132,8 @@ namespace BL {
         /// <param name="agency">agency</param>
         /// <returns>true if success, false else</returns>
         public bool AddAgency(Tour_Agency agency) {
-            if (agency.AgencyID < nextAgencyNumber || !myDal.AddAgency(agency)) return false;
+            if (agency.AgencyID < nextAgencyNumber)
+                if (!myDal.AddAgency(agency)) return false;
             nextAgencyNumber = agency.AgencyID + 1;
             return true;
         }
@@ -157,7 +159,7 @@ namespace BL {
         /// <param name="ID">agency's ID</param>
         /// <returns>true if success, false else</returns>
         public bool RemoveAgency(uint ID) {
-            return !(myDal.Reservations.Exists(item => item.AgencyID == ID)) && myDal.RemoveAgency(ID);
+            return (myDal.Reservations.Exists(item => item.AgencyID == ID)) ? false : myDal.RemoveAgency(ID);
         }
         // properties of agencies
         public List<Tour_Agency> Agencies { get { return myDal.Agencies; } }
@@ -178,7 +180,8 @@ namespace BL {
         /// <param name="reservation">reservation</param>
         /// <returns>true if success, false else</returns>
         public bool AddReservation(Reservation reservation) {
-            if (reservation.ReservationID < nextReservationNumber || !myDal.AddReservation(reservation)) return false;
+            if (reservation.ReservationID < nextReservationNumber) return false;
+            if (!myDal.AddReservation(reservation)) return false;
             nextReservationNumber = reservation.ReservationID + 1;
             return true;
         }
