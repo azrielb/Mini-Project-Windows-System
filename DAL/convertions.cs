@@ -16,11 +16,11 @@ namespace DAL {
             );
         }
         public static Room ToRoom(this XElement item) {
-            uint id,Beds,Price,theType;
-            uint.TryParse(item.Element("id").Value,out id);
-            uint.TryParse(item.Element("Beds").Value,out Beds);
+            uint id, Beds, Price, theType;
+            uint.TryParse(item.Element("id").Value, out id);
+            uint.TryParse(item.Element("Beds").Value, out Beds);
             uint.TryParse(item.Element("Price").Value, out Price);
-            uint.TryParse(item.Element("Type").Value,out theType);
+            uint.TryParse(item.Element("Type").Value, out theType);
             RoomType Type = (RoomType)theType;
             bool SeaWatching = item.Element("SeaWatching").Value == "T";
             return new Room(id, Beds, Price, Type, SeaWatching);
@@ -34,12 +34,10 @@ namespace DAL {
             );
         }
         public static Tour_Agency ToAgency(this XElement item) {
-            return new Tour_Agency(
-                uint.Parse(item.Element("id").Value),
-                item.Element("Name").Value,
-                item.Element("ContactPerson").Value,
-                (AgencyType)uint.Parse(item.Element("Type").Value)
-            );
+            uint id, Type;
+            uint.TryParse(item.Element("id").Value, out id);
+            uint.TryParse(item.Element("Type").Value, out Type);
+            return new Tour_Agency(id, item.Element("Name").Value, item.Element("ContactPerson").Value, (AgencyType)Type);
         }
         public static XElement ToXML(this Reservation src) {
             return new XElement("reservation",
@@ -53,7 +51,7 @@ namespace DAL {
                     : (src is Group_Reservation
                         ? new XElement("rooms",
                             from room in (src as Group_Reservation).Rooms
-                            select new XElement("ID", room.RoomID)
+                            select new XElement("id", room.RoomID)
                         )
                         : null
                     )
@@ -61,25 +59,30 @@ namespace DAL {
             );
         }
         public static Reservation ToReservation(this XElement item, Func<uint, Tour_Agency> intToAgency, Func<uint, Room> intToRoom) {
-            return item.Element("roomID") != null
-                ? (Reservation)new Single_Reservation(
-                    uint.Parse(item.Element("id").Value),
-                    intToAgency(uint.Parse(item.Element("AgencyID").Value)),
-                    DateTime.Parse(item.Element("ArrivalDate").Value),
-                    intToRoom(uint.Parse(item.Element("roomID").Value)),
-                    uint.Parse(item.Element("Days").Value),
-                    DateTime.Parse(item.Element("ReservationDate").Value)
-                )
-                : item.Element("rooms") != null
-                ? (Reservation)new Group_Reservation(
-                    uint.Parse(item.Element("id").Value),
-                    intToAgency(uint.Parse(item.Element("AgencyID").Value)),
-                    DateTime.Parse(item.Element("ArrivalDate").Value),
-                    (from room in item.Element("rooms").Elements("id") select intToRoom(uint.Parse(room.Value))).ToList(),
-                    uint.Parse(item.Element("Days").Value),
-                    DateTime.Parse(item.Element("ReservationDate").Value)
-                )
-                : null;
+            uint id, agencyID, Days;
+            DateTime ArrivalDate, ReservationDate;
+            uint.TryParse(item.Element("id").Value, out id);
+            uint.TryParse(item.Element("AgencyID").Value, out agencyID);
+            uint.TryParse(item.Element("Days").Value, out Days);
+            DateTime.TryParse(item.Element("ArrivalDate").Value, out ArrivalDate);
+            DateTime.TryParse(item.Element("ReservationDate").Value, out ReservationDate);
+            Tour_Agency agency = intToAgency(agencyID);
+            if (item.Element("roomID") != null) {
+                uint roomID;
+                uint.TryParse(item.Element("roomID").Value, out roomID);
+                Room room = intToRoom(roomID);
+                return (Reservation)new Single_Reservation(id, agency, ArrivalDate, room, Days, ReservationDate);
+            }
+            if (item.Element("rooms") != null) {
+                List<Room> rooms = new List<Room>();
+                foreach (XElement XroomID in item.Element("rooms").Elements("id")) {
+                    uint roomID;
+                    uint.TryParse(XroomID.Value, out roomID);
+                    rooms.Add(intToRoom(roomID));
+                }
+                return (Reservation)new Group_Reservation(id, agency, ArrivalDate, rooms, Days, ReservationDate);
+            }
+            return null;
         }
         public static List<T> ToList<T>(this XElement src, Func<uint, Tour_Agency> intToAgency = null, Func<uint, Room> intToRoom = null) {
             if (typeof(T) == typeof(Room)) {
