@@ -6,4 +6,16 @@
     <ContactPerson>Reuven</ContactPerson>
     <Type>2</Type>
   </agency>
+  <agency>
+    <id>4</id>
+    <Name>adihasn</Name>
+    <ContactPerson>Dani</ContactPerson>
+    <Type>0</Type>
+  </agency>
+  <agency>
+    <id>5</id>
+    <Name>something</Name>
+    <ContactPerson>Eliezer</ContactPerson>
+    <Type>1</Type>
+  </agency>
 </Agencies>

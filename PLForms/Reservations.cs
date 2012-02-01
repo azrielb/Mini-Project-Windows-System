@@ -24,6 +24,7 @@ namespace PLForms
         {
             reservationIDListBox.DataSource = null;
             reservationIDListBox.DataSource = myBL.Reservations();
+            var v = myBL.Reservations();
             //      reservationIDListBox.DisplayMember = "Name";
             if (myBL.Reservations().Count == 0)   //Disable edit & delete buttons if no items.
             {
