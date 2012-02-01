@@ -202,6 +202,7 @@
             this.roomsListBox.Name = "roomsListBox";
             this.roomsListBox.Size = new System.Drawing.Size(200, 94);
             this.roomsListBox.TabIndex = 20;
+            this.roomsListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.roomsListBox_ItemCheck);
             // 
             // roomsLabel
             // 
