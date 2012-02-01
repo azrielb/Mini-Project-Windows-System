@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -9,7 +10,7 @@ namespace BE {
         public List<Room> Rooms { get; set; }
         [DataMember]
         public override uint Beds {
-            get { return Room.calculateBeds(Rooms); }
+            get { return (uint)(from room in Rooms select (room.Beds * 1.0)).Sum(); }
             protected set {
                 //throw new NotImplementedException(); 
             }
