@@ -6,4 +6,10 @@
     <ContactPerson>Reuven</ContactPerson>
     <Type>2</Type>
   </agency>
+  <agency>
+    <id>1</id>
+    <Name>Shimon Tour LTD</Name>
+    <ContactPerson>Shimon</ContactPerson>
+    <Type>2</Type>
+  </agency>
 </Agencies>

@@ -17,8 +17,8 @@ namespace BL_SOAP {
         public BL_SOAP_imp() {
             myDal = DAL.FactoryDAL.getDAL;
             nextRoomNumber = Rooms().Count > 0 ? (from item in Rooms() select item.RoomID).Max() + 1 : 1;
-            //nextAgencyNumber = Agencies.Count > 0 ? (from item in Agencies select item.AgencyID).Max() + 1 : 1;
-            //nextReservationNumber = Reservations.Count > 0 ? (from item in Reservations select item.ReservationID).Max() + 1 : 1;
+            nextAgencyNumber = Agencies().Count > 0 ? (from item in Agencies() select item.AgencyID).Max() + 1 : 1;
+            nextReservationNumber = Reservations().Count > 0 ? (from item in Reservations() select item.ReservationID).Max() + 1 : 1;
         }
 
         // Implement functions and properties of IBL
