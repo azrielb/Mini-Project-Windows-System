@@ -36,7 +36,9 @@
             System.Windows.Forms.Label priceLabel;
             System.Windows.Forms.Label reservationIDLabel;
             System.Windows.Forms.Label agencyIDLabel1;
-            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            System.Windows.Forms.Label selectedRoomTypeLabel;
+            System.Windows.Forms.Label selectedRoomBedsLabel;
+            System.Windows.Forms.Label selectedRoomPriceLabel;
             this.arrivalDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.bedsTextBox = new System.Windows.Forms.TextBox();
             this.contactPersonTextBox = new System.Windows.Forms.TextBox();
@@ -44,10 +46,16 @@
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.reservationIDTextBox = new System.Windows.Forms.TextBox();
             this.agencyIDComboBox = new System.Windows.Forms.ComboBox();
-            this.single_ReservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roomsListBox = new System.Windows.Forms.CheckedListBox();
             this.roomsLabel = new System.Windows.Forms.Label();
+            this.selectedRoomTypeField = new System.Windows.Forms.Label();
+            this.selectedRoomBedsField = new System.Windows.Forms.Label();
+            this.selectedRoomPriceField = new System.Windows.Forms.Label();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_OK = new System.Windows.Forms.Button();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.single_ReservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             arrivalDateLabel = new System.Windows.Forms.Label();
             bedsLabel = new System.Windows.Forms.Label();
             contactPersonLabel = new System.Windows.Forms.Label();
@@ -55,9 +63,12 @@
             priceLabel = new System.Windows.Forms.Label();
             reservationIDLabel = new System.Windows.Forms.Label();
             agencyIDLabel1 = new System.Windows.Forms.Label();
+            selectedRoomTypeLabel = new System.Windows.Forms.Label();
+            selectedRoomBedsLabel = new System.Windows.Forms.Label();
+            selectedRoomPriceLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.single_ReservationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // arrivalDateLabel
@@ -72,11 +83,11 @@
             // bedsLabel
             // 
             bedsLabel.AutoSize = true;
-            bedsLabel.Location = new System.Drawing.Point(12, 246);
+            bedsLabel.Location = new System.Drawing.Point(12, 231);
             bedsLabel.Name = "bedsLabel";
-            bedsLabel.Size = new System.Drawing.Size(34, 13);
+            bedsLabel.Size = new System.Drawing.Size(61, 13);
             bedsLabel.TabIndex = 5;
-            bedsLabel.Text = "Beds:";
+            bedsLabel.Text = "Total Beds:";
             // 
             // contactPersonLabel
             // 
@@ -99,11 +110,11 @@
             // priceLabel
             // 
             priceLabel.AutoSize = true;
-            priceLabel.Location = new System.Drawing.Point(12, 272);
+            priceLabel.Location = new System.Drawing.Point(12, 257);
             priceLabel.Name = "priceLabel";
-            priceLabel.Size = new System.Drawing.Size(34, 13);
+            priceLabel.Size = new System.Drawing.Size(61, 13);
             priceLabel.TabIndex = 13;
-            priceLabel.Text = "Price:";
+            priceLabel.Text = "Total Price:";
             // 
             // reservationIDLabel
             // 
@@ -123,9 +134,32 @@
             agencyIDLabel1.TabIndex = 18;
             agencyIDLabel1.Text = "Agency:";
             // 
-            // reservationBindingSource
+            // selectedRoomTypeLabel
             // 
-            this.reservationBindingSource.DataSource = typeof(BE.Reservation);
+            selectedRoomTypeLabel.AutoSize = true;
+            selectedRoomTypeLabel.Location = new System.Drawing.Point(217, 143);
+            selectedRoomTypeLabel.Name = "selectedRoomTypeLabel";
+            selectedRoomTypeLabel.Size = new System.Drawing.Size(34, 13);
+            selectedRoomTypeLabel.TabIndex = 21;
+            selectedRoomTypeLabel.Text = "Type:";
+            // 
+            // selectedRoomBedsLabel
+            // 
+            selectedRoomBedsLabel.AutoSize = true;
+            selectedRoomBedsLabel.Location = new System.Drawing.Point(217, 166);
+            selectedRoomBedsLabel.Name = "selectedRoomBedsLabel";
+            selectedRoomBedsLabel.Size = new System.Drawing.Size(34, 13);
+            selectedRoomBedsLabel.TabIndex = 22;
+            selectedRoomBedsLabel.Text = "Beds:";
+            // 
+            // selectedRoomPriceLabel
+            // 
+            selectedRoomPriceLabel.AutoSize = true;
+            selectedRoomPriceLabel.Location = new System.Drawing.Point(217, 189);
+            selectedRoomPriceLabel.Name = "selectedRoomPriceLabel";
+            selectedRoomPriceLabel.Size = new System.Drawing.Size(34, 13);
+            selectedRoomPriceLabel.TabIndex = 23;
+            selectedRoomPriceLabel.Text = "Price:";
             // 
             // arrivalDateDateTimePicker
             // 
@@ -139,7 +173,8 @@
             // bedsTextBox
             // 
             this.bedsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservationBindingSource, "Beds", true));
-            this.bedsTextBox.Location = new System.Drawing.Point(111, 243);
+            this.bedsTextBox.Enabled = false;
+            this.bedsTextBox.Location = new System.Drawing.Point(111, 228);
             this.bedsTextBox.Name = "bedsTextBox";
             this.bedsTextBox.Size = new System.Drawing.Size(200, 20);
             this.bedsTextBox.TabIndex = 6;
@@ -165,7 +200,8 @@
             // priceTextBox
             // 
             this.priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.reservationBindingSource, "Price", true));
-            this.priceTextBox.Location = new System.Drawing.Point(111, 269);
+            this.priceTextBox.Enabled = false;
+            this.priceTextBox.Location = new System.Drawing.Point(111, 254);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(200, 20);
             this.priceTextBox.TabIndex = 14;
@@ -186,23 +222,18 @@
             this.agencyIDComboBox.Name = "agencyIDComboBox";
             this.agencyIDComboBox.Size = new System.Drawing.Size(200, 21);
             this.agencyIDComboBox.TabIndex = 19;
-            // 
-            // single_ReservationBindingSource
-            // 
-            this.single_ReservationBindingSource.DataSource = typeof(BE.Single_Reservation);
-            // 
-            // roomBindingSource
-            // 
-            this.roomBindingSource.DataSource = typeof(BE.Room);
+            this.agencyIDComboBox.SelectedIndexChanged += new System.EventHandler(this.agencyIDComboBox_SelectedIndexChanged);
             // 
             // roomsListBox
             // 
+            this.roomsListBox.FormatString = "Room \\#000";
             this.roomsListBox.FormattingEnabled = true;
             this.roomsListBox.Location = new System.Drawing.Point(111, 143);
             this.roomsListBox.Name = "roomsListBox";
-            this.roomsListBox.Size = new System.Drawing.Size(200, 94);
+            this.roomsListBox.Size = new System.Drawing.Size(100, 79);
             this.roomsListBox.TabIndex = 20;
             this.roomsListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.roomsListBox_ItemCheck);
+            this.roomsListBox.SelectedValueChanged += new System.EventHandler(this.roomsListBox_SelectedValueChanged);
             // 
             // roomsLabel
             // 
@@ -213,11 +244,78 @@
             this.roomsLabel.TabIndex = 21;
             this.roomsLabel.Text = "Rooms:";
             // 
+            // selectedRoomTypeField
+            // 
+            this.selectedRoomTypeField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "Type", true));
+            this.selectedRoomTypeField.Location = new System.Drawing.Point(257, 143);
+            this.selectedRoomTypeField.Name = "selectedRoomTypeField";
+            this.selectedRoomTypeField.Size = new System.Drawing.Size(54, 23);
+            this.selectedRoomTypeField.TabIndex = 22;
+            // 
+            // selectedRoomBedsField
+            // 
+            this.selectedRoomBedsField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "Beds", true));
+            this.selectedRoomBedsField.Location = new System.Drawing.Point(257, 166);
+            this.selectedRoomBedsField.Name = "selectedRoomBedsField";
+            this.selectedRoomBedsField.Size = new System.Drawing.Size(54, 23);
+            this.selectedRoomBedsField.TabIndex = 23;
+            // 
+            // selectedRoomPriceField
+            // 
+            this.selectedRoomPriceField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "Price", true));
+            this.selectedRoomPriceField.Location = new System.Drawing.Point(257, 189);
+            this.selectedRoomPriceField.Name = "selectedRoomPriceField";
+            this.selectedRoomPriceField.Size = new System.Drawing.Size(54, 23);
+            this.selectedRoomPriceField.TabIndex = 24;
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_Cancel.Location = new System.Drawing.Point(187, 298);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel.TabIndex = 26;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            // 
+            // btn_OK
+            // 
+            this.btn_OK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_OK.Location = new System.Drawing.Point(60, 298);
+            this.btn_OK.Name = "btn_OK";
+            this.btn_OK.Size = new System.Drawing.Size(75, 23);
+            this.btn_OK.TabIndex = 25;
+            this.btn_OK.Text = "OK";
+            this.btn_OK.UseVisualStyleBackColor = true;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
+            // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataSource = typeof(BE.Room);
+            // 
+            // reservationBindingSource
+            // 
+            this.reservationBindingSource.DataSource = typeof(BE.Reservation);
+            // 
+            // single_ReservationBindingSource
+            // 
+            this.single_ReservationBindingSource.DataSource = typeof(BE.Single_Reservation);
+            // 
             // Reservation_edit
             // 
+            this.AcceptButton = this.btn_OK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 410);
+            this.CancelButton = this.btn_Cancel;
+            this.ClientSize = new System.Drawing.Size(323, 333);
+            this.Controls.Add(this.btn_Cancel);
+            this.Controls.Add(this.btn_OK);
+            this.Controls.Add(selectedRoomPriceLabel);
+            this.Controls.Add(this.selectedRoomPriceField);
+            this.Controls.Add(selectedRoomBedsLabel);
+            this.Controls.Add(this.selectedRoomBedsField);
+            this.Controls.Add(selectedRoomTypeLabel);
+            this.Controls.Add(this.selectedRoomTypeField);
             this.Controls.Add(this.roomsLabel);
             this.Controls.Add(this.roomsListBox);
             this.Controls.Add(agencyIDLabel1);
@@ -237,9 +335,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Reservation_edit";
             this.Text = "Reservation Details";
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.single_ReservationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +357,10 @@
         private System.Windows.Forms.BindingSource roomBindingSource;
         private System.Windows.Forms.CheckedListBox roomsListBox;
         private System.Windows.Forms.Label roomsLabel;
+        private System.Windows.Forms.Label selectedRoomTypeField;
+        private System.Windows.Forms.Label selectedRoomBedsField;
+        private System.Windows.Forms.Label selectedRoomPriceField;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.Button btn_OK;
     }
 }

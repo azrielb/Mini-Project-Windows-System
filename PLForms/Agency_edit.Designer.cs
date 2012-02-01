@@ -143,8 +143,10 @@
             // 
             // Agency_edit
             // 
+            this.AcceptButton = this.btn_OK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_Cancel;
             this.ClientSize = new System.Drawing.Size(219, 181);
             this.Controls.Add(typeLabel);
             this.Controls.Add(this.typeListBox);
