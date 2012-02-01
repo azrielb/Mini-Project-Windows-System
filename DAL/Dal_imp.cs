@@ -141,7 +141,7 @@ namespace DAL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        public bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 0) {
+        public bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 1) {
             return UpdateReservation(ReservationID, item => {
                 if (ArrivalDate.HasValue) item.ArrivalDate = ArrivalDate.Value;
                 if (Days > 0) item.Days = Days;
@@ -155,7 +155,7 @@ namespace DAL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        public bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 0) {
+        public bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 1) {
             return UpdateReservation(ReservationID, item => {
                 if (!(item is Single_Reservation)) throw new ArgumentException("Reservation must be a Single_Reservation");
                 (item as Single_Reservation).Room = room;
@@ -171,7 +171,7 @@ namespace DAL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        public bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 0) {
+        public bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 1) {
             return UpdateReservation(ReservationID, item => {
                 if (!(item is Group_Reservation)) throw new ArgumentException("Reservation must be a Group_Reservation");
                 (item as Group_Reservation).Rooms = rooms;

@@ -214,7 +214,7 @@ namespace DAL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        public bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 0) {
+        public bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 1) {
             return UpdateReservation(ReservationID, item => {
                 if (ArrivalDate.HasValue) item.Element("ArrivalDate").Value = ArrivalDate.ToString();
                 if (Days > 0) item.Element("Days").Value = Days.ToString();
@@ -228,7 +228,7 @@ namespace DAL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        public bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 0) {
+        public bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 1) {
             return UpdateReservation(ReservationID, item => {
                 {
                     if (item.Element("roomID") == null) throw new ArgumentException("Reservation must be a Single_Reservation");
@@ -246,7 +246,7 @@ namespace DAL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        public bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 0) {
+        public bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 1) {
             return UpdateReservation(ReservationID, item => {
                 {
                     if (item.Element("rooms") == null) throw new ArgumentException("Reservation must be a Single_Reservation");

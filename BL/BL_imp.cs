@@ -180,7 +180,7 @@ namespace BL {
         /// <param name="reservation">reservation</param>
         /// <returns>true if success, false else</returns>
         public bool AddReservation(Reservation reservation) {
-            if (reservation.ReservationID < nextReservationNumber) return false;
+            if (reservation.Days < 1 || reservation.ReservationID < nextReservationNumber) return false;
             if (!myDal.AddReservation(reservation)) return false;
             nextReservationNumber = reservation.ReservationID + 1;
             return true;
@@ -192,7 +192,8 @@ namespace BL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        public bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 0) {
+        public bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 1) {
+            if (Days < 1) return false;
             return myDal.UpdateReservation(ReservationID, ArrivalDate, Days);
         }
         /// <summary>
@@ -203,7 +204,8 @@ namespace BL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        public bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 0) {
+        public bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 1) {
+            if (Days < 1) return false;
             return myDal.UpdateReservation(ReservationID, room, ArrivalDate, Days);
         }
         /// <summary>
@@ -214,7 +216,8 @@ namespace BL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        public bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 0) {
+        public bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 1) {
+            if (Days < 1) return false;
             return myDal.UpdateReservation(ReservationID, rooms, ArrivalDate, Days);
         }
         /// <summary>

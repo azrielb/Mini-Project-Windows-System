@@ -114,7 +114,7 @@ namespace BL_SOAP {
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
         [OperationContract]
-        bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 0);
+        bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 1);
         /// <summary>
         /// updating a reservation by parameters
         /// </summary>
@@ -123,7 +123,7 @@ namespace BL_SOAP {
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
         [OperationContract(Name = "UpdateSingleReservation")]
-        bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 0);
+        bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 1);
         /// <summary>
         /// updating a reservation by parameters
         /// </summary>
@@ -133,7 +133,7 @@ namespace BL_SOAP {
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
         [OperationContract(Name = "UpdateGroupReservation")]
-        bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 0);
+        bool UpdateReservation(uint ReservationID, List<Room> rooms, DateTime? ArrivalDate = null, uint Days = 1);
         /// <summary>
         /// remove a reservation from the collection
         /// </summary>

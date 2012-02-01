@@ -101,7 +101,7 @@ namespace BL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 0);
+        bool UpdateReservation(uint ReservationID, DateTime? ArrivalDate = null, uint Days = 1);
         /// <summary>
         /// updating a reservation by parameters
         /// </summary>
@@ -110,7 +110,7 @@ namespace BL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 0);
+        bool UpdateReservation(uint ReservationID, Room room, DateTime? ArrivalDate = null, uint Days = 1);
         /// <summary>
         /// updating a reservation by parameters
         /// </summary>
@@ -119,7 +119,7 @@ namespace BL {
         /// <param name="ArrivalDate">Arrival Date - optional</param>
         /// <param name="Days">Days - optional</param>
         /// <returns>true if success, false else</returns>
-        bool UpdateReservation(uint ReservationID, RO rooms, DateTime? ArrivalDate = null, uint Days = 0);
+        bool UpdateReservation(uint ReservationID, RO rooms, DateTime? ArrivalDate = null, uint Days = 1);
         /// <summary>
         /// remove a reservation from the collection
         /// </summary>
