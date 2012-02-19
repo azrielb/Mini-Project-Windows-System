@@ -4,10 +4,17 @@ using BE;
 
 namespace PLForms
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Agency_edit : Form
     {
         bool add;
         BL_ServiceReference.BL_SOAPClient myBL;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
         public Agency_edit(BL_ServiceReference.BL_SOAPClient BLin)
         {
             myBL = BLin;
@@ -16,6 +23,11 @@ namespace PLForms
             typeListBox.DataSource = Enum.GetValues(typeof(AgencyType));
             agencyIDTextBox.Text = myBL.NextAgencyNumber().ToString();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
+        /// <param name="a"></param>
         public Agency_edit(BL_ServiceReference.BL_SOAPClient BLin, Tour_Agency a)
         {
             myBL = BLin;

@@ -87,7 +87,9 @@ namespace PLForms.BL_ServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IBL_SOAPChannel : PLForms.BL_ServiceReference.IBL_SOAP, System.ServiceModel.IClientChannel {
     }
-    
+    /// <summary>
+    /// 
+    /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class BL_SOAPClient : System.ServiceModel.ClientBase<PLForms.BL_ServiceReference.IBL_SOAP>, PLForms.BL_ServiceReference.IBL_SOAP {
@@ -138,11 +140,21 @@ namespace PLForms.BL_ServiceReference {
         public System.Collections.Generic.List<BE.Room> availableRooms(System.Nullable<System.DateTime> start, System.Nullable<System.DateTime> end, System.Predicate<BE.Room> predicate) {
             return base.Channel.availableRooms(start, end, predicate);
         }
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns></returns>
         public bool roomIsAvailable(uint ID, System.Nullable<System.DateTime> start, System.Nullable<System.DateTime> end) {
             return base.Channel.roomIsAvailable(ID, start, end);
         }
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="agency"></param>
+        /// <returns></returns>
         public bool AddAgency(BE.Tour_Agency agency) {
             return base.Channel.AddAgency(agency);
         }

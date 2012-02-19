@@ -34,3 +34,4 @@ C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\obj\x86\Debug\Gen
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\obj\x86\Debug\PLForms.exe
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\obj\x86\Debug\PLForms.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\bin\Debug\PLForms.XML

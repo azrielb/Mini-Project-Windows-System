@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using BE;
 
 namespace PLForms
 {
@@ -8,6 +7,10 @@ namespace PLForms
     {
         BL_ServiceReference.BL_SOAPClient myBL;
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
         public Agencies(BL_ServiceReference.BL_SOAPClient BLin)
         {
             myBL = BLin;

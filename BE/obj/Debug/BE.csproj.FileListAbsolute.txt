@@ -8,3 +8,4 @@ C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BE\bin\Debug\BE.pdb
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BE\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BE\obj\Debug\BE.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BE\obj\Debug\BE.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BE\bin\Debug\BE.XML
