@@ -5,6 +5,11 @@ using BE;
 
 namespace PLForms
 {
+    /// <summary>
+    /// Written by:
+    /// Azriel Berger - ID no. 039677588
+    /// Daniel Tal-Or - ID no. 330970591
+    /// </summary>
     static class Program
     {
         /// <summary>
