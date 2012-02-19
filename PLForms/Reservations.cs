@@ -1,12 +1,20 @@
 ﻿using System;
 using System.Windows.Forms;
+using BE;
 
 namespace PLForms
 {
+    /// <summary>
+    /// 
+    /// </summary>
    public partial class Reservations : Form
     {
-        BL_ServiceReference.BL_SOAPClient myBL;
-        public Reservations(BL_ServiceReference.BL_SOAPClient BLin)
+        BL.BL_imp myBL;
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="BLin"></param>
+        public Reservations(BL.BL_imp BLin)
         {
             myBL = BLin;
             InitializeComponent();
@@ -16,10 +24,10 @@ namespace PLForms
         private void reservationIDListBoxRefresh()
         {
             reservationIDListBox.DataSource = null;
-            reservationIDListBox.DataSource = myBL.Reservations();
-            var v = myBL.Reservations();
+            reservationIDListBox.DataSource = myBL.Reservations;
+            var v = myBL.Reservations;
             //      reservationIDListBox.DisplayMember = "Name";
-            if (myBL.Reservations().Count == 0)   //Disable edit & delete buttons if no items.
+            if (myBL.Reservations.Count == 0)   //Disable edit & delete buttons if no items.
             {
                 btn_Delete.Enabled = false;
                 btn_Edit.Enabled = false;

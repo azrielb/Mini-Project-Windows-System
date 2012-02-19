@@ -20,3 +20,4 @@ C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\ABClasses.pd
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\obj\Debug\BL.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\obj\Debug\BL.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\BL\bin\Debug\BE.xml

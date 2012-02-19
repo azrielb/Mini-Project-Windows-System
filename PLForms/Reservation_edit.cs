@@ -8,28 +8,37 @@ using BE;
 namespace PLForms {
     public partial class Reservation_edit : Form {
         bool add;
-        BL_ServiceReference.BL_SOAPClient myBL;
+        BL.BL_imp myBL;
         bool isSingle;
-        public Reservation_edit(BL_ServiceReference.BL_SOAPClient BLin)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
+        public Reservation_edit(BL.BL_imp BLin)
         {
             myBL = BLin;
             add = true;
             InitializeComponent();
-            agencyIDComboBox.DataSource = myBL.Agencies();
+            agencyIDComboBox.DataSource = myBL.Agencies;
             agencyIDComboBox.DisplayMember = "Name";
             agencyIDComboBox.ValueMember = "AgencyID";
-            reservationIDTextBox.Text = (myBL.NextReservationNumber()).ToString();
+            reservationIDTextBox.Text = (myBL.NextReservationNumber).ToString();
             arrivalDateDateTimePicker.Value = DateTime.Today;
             leavingDateDateTimePicker.Value = DateTime.Today.AddDays(1);
             roomsListBoxRefresh();
         }
-        public Reservation_edit(BL_ServiceReference.BL_SOAPClient BLin, Reservation r) {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
+        /// <param name="r"></param>
+        public Reservation_edit(BL.BL_imp BLin, Reservation r) {
             myBL = BLin;
             add = false;
             InitializeComponent();
             reservationIDTextBox.Text = r.ReservationID.ToString();
             reservationIDTextBox.Enabled = false;
-            agencyIDComboBox.DataSource = myBL.Agencies();
+            agencyIDComboBox.DataSource = myBL.Agencies;
             agencyIDComboBox.DisplayMember = "Name";
             agencyIDComboBox.ValueMember = "AgencyID";
             agencyIDComboBox.SelectedValue = r.AgencyID;
@@ -168,11 +177,11 @@ namespace PLForms {
                 {
                     if (r is Group_Reservation)
                     {
-                        if (!myBL.UpdateGroupReservation(r.ReservationID, ((Group_Reservation)r).Rooms, r.ArrivalDate, r.Days)) throw new Exception();
+                        if (!myBL.UpdateReservation(r.ReservationID, ((Group_Reservation)r).Rooms, r.ArrivalDate, r.Days)) throw new Exception();
                     }
                     else if (r is Single_Reservation)
                     {
-                        if (!myBL.UpdateSingleReservation(r.ReservationID, ((Single_Reservation)r).Room, r.ArrivalDate, r.Days)) throw new Exception();
+                        if (!myBL.UpdateReservation(r.ReservationID, ((Single_Reservation)r).Room, r.ArrivalDate, r.Days)) throw new Exception();
                     }
                 }
 

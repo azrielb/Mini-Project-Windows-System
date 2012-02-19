@@ -7,16 +7,25 @@ namespace PLForms
     public partial class Room_edit : Form
     {
         bool add;
-        BL_ServiceReference.BL_SOAPClient myBL;
-        public Room_edit(BL_ServiceReference.BL_SOAPClient BLin)
+        BL.BL_imp myBL;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
+        public Room_edit(BL.BL_imp BLin)
         {
             myBL = BLin;
             add = true;
             InitializeComponent();
             typeListBox.DataSource = Enum.GetValues(typeof(RoomType));
-            roomIDTextBox.Text = myBL.NextRoomNumber().ToString();
+            roomIDTextBox.Text = myBL.NextRoomNumber.ToString();
         }
-        public Room_edit(BL_ServiceReference.BL_SOAPClient BLin, Room r)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
+        /// <param name="r"></param>
+        public Room_edit(BL.BL_imp BLin, Room r)
         {
             myBL = BLin;
             add = false;

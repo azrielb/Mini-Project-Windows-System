@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using BE;
 
 namespace PLForms
 {
@@ -11,10 +13,10 @@ namespace PLForms
         [STAThread]
         static void Main()
         {
-            BL_ServiceReference.BL_SOAPClient myBL = new BL_ServiceReference.BL_SOAPClient();
+            BL.IBL<List<Room>, List <Tour_Agency>, List<Reservation>> myBL = BL.FactoryBL.getBL;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main(myBL));
+            Application.Run(new Main((BL.BL_imp)myBL));
         }
     }
 }

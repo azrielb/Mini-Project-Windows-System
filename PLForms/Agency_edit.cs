@@ -10,25 +10,25 @@ namespace PLForms
     public partial class Agency_edit : Form
     {
         bool add;
-        BL_ServiceReference.BL_SOAPClient myBL;
+        BL.BL_imp myBL;
         /// <summary>
         /// 
         /// </summary>
         /// <param name="BLin"></param>
-        public Agency_edit(BL_ServiceReference.BL_SOAPClient BLin)
+        public Agency_edit(BL.BL_imp BLin)
         {
             myBL = BLin;
             add = true;
             InitializeComponent();
             typeListBox.DataSource = Enum.GetValues(typeof(AgencyType));
-            agencyIDTextBox.Text = myBL.NextAgencyNumber().ToString();
+            agencyIDTextBox.Text = myBL.NextAgencyNumber.ToString();
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="BLin"></param>
         /// <param name="a"></param>
-        public Agency_edit(BL_ServiceReference.BL_SOAPClient BLin, Tour_Agency a)
+        public Agency_edit(BL.BL_imp BLin, Tour_Agency a)
         {
             myBL = BLin;
             add = false;

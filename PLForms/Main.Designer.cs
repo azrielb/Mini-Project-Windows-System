@@ -1,5 +1,8 @@
 ﻿namespace PLForms
 {
+    /// <summary>
+    /// 
+    /// </summary>
     partial class Main
     {
         /// <summary>

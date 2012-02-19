@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BE</name>
+    </assembly>
+    <members>
+        <member name="M:BE.Reservation.#ctor(System.UInt32,BE.Tour_Agency,System.DateTime,System.UInt32,System.Nullable{System.DateTime})">
+            <summary>
+            Constructor - by days (default: one day)
+            </summary>
+            <param name="ID">reservation ID</param>
+            <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
+            <param name="arrivalDate">arrival date</param>
+            <param name="days">the amount of days</param>
+            <param name="reservationDate">reservation date, null is current date</param>
+        </member>
+        <member name="M:BE.Reservation.#ctor(System.UInt32,BE.Tour_Agency,System.DateTime,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            Constructor - by leaving date
+            </summary>
+            <param name="ID">reservation ID</param>
+            <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
+            <param name="arrivalDate">arrival date</param>
+            <param name="leavingDate">leaving Date</param>
+            <param name="reservationDate">reservation date, null is current date</param>
+        </member>
+        <member name="M:BE.Reservation.CompareTo(System.Object)">
+            <summary>
+            the reservation can be comapred with another reservation or with integer
+            </summary>
+        </member>
+        <member name="M:BE.Room.#ctor(System.UInt32,System.UInt32,System.UInt32,BE.RoomType,System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ID">room id</param>
+            <param name="beds">amount of beds in room</param>
+            <param name="price">price for 1 day</param>
+            <param name="type">Regular or Suite</param>
+            <param name="seaWatching">the room watchs of the sea?</param>
+        </member>
+        <member name="M:BE.Room.CompareTo(System.Object)">
+            <summary>
+            room can be comapred with another room or with integer
+            </summary>
+        </member>
+        <member name="M:BE.Single_Reservation.#ctor(System.UInt32,BE.Tour_Agency,System.DateTime,BE.Room,System.UInt32,System.Nullable{System.DateTime})">
+            <summary>
+            Constructor - by days (default: one day)
+            </summary>
+            <param name="ID">reservation ID</param>
+            <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
+            <param name="arrivalDate">arrival date</param>
+            <param name="room">The room</param>
+            <param name="days">the amount of days</param>
+            <param name="reservationDate">reservation date, null is current date</param>
+        </member>
+        <member name="M:BE.Single_Reservation.#ctor(System.UInt32,BE.Tour_Agency,System.DateTime,BE.Room,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            Constructor - by leaving date
+            </summary>
+            <param name="ID">reservation ID</param>
+            <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
+            <param name="arrivalDate">arrival date</param>
+            <param name="room">The room</param>
+            <param name="leavingDate">leaving Date</param>
+            <param name="reservationDate">reservation date, null is current date</param>
+        </member>
+        <member name="M:BE.Tour_Agency.#ctor(System.UInt32,System.String,System.String,BE.AgencyType)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ID">id</param>
+            <param name="name">name</param>
+            <param name="contactPerson">contact person</param>
+            <param name="type">AgencyType</param>
+        </member>
+        <member name="M:BE.Tour_Agency.CompareTo(System.Object)">
+            <summary>
+            Tour_Agency can be comapred with another Tour_Agency or with integer
+            </summary>
+        </member>
+        <member name="M:BE.Group_Reservation.#ctor(System.UInt32,BE.Tour_Agency,System.DateTime,System.Collections.Generic.List{BE.Room},System.UInt32,System.Nullable{System.DateTime})">
+            <summary>
+            Constructor - by days (default: one day)
+            </summary>
+            <param name="ID">reservation ID</param>
+            <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
+            <param name="arrivalDate">arrival date</param>
+            <param name="myRooms">collection of rooms</param>
+            <param name="days">the amount of days</param>
+            <param name="reservationDate">reservation date, null is current date</param>
+        </member>
+        <member name="M:BE.Group_Reservation.#ctor(System.UInt32,BE.Tour_Agency,System.DateTime,System.Collections.Generic.List{BE.Room},System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            Constructor - by leaving date
+            </summary>
+            <param name="ID">reservation ID</param>
+            <param name="agency">Agency (The fields that are in use are agecyID and ContactPerson)</param>
+            <param name="arrivalDate">arrival date</param>
+            <param name="myRooms">collection of rooms</param>
+            <param name="leavingDate">leaving Date</param>
+            <param name="reservationDate">reservation date, null is current date</param>
+        </member>
+    </members>
+</doc>

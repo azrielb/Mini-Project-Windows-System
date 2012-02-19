@@ -16,3 +16,4 @@ C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\bin\Debug\BE.pdb
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\obj\Debug\DAL.dll
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\obj\Debug\DAL.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\DAL\bin\Debug\BE.xml

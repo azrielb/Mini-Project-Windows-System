@@ -93,11 +93,6 @@
     <Compile Include="Room_edit.Designer.cs">
       <DependentUpon>Room_edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Service References\BL_ServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Agencies.resx">
       <DependentUpon>Agencies.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -150,45 +145,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\BL_ServiceReference\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\BL_ServiceReference\BE.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\BL_ServiceReference\service.wsdl" />
-    <None Include="Service References\BL_ServiceReference\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\BL_ServiceReference\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\BL_ServiceReference\System.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\BL_ServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\BL_ServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\BL_ServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\BL_ServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{5D8B0900-A5FE-4555-BA7D-5FDB9A2C85A4}</Project>
       <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{5B6E1F37-87F5-4B4C-9379-88C8E68E7410}</Project>
+      <Name>BL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

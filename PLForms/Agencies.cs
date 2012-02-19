@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Windows.Forms;
+using BE;
 
 namespace PLForms
 {
     public partial class Agencies : Form
     {
-        BL_ServiceReference.BL_SOAPClient myBL;
+        BL.BL_imp myBL;
         
         /// <summary>
         /// 
         /// </summary>
         /// <param name="BLin"></param>
-        public Agencies(BL_ServiceReference.BL_SOAPClient BLin)
+        public Agencies(BL.BL_imp BLin)
         {
             myBL = BLin;
             InitializeComponent();
@@ -45,9 +46,9 @@ namespace PLForms
         private void agencyIDListBoxRefresh()
         {
             agencyIDListBox.DataSource = null;
-            agencyIDListBox.DataSource = myBL.Agencies();
+            agencyIDListBox.DataSource = myBL.Agencies;
             agencyIDListBox.DisplayMember = "Name";
-            if (myBL.Agencies().Count == 0)
+            if (myBL.Agencies.Count == 0)
             {
                 btn_Delete.Enabled = false;
                 btn_Edit.Enabled = false;

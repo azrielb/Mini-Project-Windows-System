@@ -5,9 +5,13 @@ namespace PLForms
 {
     public partial class Main : Form
     {
-        BL_ServiceReference.BL_SOAPClient myBL;
+        BL.BL_imp myBL;
 
-        public Main(BL_ServiceReference.BL_SOAPClient BLin)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
+        public Main(BL.BL_imp BLin)
         {
             myBL = BLin;
             InitializeComponent();

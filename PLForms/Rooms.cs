@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
+using BE;
 
 namespace PLForms {
     public partial class Rooms : Form {
-        BL_ServiceReference.BL_SOAPClient myBL;
+        BL.BL_imp myBL;
 
-        public Rooms(BL_ServiceReference.BL_SOAPClient BLin) {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
+        public Rooms(BL.BL_imp BLin) {
             myBL = BLin;
             InitializeComponent();
             roomIDListBoxRefresh();
@@ -35,9 +40,9 @@ namespace PLForms {
 
         private void roomIDListBoxRefresh() {
             roomIDListBox.DataSource = null;
-            roomIDListBox.DataSource = myBL.Rooms();
+            roomIDListBox.DataSource = myBL.Rooms;
             roomIDListBox.DisplayMember = "RoomID";
-            if (myBL.Rooms().Count == 0) {
+            if (myBL.Rooms.Count == 0) {
                 btn_Delete.Enabled = false;
                 btn_Edit.Enabled = false;
             } else {

@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PLForms</name>
+    </assembly>
+    <members>
+        <member name="M:PLForms.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:PLForms.Main">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Main.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Main.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Main.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PLForms.Main.#ctor(BL.BL_imp)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="T:PLForms.Agency_edit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PLForms.Agency_edit.#ctor(BL.BL_imp)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="M:PLForms.Agency_edit.#ctor(BL.BL_imp,BE.Tour_Agency)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+            <param name="a"></param>
+        </member>
+        <member name="F:PLForms.Agency_edit.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Agency_edit.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Agency_edit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PLForms.Room_edit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Room_edit.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Room_edit.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Room_edit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PLForms.Room_edit.#ctor(BL.BL_imp)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="M:PLForms.Room_edit.#ctor(BL.BL_imp,BE.Room)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+            <param name="r"></param>
+        </member>
+        <member name="T:PLForms.Agencies">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Agencies.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Agencies.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Agencies.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PLForms.Agencies.#ctor(BL.BL_imp)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="T:PLForms.Reservation_edit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Reservation_edit.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Reservation_edit.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Reservation_edit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PLForms.Reservation_edit.#ctor(BL.BL_imp)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="M:PLForms.Reservation_edit.#ctor(BL.BL_imp,BE.Reservation)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+            <param name="r"></param>
+        </member>
+        <member name="T:PLForms.Reservations">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PLForms.Reservations.#ctor(BL.BL_imp)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="F:PLForms.Reservations.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Reservations.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Reservations.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PLForms.Rooms">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Rooms.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Rooms.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Rooms.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PLForms.Rooms.#ctor(BL.BL_imp)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="T:PLForms.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PLForms.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PLForms.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
