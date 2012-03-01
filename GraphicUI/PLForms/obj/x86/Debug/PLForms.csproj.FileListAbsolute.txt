@@ -33,3 +33,7 @@ C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\bin\Debug\PLForms
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\bin\Debug\PLForms.pdb
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\obj\x86\Debug\PLForms.exe
 C:\Users\azrielb\Dropbox\Public\Programing\miniProject\PLForms\obj\x86\Debug\PLForms.pdb
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\GraphicUI\PLForms\bin\Debug\PLForms.exe.config
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\GraphicUI\PLForms\bin\Debug\PLForms.XML
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\GraphicUI\PLForms\obj\x86\Debug\PLForms.exe
+C:\Users\azrielb\Dropbox\Public\Programing\miniProject\GraphicUI\PLForms\obj\x86\Debug\PLForms.pdb
