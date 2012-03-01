@@ -1,22 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Reservations>
   <reservation>
-    <id>2</id>
+    <id>4</id>
     <AgencyID>0</AgencyID>
-    <ArrivalDate>ח' שבט תשע"ב 00:00:00</ArrivalDate>
+    <ArrivalDate>2012-03-01T00:00:00+02:00</ArrivalDate>
     <Days>1</Days>
-    <ReservationDate>2012-02-01T19:08:26.1874811+02:00</ReservationDate>
-    <rooms>
-      <ID>58</ID>
-      <ID>71</ID>
-    </rooms>
+    <ReservationDate>0001-01-01T00:00:00</ReservationDate>
+    <roomID>58</roomID>
   </reservation>
   <reservation>
-    <id>3</id>
+    <id>5</id>
     <AgencyID>0</AgencyID>
-    <ArrivalDate>2012-02-01T00:00:00+02:00</ArrivalDate>
-    <Days>10</Days>
-    <ReservationDate>2012-02-01T19:23:35.1954734+02:00</ReservationDate>
-    <roomID>216</roomID>
+    <ArrivalDate>2012-03-15T00:00:00</ArrivalDate>
+    <Days>2</Days>
+    <ReservationDate>0001-01-01T00:00:00</ReservationDate>
+    <rooms>
+      <id>71</id>
+      <id>72</id>
+      <id>88</id>
+    </rooms>
   </reservation>
 </Reservations>
