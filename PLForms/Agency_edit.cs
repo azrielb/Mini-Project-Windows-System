@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-
+using PLForms.BL_ServiceReference;
 
 namespace PLForms
 {
@@ -46,13 +46,12 @@ namespace PLForms
         {
             try
             {
-                Tour_Agency a = new Tour_Agency
-                (
-                    uint.Parse(agencyIDTextBox.Text),
-                    nameTextBox.Text,
-                    contactPersonTextBox.Text,
-                    (AgencyType)typeListBox.SelectedItem
-                );
+                Tour_Agency a = new Tour_Agency {
+                    AgencyID = uint.Parse(agencyIDTextBox.Text),
+                    Name = nameTextBox.Text,
+                    ContactPerson = contactPersonTextBox.Text,
+                    Type = (AgencyType)typeListBox.SelectedItem
+                };
                 if (add)
                 {
                     if (!myBL.AddAgency(a)) throw new Exception();

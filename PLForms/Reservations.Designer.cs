@@ -41,7 +41,7 @@
             // 
             // reservationBindingSource
             // 
-            this.reservationBindingSource.DataSource = typeof(BE.Reservation);
+            this.reservationBindingSource.DataSource = typeof(BL_ServiceReference.Reservation);
             // 
             // reservationIDLabel
             // 

@@ -1,4 +1,5 @@
-﻿namespace PLForms
+﻿using PLForms.BL_ServiceReference;
+namespace PLForms
 {
     partial class Agency_edit
     {
@@ -85,7 +86,7 @@
             // 
             // tour_AgencyBindingSource
             // 
-            this.tour_AgencyBindingSource.DataSource = typeof(BE.Tour_Agency);
+            this.tour_AgencyBindingSource.DataSource = typeof(Tour_Agency);
             // 
             // agencyIDTextBox
             // 

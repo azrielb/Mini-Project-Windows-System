@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using PLForms.BL_ServiceReference;
 
 
 namespace PLForms {
@@ -136,29 +137,25 @@ namespace PLForms {
                 Reservation r;
                 if (roomsListBox.CheckedItems.Count == 1)
                 {
-                    r = new Single_Reservation
-                    (
-                        uint.Parse(reservationIDTextBox.Text),
-                        (Tour_Agency)agencyIDComboBox.SelectedItem,
-                        arrivalDateDateTimePicker.Value,
-                        (Room)roomsListBox.CheckedItems[0],
-                        (uint)(leavingDateDateTimePicker.Value - arrivalDateDateTimePicker.Value).Days,
-                        (DateTime?)null
-                    );
+                    r = new Single_Reservation {
+                        ReservationID = uint.Parse(reservationIDTextBox.Text),
+                        AgencyID = (agencyIDComboBox.SelectedItem as Tour_Agency).AgencyID,
+                        ArrivalDate = arrivalDateDateTimePicker.Value,
+                        Room = (Room)roomsListBox.CheckedItems[0],
+                        Days = (uint)(leavingDateDateTimePicker.Value - arrivalDateDateTimePicker.Value).Days
+                    };
                 }
                 else
                 {
                     List<Room> checkedRooms = new List<Room>();
                     checkedRooms.AddRange(from Room item in roomsListBox.CheckedItems select item);
-                    r = new Group_Reservation
-                    (
-                        uint.Parse(reservationIDTextBox.Text),
-                        (Tour_Agency)agencyIDComboBox.SelectedItem,
-                        arrivalDateDateTimePicker.Value,
-                        checkedRooms,
-                        (uint)(leavingDateDateTimePicker.Value - arrivalDateDateTimePicker.Value).Days,
-                        (DateTime?)null
-                    );
+                    r = new Group_Reservation {
+                        ReservationID = uint.Parse(reservationIDTextBox.Text), 
+                        AgencyID = (agencyIDComboBox.SelectedItem as Tour_Agency).AgencyID, 
+                        ArrivalDate = arrivalDateDateTimePicker.Value, 
+                        Rooms = checkedRooms, 
+                        Days = (uint)(leavingDateDateTimePicker.Value - arrivalDateDateTimePicker.Value).Days
+                    };
                 }
                 if (add)
                 {

@@ -53,7 +53,7 @@
             // 
             // tour_AgencyBindingSource
             // 
-            this.tour_AgencyBindingSource.DataSource = typeof(BE.Tour_Agency);
+            this.tour_AgencyBindingSource.DataSource = typeof(BL_ServiceReference.Tour_Agency);
             // 
             // agencyIDListBox
             // 

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-
+using PLForms.BL_ServiceReference;
 
 namespace PLForms
 {
@@ -8,6 +8,10 @@ namespace PLForms
     {
         bool add;
         BL_ServiceReference.BL_SOAPClient myBL;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
         public Room_edit(BL_ServiceReference.BL_SOAPClient BLin)
         {
             myBL = BLin;
@@ -16,6 +20,11 @@ namespace PLForms
             typeListBox.DataSource = Enum.GetValues(typeof(RoomType));
             roomIDTextBox.Text = myBL.NextRoomNumber().ToString();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="BLin"></param>
+        /// <param name="r"></param>
         public Room_edit(BL_ServiceReference.BL_SOAPClient BLin, Room r)
         {
             myBL = BLin;
@@ -33,14 +42,13 @@ namespace PLForms
 
         private void btn_OK_Click(object sender, EventArgs e) {
             try {
-                Room r = new Room
-                (
-                    uint.Parse(roomIDTextBox.Text),
-                    uint.Parse(bedsTextBox.Text),
-                    uint.Parse(priceTextBox.Text),
-                    (BE.RoomType)typeListBox.SelectedItem,
-                    seaWatchingCheckBox.Checked
-                );
+                Room r = new Room {
+                    RoomID = uint.Parse(roomIDTextBox.Text),
+                    Beds = uint.Parse(bedsTextBox.Text),
+                    Price = uint.Parse(priceTextBox.Text),
+                    Type = (RoomType)typeListBox.SelectedItem,
+                    SeaWatching = seaWatchingCheckBox.Checked
+                };
                 if (add) {
                     if (!myBL.AddRoom(r)) throw new Exception();
                 } else {

@@ -15,3 +15,9 @@ call git add *.force
 call git add *.user
 call git add *.config
 call git add *.tlog
+call git add *.wsdl
+call git add *.datasource
+call git add *.xsd
+call git add *.resx
+call git add *.svcmap
+

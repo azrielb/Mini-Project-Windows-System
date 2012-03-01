@@ -1,0 +1,880 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PLForms</name>
+    </assembly>
+    <members>
+        <member name="M:PLForms.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:PLForms.Main">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Main.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Main.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Main.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PLForms.Main.#ctor(PLForms.BL_ServiceReference.BL_SOAPClient)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="M:PLForms.Main.btn_Rooms_Click(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:PLForms.Agency_edit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PLForms.Agency_edit.#ctor(PLForms.BL_ServiceReference.BL_SOAPClient)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="M:PLForms.Agency_edit.#ctor(PLForms.BL_ServiceReference.BL_SOAPClient,PLForms.BL_ServiceReference.Tour_Agency)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+            <param name="a"></param>
+        </member>
+        <member name="F:PLForms.Agency_edit.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Agency_edit.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Agency_edit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PLForms.BL_ServiceReference.Room">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Room.extensionDataField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Room.BedsField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Room.PriceField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Room.RoomIDField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Room.SeaWatchingField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Room.TypeField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.Room.RaisePropertyChanged(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Room.ExtensionData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Room.Beds">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Room.Price">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Room.RoomID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Room.SeaWatching">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Room.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:PLForms.BL_ServiceReference.Room.PropertyChanged">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PLForms.BL_ServiceReference.RoomType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.RoomType.Regular">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.RoomType.Suite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PLForms.BL_ServiceReference.Tour_Agency">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Tour_Agency.extensionDataField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Tour_Agency.AgencyIDField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Tour_Agency.ContactPersonField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Tour_Agency.NameField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Tour_Agency.TypeField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.Tour_Agency.RaisePropertyChanged(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Tour_Agency.ExtensionData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Tour_Agency.AgencyID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Tour_Agency.ContactPerson">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Tour_Agency.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Tour_Agency.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:PLForms.BL_ServiceReference.Tour_Agency.PropertyChanged">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PLForms.BL_ServiceReference.AgencyType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.AgencyType.national">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.AgencyType.international">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.AgencyType.in_hotel_chain_ownership">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PLForms.BL_ServiceReference.Reservation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.Reservation.RaisePropertyChanged(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Reservation.ExtensionData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Reservation.AgencyID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Reservation.ArrivalDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Reservation.Beds">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Reservation.ContactPerson">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Reservation.Days">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Reservation.LeavingDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Reservation.Price">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Reservation.ReservationDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Reservation.ReservationID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="E:PLForms.BL_ServiceReference.Reservation.PropertyChanged">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PLForms.BL_ServiceReference.Group_Reservation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Group_Reservation.RoomsField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Group_Reservation.Rooms">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PLForms.BL_ServiceReference.Single_Reservation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.BL_ServiceReference.Single_Reservation.RoomField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PLForms.BL_ServiceReference.Single_Reservation.Room">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PLForms.BL_ServiceReference.IBL_SOAP">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.AddRoom(PLForms.BL_ServiceReference.Room)">
+            <summary>
+            
+            </summary>
+            <param name="room"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.UpdateRoom(System.UInt32,System.UInt32,System.Nullable{PLForms.BL_ServiceReference.RoomType},System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <param name="Beds"></param>
+            <param name="Type"></param>
+            <param name="Price"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.RemoveRoom(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.Rooms">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.NextRoomNumber">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.reservedRooms(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.availableRooms(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Predicate{PLForms.BL_ServiceReference.Room})">
+            <summary>
+            
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.roomIsAvailable(System.UInt32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.AddAgency(PLForms.BL_ServiceReference.Tour_Agency)">
+            <summary>
+            
+            </summary>
+            <param name="agency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.UpdateAgency(System.UInt32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <param name="Name"></param>
+            <param name="ContactPerson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.RemoveAgency(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.Agencies">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.NextAgencyNumber">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.AddReservation(PLForms.BL_ServiceReference.Reservation)">
+            <summary>
+            
+            </summary>
+            <param name="reservation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.UpdateReservation(System.UInt32,System.Nullable{System.DateTime},System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ReservationID"></param>
+            <param name="ArrivalDate"></param>
+            <param name="Days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.UpdateSingleReservation(System.UInt32,PLForms.BL_ServiceReference.Room,System.Nullable{System.DateTime},System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ReservationID"></param>
+            <param name="room"></param>
+            <param name="ArrivalDate"></param>
+            <param name="Days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.UpdateGroupReservation(System.UInt32,System.Collections.Generic.List{PLForms.BL_ServiceReference.Room},System.Nullable{System.DateTime},System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ReservationID"></param>
+            <param name="rooms"></param>
+            <param name="ArrivalDate"></param>
+            <param name="Days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.RemoveReservation(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.Reservations">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.NextReservationNumber">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.ReservationsPrice">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.IBL_SOAP.cancelReservations(System.DateTime,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PLForms.BL_ServiceReference.IBL_SOAPChannel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PLForms.BL_ServiceReference.BL_SOAPClient">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="endpointConfigurationName"></param>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="endpointConfigurationName"></param>
+            <param name="remoteAddress"></param>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.#ctor(System.String,System.ServiceModel.EndpointAddress)">
+            <summary>
+            
+            </summary>
+            <param name="endpointConfigurationName"></param>
+            <param name="remoteAddress"></param>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+            <summary>
+            
+            </summary>
+            <param name="binding"></param>
+            <param name="remoteAddress"></param>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.AddRoom(PLForms.BL_ServiceReference.Room)">
+            <summary>
+            
+            </summary>
+            <param name="room"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.UpdateRoom(System.UInt32,System.UInt32,System.Nullable{PLForms.BL_ServiceReference.RoomType},System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <param name="Beds"></param>
+            <param name="Type"></param>
+            <param name="Price"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.RemoveRoom(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.Rooms">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.NextRoomNumber">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.reservedRooms(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.availableRooms(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Predicate{PLForms.BL_ServiceReference.Room})">
+            <summary>
+            
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.roomIsAvailable(System.UInt32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.AddAgency(PLForms.BL_ServiceReference.Tour_Agency)">
+            <summary>
+            
+            </summary>
+            <param name="agency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.UpdateAgency(System.UInt32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <param name="Name"></param>
+            <param name="ContactPerson"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.RemoveAgency(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.Agencies">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.NextAgencyNumber">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.AddReservation(PLForms.BL_ServiceReference.Reservation)">
+            <summary>
+            
+            </summary>
+            <param name="reservation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.UpdateReservation(System.UInt32,System.Nullable{System.DateTime},System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ReservationID"></param>
+            <param name="ArrivalDate"></param>
+            <param name="Days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.UpdateSingleReservation(System.UInt32,PLForms.BL_ServiceReference.Room,System.Nullable{System.DateTime},System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ReservationID"></param>
+            <param name="room"></param>
+            <param name="ArrivalDate"></param>
+            <param name="Days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.UpdateGroupReservation(System.UInt32,System.Collections.Generic.List{PLForms.BL_ServiceReference.Room},System.Nullable{System.DateTime},System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ReservationID"></param>
+            <param name="rooms"></param>
+            <param name="ArrivalDate"></param>
+            <param name="Days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.RemoveReservation(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.Reservations">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.NextReservationNumber">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.ReservationsPrice">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PLForms.BL_ServiceReference.BL_SOAPClient.cancelReservations(System.DateTime,System.DateTime)">
+            <summary>
+            
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PLForms.Room_edit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Room_edit.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Room_edit.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Room_edit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PLForms.Room_edit.#ctor(PLForms.BL_ServiceReference.BL_SOAPClient)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="M:PLForms.Room_edit.#ctor(PLForms.BL_ServiceReference.BL_SOAPClient,PLForms.BL_ServiceReference.Room)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+            <param name="r"></param>
+        </member>
+        <member name="T:PLForms.Agencies">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Agencies.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Agencies.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Agencies.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:PLForms.Agencies.#ctor(PLForms.BL_ServiceReference.BL_SOAPClient)">
+            <summary>
+            
+            </summary>
+            <param name="BLin"></param>
+        </member>
+        <member name="T:PLForms.Reservation_edit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Reservation_edit.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Reservation_edit.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Reservation_edit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PLForms.Reservations">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Reservations.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Reservations.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Reservations.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PLForms.Rooms">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PLForms.Rooms.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:PLForms.Rooms.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:PLForms.Rooms.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:PLForms.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:PLForms.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:PLForms.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

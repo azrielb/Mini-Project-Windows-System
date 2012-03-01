@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a852ce6b-4dc8-4329-9e91-efed05acd8a7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b245414-935b-4642-9477-4acc434dddb4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -20,15 +20,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="cfdb3b3b-0776-4002-a889-8e07d1b2fb67" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="80081702-f5ed-4f65-8e85-750c01cae78c" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="6864546a-2a11-42af-a686-ef05730ae229" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/mex" />
-    <MetadataFile FileName="BE.xsd" MetadataType="Schema" ID="10112d04-d16d-45a9-a420-de2ef4087820" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="8399ff94-9d69-453a-90da-5f9da7e041a0" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/mex" />
-    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="da9a123e-3021-47c2-b29b-f0220ff6f05e" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/mex" />
+    <MetadataFile FileName="BL_SOAP_imp.wsdl" MetadataType="Wsdl" ID="e34f6f40-e638-41b4-9a4b-c7b719aff120" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="215b7d53-7872-468c-933d-e8cdae21f108" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/?xsd=xsd4" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="7c13d006-4f2f-4a45-b46b-8da58b8544d8" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/?xsd=xsd3" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="7a7aaef6-a921-461d-9ed7-4736c4054d3d" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/?xsd=xsd2" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="df17a89b-3766-41bd-9255-00c9376aaf19" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/?xsd=xsd1" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="3641fc7a-7c94-4897-875d-cccbdd5b52bb" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/BL_SOAP/Service1/?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
